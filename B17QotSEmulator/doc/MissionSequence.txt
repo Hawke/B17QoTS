@@ -1,0 +1,159 @@
+The mission has already been created. The plane is at its base in zone 1, ready to takeoff.
+
+--------------------------------------------------------------------------------
+
+Take Off
+	If B-24
+		Roll for crash
+
+Enter Next/Prev Zone
+	increment/decrement zone
+	If zone is target zone
+		roll for weather in zone ... O1Weather()
+	If zone is base zone
+		roll for weather in zone ... O1Weather()
+		land ... G9LandingOnLand()
+		If bomber had a BIP, it is unfit for further missions (scrapped)
+	If bomber is at low altitude (10,000 feet)
+	& over enemy territory
+		light flak
+		Repeat flak procedure from "roll for flak hits three times" point forward
+	Determine quality of fighter cover (Lanc = none) ... G5FighterCover()
+	Determine number of German waves ... B1NumberOfGermanFighterWaves()
+		If Lancaster
+			0 or 1 waves
+	For each wave
+		Determine type of wave ... B3AttackingFighterWaves()
+			If Lancaster
+				Tame Boar / Wild Boar
+				If Tame Boar
+					Spotting phase
+					If Tame Boar not spotted
+						Tame Boar gets bonus surprise attack before resolving normal combat
+		If out of formation
+			Add Me-109 at 12 level
+			If operating engines >= 3
+			& control cables operative
+			& negative landing modifiers <= 2
+			& pilot and copilot in position
+			& other damage does not prevent evasion
+				Evasive action?
+		else if lead bomber
+			Add Me-109 at 12 high
+		else if tail bomber
+			Add Me-109 at 6 high
+		For each German fighter
+			Determine pilot quality
+		loop
+		Place German planes at clock positions
+		while German fighters remain
+			Determine quantity of fighter cover (Lanc = none) ... M4FighterCoverDefense()
+			Select German fighters to be removed
+			Remove German fighters
+			Determine which MGs may fire at which German fighters
+				If MG unmanned
+				Or MG is out of ammo
+				Or MG is inoperative/jammed
+					May not fire at any target
+			Designate targets for MGs
+			For each MG with a designated target
+				If remaining ammo >= 3
+				& attack from rear, sides or underneath
+					Spray fire?
+				If spray fire
+					Mark off three ammo boxes
+					Determine if MG hit German fighter ... M5SprayFire()
+				Else
+					Mark off one ammo box
+					Determine if MG hit German fighter ... M1DefensiveFire()
+				If German fighter was hit
+					roll for damage ... M2HitDamageAgainstGermanFighter()
+					place damage marker
+					If German fighter destroyed
+						Give credit to gunner
+						Remove it from map
+			loop
+			For each remaining German fighter
+				Determine if it hits bomber ... M3GermanOffensiveFire()
+				If bomber was hit
+					determine number of hits ... B4ShellHitsByArea()
+					For each hit
+						determine location of hit ... B5AreaDamage()
+						if type of hit is "walking"
+							delete all hits
+							set hits = quantity for the type of walk
+							set type of each hit to type of hit(s) associated with the type of walk						
+							exit loop
+					loop
+					For each hit
+						determine damage (appropriate P-chart or BL-chart)
+					loop
+				else if bomber is in formation
+					Remove German fighter from map
+				if German fighter has FBOA damage
+					Remove German fighter from map
+				if German fighter attacked from 10:30, 12 or 1
+				& tail MG is manned
+				& tail MG has ammo
+				& tail MG is operative
+					If tail gunner wishes to make a passing shot
+						Perform defensive fire routine from "Designate targets for MGs" point forward
+				increment number attacks German fighter has made
+				if German fighter has FBOA damage, or has made three attacks
+					Remove German fighter from map
+				else
+					determine successive attacking position ... B6SuccessiveAttacks()
+			loop
+			crash landing? (water or enemy territory)
+			Swap crew positions? (within same compartment only)
+		loop
+		Swap crew positions? (any)
+		Swap ammo between positions?
+		If out of formation
+			Repeat wave process from "Determine number of German waves" point forward
+	loop
+	Abort mission?
+	If zone is target zone
+		If Lancaster
+		& inbound
+			Searchlight phase
+		Resolve flak
+			determine flak over target ... O2FlakOverTarget()
+			roll for flak hits three times ... O3FlakToHitBomber()
+			For each flak hit
+				determine number of shell hits ... O4EffectOfFlakHits()
+				if number of shell hits = "burst in plane"
+					determine location of BIP ... O5AreaAffectedByFlakHit()
+					if area = bomb bay
+						all crew KIA
+						bomber destroyed
+						end mission
+					all crew in area KIA
+					inflict every possible damage result for that area (appropriate P-chart or BL-chart)
+					if area = wing, tail or flight deck
+						emergency bail out
+					else
+						out of formation
+						-4 to landing roll
+						no evasive action allowed
+				else
+					For each shell hit
+						determine location of hit ... O5AreaAffectedByFlakHit()
+						determine damage (appropriate P-chart or BL-chart)
+					loop
+				loop
+			loop
+		If Lancaster
+		& inbound
+			Wild Boar ... Repeat wave process from "Determine number of German waves" point forward
+		Resolve Bomb run
+			determine if bombs were on target ... O6BombRun()
+			determine bombing accuracy ... O7BombingAccuracy()
+		Turn the plane around
+	Swap ammo between positions?
+	Repeat wave procedure in target zone
+
+
+
+
+

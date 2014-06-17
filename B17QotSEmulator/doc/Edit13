@@ -1,0 +1,62 @@
+to port
+
+	port occ
+	
+		do nothing
+		
+	stbd occ
+	
+		if stbd <> firing
+		and stbd <= LW2
+
+			stbd -> port (1/2)
+
+	ball occ
+
+		if ball is tunn
+		and ball occ
+		and ball <= LW2
+
+			tunn -> port (1/1)
+
+to stbd
+
+	stbd occ
+	
+		do nothing
+		
+	port occ
+
+		if port <> firing
+		and port <= LW2
+
+			port -> stbd (2/3)
+
+	ball occ
+
+		if ball is tunn
+		and ball occ
+		and ball <= LW2
+
+			tunn -> stbd (2/1)
+
+to ball
+
+	ball occ
+	
+		do nothing
+		
+	stbd occ
+	
+		if stbd <> firing
+		and stbd <= LW2
+
+			stbd -> tunn (3/2)
+
+	port occ
+
+		if port <= LW2
+
+			port -> tunn (3/3)
+
+

@@ -1,0 +1,66 @@
+B-17 C: Nose, radio room, stbd waist, port waist, ventral blister (x2).
+        18 ammo for ventral blister, 15 for other guns.
+B-17 E: Nose, radio room, stbd waist, port waist, top turret (x2), ball
+        turret (x2), tail turret (x2). Default ammo.
+B-17 F: Nose, stbd cheek, port cheek, radio room, stbd waist, port waist,
+        top turret (x2), ball turret (x2), tail turret (x2). Default ammo.
+B-17 G: Nose (x2), stbd cheek, port cheek, stbd waist, port waist, top
+        turret (x2), ball turret (x2), tail turret (x2). Default ammo.
+YB-40:  Nose (x2), stbd cheek, port cheek, stbd waist (x2), port waist (x2),
+        top turret (x2), ball turret (x2), tail turret (x2), mid-upper (x2).
+        Ammo increased for most position, plus general stock of 76
+        additional ammo. Damage modifications.
+
+B-24 D: Nose, stbd waist, port waist, ventral blister, top turret (x2),
+        tail turret (x2). Default ammo. Damage modifications.
+B-24 E: Nose, stbd cheek, port cheek, stbd waist, port waist, ventral
+        blister, top turret (x2), tail turret (x2). Default ammo. Damage
+        modifications.
+B-24 G: Nose (x2), stbd waist, port waist, ball turret (x2), top turret
+        (x2), tail turret (x2). Default ammo. Damage modifications.
+B-24 L: Nose (x2), stbd waist, port waist, floor ring (x2), top turret
+        (x2), stinger turret (x2). Default ammo. Damage modifications.
+
+Lanc:   Nose (x2), mid-upper turret (x2), tail turret (x4). Default ammo for
+        nose and mid-upper; tail has 63 ammo. Damage modifications.
+
+Lancaster: On the Mission Chart, use the Nose and Top Turret ammo boxes for
+the Nose and Mid-upper Turrets, respectively. For the Tail Guns, use the ammo
+boxes for the Port Waist, Starboard Waist and Tail Guns combined.
+
+Nose (1g-15a) / Nose Turret (2g-15a or 2g-30a)
+Stbd Cheek (1g-10a)
+Port Cheek (1g-10a)
+Top Turret (2g-16a or 2g-32a)
+Mid-Upper (2g-16a)
+Radio Room (1g-10a)
+Stbd Waist (1g-20a or 2g-20a)
+Port Waist  (1g-20a or 2g-20a)
+Ball Turret (2g-20a or 2g-24a) / Ventral Blister (2g-20a) / Tunnel (1g-20a) / Floor Ring (2g-20a)
+Tail (2g-23a or 2g-25a or 4g-63a) / Stinger (2g-23a)
+
+' Nose MG manned by Bombardier
+'
+'B17_C: bmdr (nose)
+'B17_E: bmdr (nose)
+'B17_F: bmdr (nose/pc/sc), navig (nose/pc/sc)
+'B17_G: bmdr (nose/pc/sc), navig (nose/pc/sc)
+'B24_D: bmdr (nose)
+'B24_E: bmdr (nose/pc/sc), navig (nose/pc/sc)
+'AVRO_LANCASTER: bmdr (nose)
+'
+' Nose MG manned by Nose Gunner
+'
+'YB40: nose (nose), navig (pc/sc)
+'B24_GHJ: nose (nose)
+'B24_LM: nose (nose)
+                
+Things That Describe Gun Positions
+----------------------------------
+Ammo
+Field of Fire(20)
+Airman Manning It
+Is Airman Qualified?
+Status
+FirepowerBonus
+

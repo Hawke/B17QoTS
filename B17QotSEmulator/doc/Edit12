@@ -1,0 +1,151 @@
+    ElseIf GunOccupied(STBD_WAIST_MG) = True Then ' stbd occ
+    
+        If GunOccupied(BALL_TURRET_MG) _
+        And blnHasTunnelGun = True Then ' tunn occ (1st row)
+    
+            If intToGun = PORT_WAIST_MG Then ' to port
+    
+                ' If the stbd waist gun is being fired or the stbd waist gunner
+                ' is incapacitated, and the tunnel gunner is healthy, then move
+                ' the tunnel gunner to the port waist gun.
+    
+                If (lblGunAmmo(STBD_WAIST_MG).Tag <> "" _
+                Or Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum)).Status >= SW_STATUS) _
+                And Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(BALL_GUNNER).CurrentSerialNum)).Status <= LW2_STATUS Then ' stbd marked, tunn avail
+                    
+                    ' tunn -> port (1/1)
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(BALL_GUNNER).CurrentSerialNum
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = Bomber.Gun(BALL_TURRET_MG).MannedBy
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = True
+                    
+                    ' Unman tunnel.
+                    Bomber.Position(BALL_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(BALL_TURRET_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(BALL_TURRET_MG).TempPosSwap = True
+                    lblGunAmmo(BALL_TURRET_MG).Tag = ""
+    
+                ' ElseIf the stbd waist gunner is healthy, then move the stbd waist
+                ' gunner to the port waist gun.
+    
+                ElseIf Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum)).Status <= LW2_STATUS Then ' stbd avail
+                    
+                    ' stbd -> port (1/2)
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = Bomber.Gun(STBD_WAIST_MG).MannedBy
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = True
+                    
+                    ' Unman stbd side.
+                    Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(STBD_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(STBD_WAIST_MG).TempPosSwap = True
+                    lblGunAmmo(STBD_WAIST_MG).Tag = ""
+                
+                End If
+            
+            Else
+            
+                ' do nothing (1/3)
+    
+            End If
+        
+        Else ' we know port must be occupied if tunn is empty
+        
+            If intToGun = BALL_TURRET_MG _
+            And blnHasTunnelGun = True Then ' to tunn
+    
+                ' If the stbd waist gun is being fired or the stbd waist gunner
+                ' is incapacitated, and the port waist gunner is healthy, then
+                ' move the port waist gunner to the stbd waist gun.
+    
+                If (lblGunAmmo(STBD_WAIST_MG).Tag <> "" _
+                Or Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum)).Status >= SW_STATUS) _
+                And Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum)).Status <= LW2_STATUS Then ' stbd marked, tunn avail
+                    
+'                If lblGunAmmo(STBD_WAIST_MG).Tag <> "" _
+'                And Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum)).Status <= LW2_STATUS Then  ' stbd marked, port avail
+
+                    ' port -> tunn (3/3)
+                    Bomber.Position(BALL_GUNNER).CurrentSerialNum = Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(BALL_TURRET_MG).MannedBy = Bomber.Gun(PORT_WAIST_MG).MannedBy
+                    Bomber.Gun(BALL_TURRET_MG).TempPosSwap = True
+                    
+                    ' Unman port side.
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = True
+                    lblGunAmmo(PORT_WAIST_MG).Tag = ""
+    
+                ' ElseIf the stbd waist gunner is healthy, then move the stbd waist
+                ' gunner to the tunnel gun.
+    
+                ElseIf Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum)).Status <= LW2_STATUS Then  ' stbd avail
+
+                    ' stbd -> tunn (3/2)
+                    Bomber.Position(BALL_GUNNER).CurrentSerialNum = Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(BALL_TURRET_MG).MannedBy = Bomber.Gun(STBD_WAIST_MG).MannedBy
+                    Bomber.Gun(BALL_TURRET_MG).TempPosSwap = True
+                    
+                    ' Unman stbd side.
+                    Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(STBD_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(STBD_WAIST_MG).TempPosSwap = True
+                    lblGunAmmo(STBD_WAIST_MG).Tag = ""
+        
+                End If
+            
+            Else
+            
+                ' do nothing (3/1)
+            
+            End If
+    
+        End If
+    
+    Else ' we know port must be occupied if stbd is empty
+    
+        If intToGun = STBD_WAIST_MG Then ' to stbd
+    
+            ' If the tunnel gun is being fired or the tunnel gunner is
+            ' incapacitated, and the port waist gunner is healthy, then move
+            ' the port waist gunner to the stbd waist gun.
+    
+            If ((lblGunAmmo(BALL_TURRET_MG).Tag <> "" _
+            And blnHasTunnelGun = True) _
+            Or Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(BALL_GUNNER).CurrentSerialNum)).Status >= SW_STATUS) And Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum)).Status <= LW2_STATUS Then  ' tunn marked, port avail
+
+                ' port -> stbd (2/3)
+                Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum
+                Bomber.Gun(STBD_WAIST_MG).MannedBy = Bomber.Gun(PORT_WAIST_MG).MannedBy
+                Bomber.Gun(STBD_WAIST_MG).TempPosSwap = True
+                
+                ' Unman port side.
+                Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                Bomber.Gun(PORT_WAIST_MG).MannedBy = UNMANNED_MG
+                Bomber.Gun(PORT_WAIST_MG).TempPosSwap = True
+                lblGunAmmo(PORT_WAIST_MG).Tag = ""
+    
+            ' ElseIf the tunnel gunner is healthy, then move the tunnel gunner
+            ' to the stbd waist gun.
+    
+            ElseIf Bomber.Airman(GetAirmanIndexBySerialNumber(Bomber.Position(BALL_GUNNER).CurrentSerialNum)).Status <= LW2_STATUS Then  ' tunn avail
+
+                ' tunn -> stbd (2/1)
+                Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(BALL_GUNNER).CurrentSerialNum
+                Bomber.Gun(STBD_WAIST_MG).MannedBy = Bomber.Gun(BALL_TURRET_MG).MannedBy
+                Bomber.Gun(STBD_WAIST_MG).TempPosSwap = True
+                
+                ' Unman tunnel.
+                Bomber.Position(BALL_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                Bomber.Gun(BALL_TURRET_MG).MannedBy = UNMANNED_MG
+                Bomber.Gun(BALL_TURRET_MG).TempPosSwap = True
+                lblGunAmmo(BALL_TURRET_MG).Tag = ""
+    
+            End If
+        
+        Else
+        
+            ' do nothing (2/2)
+            
+        End If
+    
+    End If

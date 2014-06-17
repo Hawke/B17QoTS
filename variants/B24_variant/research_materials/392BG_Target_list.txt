@@ -1,0 +1,301 @@
+B-24
+
+9-Sep-43	Abbeville
+2-Oct-43	Woensdrecht
+4-Oct-43	Frisian Islands
+8-Oct-43	Vegesack
+9-Oct-43	Danzig
+3-Nov-43	Wilhelmshaven
+5-Nov-43	Munster
+13-Nov-43	Bremen
+16-Nov-43	Rjuken, Norway
+18-Nov-43	Kjeller, Norway
+26-Nov-43	Bremen
+1-Dec-43	Solingen
+5-Dec-43	Cognac
+11-Dec-43	Emden
+13-Dec-43	Kiel
+16-Dec-43	Bremen
+20-Dec-43	Bremen
+22-Dec-43	Munster
+24-Dec-43	NoBall, France
+30-Dec-43	Ludwigshafen
+31-Dec-43	St Jean D’Angley, France
+4-Jan-44	Kiel
+5-Jan-44	Kiel
+7-Jan-44	Ludwigshafen
+11-Jan-44	Meppen
+14-Jan-44	NoBall #52 and #101
+21-Jan-44	NoBall #46 and #101
+29-Jan-44	Frankfurt
+30-Jan-44	Hannover
+31-Jan-44	Noball-Siracourt, France #A7
+2-Feb-44	NoBall-Watten, France #Al
+5-Feb-44	Tours A/F
+6-Feb-44	NoBall-Siracourt, France #A7
+8-Feb-44	No-Ball
+11-Feb-44	No-Ball
+12-Feb-44	NoBall-Siracourt, France #A7
+13-Feb-44	NoBall #22 and #62
+20-Feb-44	Berlin
+21-Feb-44	Vorden A/F
+22-Feb-44	Gotha
+24-Feb-44	Gotha
+25-Feb-44	Furth 
+29-Feb-44	NoBall-Lottingham
+2-Mar-44	Berlin
+3-Mar-44	Oranienburg
+5-Mar-44	Cognac
+6-Mar-44	Genshagen
+8-Mar-44	Berlin
+9-Mar-44	Berlin
+12-Mar-44	NoBall-Siracourt #A7
+15-Mar-44	Brunswick
+16-Mar-44	Friedrichshafen
+18-Mar-44	Friedrichshafen
+21-Mar-44	NoBall Watten
+23-Mar-44	Osnabruck
+24-Mar-44	St. Dizier
+26-Mar-44	NoBall Febvin Palfart #87
+27-Mar-44	Mont-De-Marsan A/F
+6-Apr-44	Watten
+8-Apr-44	Brunswick
+9-Apr-44	Tutow
+10-Apr-44	NoBall Marquise
+11-Apr-44	Bernburg
+12-Apr-44	Zwickau
+13-Apr-44	Lechfeld A/F
+18-APR-44	Bremerhaven
+19-Apr-44	Gutersloh
+20-Apr-44	NoBall Marquise
+22-Apr-44	Hamm
+24-Apr-44	Leipheim
+25-Apr-44	NoBall Wizernes
+26-Apr-44	Gutersloh
+27-Apr-44	NoBall Moenneville #61
+27-Apr-44	Chalon-Sur-Marne
+29-Apr-44	Berlin
+1-May-44	Liege
+3-May-44	NoBall - Wizernes
+4-May-44	Brunswick
+7-May-44	Munster
+8-May-44	Brunswick
+9-May-44	St Trond A/F
+11-May-44	Belfort
+12-May-44	Zietz 
+12-May-44	Tutow A/F
+15-May-44	NoBall - Siracourt
+19-May-44	Brunswick
+21-May-44	NoBall - Siracourt
+23-May-44	St Avord A/F
+24-May-44	Melun A/F
+25-May-44	Belfort
+27-May-44	Saarbrucken
+28-May-44	Zeitz
+29-May-44	Politz
+30-May-44	Rotenburg A/F
+31-May-44	Brussels
+2-Jun-44	Berck Sur-Mer
+4-Jun-44	St Avord A/F
+6-Jun-44	St Laurent Sur-Mer
+6-Jun-44	Forest De Cersy
+6-Jun-44	Vire
+7-Jun-44	Lisieux
+8-Jun-44	LeMans A/F
+10-Jun-44	Orleans-Bricy A/F
+11-Jun-44	La Possonniere
+11-Jun-44	Montford-Sur-Mer
+12-Jun-44	Dreux A/F
+14-Jun-44	Emmerich
+15-Jun-44	La Frillerie
+17-Jun-44	Melun A/F
+17-Jun-44	Tours A/F
+18-Jun-44	Bremerhaven
+19-Jun-44	Mont-Louis-Fernes
+20-Jun-44	Politz
+20-Jun-44	Crepy
+21-Jun-44	Berlin
+22-Jun-44	NoBall-Domleger
+22-Jun-44	St Cyr A/F
+23-Jun-44	Leon/Athies A/F
+25-Jun-44	Buc A/F
+28-Jun-44	Saarbrucken
+29-Jun-44	Magdeburg
+4-Jul-44	Conches
+6-Jul-44	Kiel
+7-Jul-44	Bernburg
+8-Jul-44	Esternay
+11-Jul-44	Munich
+12-Jul-44	Munich
+13-Jul-44	Saarbrucken
+16-Jul-44	Saarbrucken
+18-Jul-44	Troarns
+19-Jul-44	Koblenz
+20-Jul-44	Erfurt
+21-Jul-44	Oberpfeffenhofen
+24-Jul-44	St. Lo
+25-Jul-44	St. Lo
+29-Jul-44	Bremen
+31-Jul-44	Ludwigshafen
+1-Aug-44	Balbec
+2-Aug-44	Amiens
+3-Aug-44	Beveland
+4-Aug-44	Kiel
+4-Aug-44	NoBall-Villers L’Hopital
+5-Aug-44	Brunswick
+6-Aug-44	Hamburg
+8-Aug-44	La Perthe A/F
+9-Aug-44	Stuttgart
+11-Aug-44	Pacy-Sur-Armancon
+12-Aug-44	Juvincourt A/F
+13-Aug-44	Pont-Audmer
+14-Aug-44	Lyon-Bron A/F
+15-Aug-44	Whittmundhafen
+16-Aug-44	Koblenz
+18-Aug-44	Nancy-Essey A/F
+24-Aug-44	Hannover
+25-Aug-44	Schwerin
+26-Aug-44	Salzbergen
+27-Aug-44	Oranienburg
+30-Aug-44	Haut Maisnil
+5-Sep-44	Karlsruhe
+8-Sep-44	Karlsruhe
+9-Sep-44	Mainz
+10-Sep-44	Ulm
+11-Sep-44	Hannover
+12-Sep-44	Hannover
+13-Sep-44	Schwabish Hall
+21-Sep-44	Koblenz
+22-Sep-44	Kassel
+25-Sep-44	Koblenz
+26-Sep-44	Hamm
+27-Sep-44	Kassel
+28-Sep-44	Kassel
+30-Sep-44	Hamm
+2-Oct-44	Hamm
+3-Oct-44	Gaggenau
+5-Oct-44	Lippstadt
+6-Oct-44	Hamburg 
+7-Oct-44	Kassel
+9-Oct-44	Koblenz 
+12-Oct-44	Osnabruck
+14-Oct-44	Cologne
+15-Oct-44	Cologne
+17-Oct-44	Cologne
+19-Oct-44	Mainz
+22-Oct-44	Hamm
+25-Oct-44	Neumunster
+26-Oct-44	Hamburg
+30-Oct-44	Hamburg
+1-Nov-44	Gelsenkirchen
+2-Nov-44	Castrop-Rauxel
+4-Nov-44	Misberg
+5-Nov-44	Karlsruhe
+6-Nov-44	Minden
+8-Nov-44	Rheine
+9-Nov-44	Metz
+10-Nov-44	Hanau
+11-Nov-44	Bottrop
+16-Nov-44	Eschweiler
+21-Nov-44	Hannover
+25-Nov-44	Karlsruhe
+26-Nov-44	Bielefeld
+29-Nov-44	Altenbeken
+30-Nov-44	Neunkirchen
+2-Dec-44	Bingen 
+4-Dec-44	Koblenz
+5-Dec-44	Munster
+6-Dec-44	Bielefeld
+11-Dec-44	Hanau
+12-Dec-44	Hanau
+23-Dec-44	Ahrweiler
+24-Dec-44	Trier
+27-Dec-44	Hamburg
+28-Dec-44	Kaiserslautern
+29-Dec-44	Neuwied
+29-Dec-44	Remagen Bridge
+31-Dec-44	Euskirchen
+1-Jan-45	Koblenz
+2-Jan-45	Koblenz
+3-Jan-45	Landau
+5-Jan-45	Neunkirchen
+7-Jan-45	Landau
+8-Jan-45	Dasburg
+10-Jan-45	Dasburg
+13-Jan-45	Kaiserslautern
+14-Jan-45	Hemmingstedt
+16-Jan-45	Dresden
+21-Jan-45	Stuttgart
+28-Jan-45	Dortmund
+29-Jan-45	Hamm
+3-Feb-45	Magdeburg
+6-Feb-45	Magdeburg
+9-Feb-45	Magdeburg
+11-Feb-45	Dulmen
+14-Feb-45	Magdeburg
+15-Feb-45	Magdeburg
+16-Feb-45	Salzbergen
+21-Feb-45	Nuremburg
+22-Feb-45	Northeim
+23-Feb-45	Weimar
+24-Feb-45	Misburg
+25-Feb-45	Aschaffenburg
+26-Feb-45	Berlin
+27-Feb-45	Halle 
+28-Feb-45	Siegen
+1-Mar-45	Nuremburg
+2-Mar-45	Magdeburg
+3-Mar-45	Magdeburg
+4-Mar-45	Aschaffenburg
+5-Mar-45	Harburg
+7-Mar-45	Bielefeld
+8-Mar-45	Siegen
+10-Mar-45	Bielefeld
+11-Mar-45	Kiel
+12-Mar-45	Swinemunde
+14-Mar-45	Gutersloh
+15-Mar-45	Zossen
+17-Mar-45	Munster
+18-Mar-45	Berlin
+19-Mar-45	Neuburg
+20-Mar-45	Hemmingstedt
+21-Mar-45	Hesepe
+21-Mar-45	Essen
+22-Mar-45	Schwabish Hall
+23-Mar-45	Rheine
+24-Mar-45	Stormede
+25-Mar-45	Hitzacker
+30-Mar-45	Wilhelmshaven
+31-Mar-45	Brunswick
+4-Apr-45	Kaltenkirchen
+5-Apr-45	Plauen
+6-Apr-45	Halle
+7-Apr-45	Krummel
+8-Apr-45	Bayreuth
+9-Apr-45	Leipheim
+11-Apr-45	Regensburg
+14-Apr-45	Bordeaux
+15-Apr-45	Bordeaux
+16-Apr-45	Landshut
+17-Apr-45	Beroun
+20-Apr-45	Schwandorf 
+29-Apr-45	Hallein, Austria
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

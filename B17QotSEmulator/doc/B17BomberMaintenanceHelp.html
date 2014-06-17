@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<meta name="keywords" content="B-17 Queen Skies B17QotS Avalon Hill game simulate World War II Allied strategic bombing B17QotS">
+	<meta name="description" content="&quot;B-17: Queen of the Skies&quot; Emulator (Bomber Maintenance Help)">
+	<meta name="author" content="Preston V. McMurry III">
+	<style type="text/css">
+		.MailLink
+		{
+			color: #0000ff; 
+			text-decoration: underline; 
+			cursor: pointer;
+		}
+	</style>
+	<title>&quot;B-17: Queen of the Skies&quot; Emulator (Bomber Maintenance Help)</title>
+</head>
+<body bgcolor="#ffffe0">
+
+<center>
+	<font size="-1">"B-17: Queen of the Skies" Emulator</font><p />
+	<font size="+3" face="stencil" color="#005500">Bomber  Maintenance</font>
+</center>
+
+<p />
+<div style="border-top: 2px #000000 solid;" /><!--Compliant cross-browser pseudo HR tag--></div>
+<p />
+
+{intro}
+
+<p />
+
+<b><u>Name</u>:</b> Scrolling through the list of names will open the flight log for the listed bomber. Other than adding a new bomber, it cannot be modified. 
+
+<p />
+
+<b><u>Tail Number</u>:</b> All American planes, even those created by the user, are assigned the serial numbers of real life bombers. Tail number  cannot be modified. The manufacturer and plant are encoded as part of the tail number:
+
+<blockquote>
+	BO: Boeing, Seattle, WA
+	<br />
+	CF: Consolidated, Ft. Worth, TX
+	<br />
+	CO: Consolidated, San Diego, CA
+	<br />
+	DL: Douglas, Long Beach, CA
+	<br />
+	DT: Douglas, Tulsa, OK
+	<br />
+	FO: Ford, Willow Run, MI
+	<br />
+	NT: North American, Dallas, TX
+	<br />
+	VE: Lockheed-Vega, Burbank, CA
+</blockquote>
+
+<p />
+
+<b><u>Bomber Model</u>:</b> The bomber's make and model number; it cannot be modified. The list of models is dependent on the squadron's bomber type: e.g., if the bomber is in the 324th Bomb Squadron, then only B-17 models will be listed. The available models are: B-17C, B-17E, B-17F, B-17G, <a href="http://www.33rdinfantrydivision.org/b17/Modifications/yb40.htm">YB-40</a>, B-24D, B-24E, B-24 G&frasl;H&frasl;J (which are identical in emulator terms), B-24 L&frasl;M (ditto), and the <a href="http://www.33rdinfantrydivision.org/b17/lancaster/lancaster.zip">Avro Lancaster</a>. Note that the B-17 Es and Gs use information from both <a href="http://www.33rdinfantrydivision.org/b17/Modifications/b17models.htm">Volume 20, #6 </a> and <a href="http://www.33rdinfantrydivision.org/b17/Modifications/modifications.zip">Volume 24, #6 </a> of "The General". The B-24 is taken from the <a class="MailLink" onclick="window.open('http://prestonm.com/mail.php?Subject=B24 Flying BoxCar variant','email','width=500,height=400,left=200,top=100,location=no,menubar=no,resizable=yes,scrollbars=yes,toolbar=no');">B24 Flying BoxCar variant</a>.
+
+<p />
+
+<b><u>Squadron</u>:</b> The squadron the bomber is assigned to. The bomber may be transferred by choosing another squadron from the list. The list of squadrons is dependent on the bomber model.
+
+<p />
+
+<table border="1" bgcolor="#000000" cellpadding="5">
+
+	<tr>
+		<td bgcolor="#ffffe0"><b>Status</b></td>
+		<td bgcolor="#ffffe0"><b>Update?</b></td>
+		<td bgcolor="#ffffe0"><b>Notes</b></td>
+	</tr>
+
+	<tr>
+		<td bgcolor="#000000" valign="top"><font color="#ffffff">Shot Down, Ditched, Captured</font></td>
+		<td bgcolor="#ffffe0" valign="top">No</td>
+		<td bgcolor="#ffffe0" valign="top">The bomber was shot down, ditched, or landed in enemy or neutral territory.</td>
+	</tr>
+
+	<tr>
+		<td bgcolor="#ffa3a3" valign="top">Crashed, Scrapped</td>
+		<td bgcolor="#ffffe0" valign="top">No</td>
+		<td bgcolor="#ffffe0" valign="top">The bomber crashed on takeoff or landing at a friendly base, or it was cannibalized due to excessive damage (400+ Peckham Points). </td>
+	</tr>
+
+	<tr>
+		<td bgcolor="#a3ffa3" valign="top">Stand Down</td>
+		<td bgcolor="#ffffe0" valign="top">Yes</td>
+		<td bgcolor="#ffffe0" valign="top">The aircraft has unmanned positions. It can not fly missions until the unmanned positions are filled.</td>
+	</tr>
+
+	<tr>
+		<td bgcolor="#a3ffa3" valign="top">Flight Duty</td>
+		<td bgcolor="#ffffe0" valign="top">Yes</td>
+		<td bgcolor="#ffffe0" valign="top">The bomber is available for missions. Default bombers are always on Flight Duty status.</td>
+	</tr>
+
+	<tr>
+		<td bgcolor="#cccccc" valign="top">Retired</td>
+		<td bgcolor="#ffffe0" valign="top">No</td>
+		<td bgcolor="#ffffe0" valign="top">The aircraft has been retired from active duty to serve as a formation aircraft, or go on war bond tours.</td>
+	</tr>
+
+</table>
+
+<p />
+
+<b><u>Manufacturer</u>:</b> The company which produced the bomber. 
+
+<p />
+
+<b><u>Plant</u>:</b> The plant at which the bomber was built. This and manufacturer are listed so the user doesn't have to remember the codes.
+
+<p />
+
+<b><u>Flight Log</u>:</b> Lists the bomber's missions, kills, and accumulated luck (i.e., "Rabbits Foot"). 
+
+<p />
+
+<b><u>Default</u>:</b> Indicates that the aircraft is a default bomber. Updating or deleting a default bomber merely resets its flight log. (A default bomber can not be fully deleted.) The default bombers are:
+
+<blockquote>
+	<u>B-17</u>: Memphis Belle, the first Flying Fortress to complete 25 missions.
+	<p />
+	<u>B-24</u>: Dakota Queen, flown by (later) Senator George McGovern.
+	<p />
+	<u>Avro Lancaster</u>: KB726, the aircraft from which A.C. Mynarski received his posthumous Victoria Cross.
+	<p />
+</blockquote>
+
+<p />
+
+<b><u>Crew Button(s)</u>:</b>
+<ol>
+	<li /><a href="B17CrewAssignmentHelp.html">Assign Crew</a>: If the bomber is on Flight Duty status then this button will appear. On the Assign Crew Dialog, the crew assignments may be changed.
+	<p />
+	<li /><u>Default Crew</u>: This button appears if the bomber is a default bomber. The crew assignments may be viewed, but not changed.
+	<p />
+	<li /><u>Last Crew</u>: This button appears if the bomber is in a non-duty status. The last assigned crew may be viewed, but not changed.
+	<p />
+</ol>
+
+<p />
+
+<b><u>Retire Bomber Button</u>:</b> If the bomber is on Flight Duty status then this button will appear. If you confirm that you wish to retire the bomber, its status will be changed to Retired, and its crew will have their assigments changed to Admin Duty.
+
+<p />
+<div style="border-top: 2px #000000 solid;" /><!--Compliant cross-browser pseudo HR tag--></div>
+<p />
+
+<b><u>Notes</u>:</b>
+<ol>
+	<li />To add a bomber, overwrite the current bomber's name, then select a bomber model and squadron, then click the Add button. You will then need to assign airmen to the bomber, either through the Assign Crew Dialog, or via Airman Maintenance.
+	<p />
+	<li />Only the squadron may be updated. (Crew assignments are changed on the Assign Crew Dialog.)
+	<p />
+	<li />The bomber can not be deleted if it currently has assigned crew. Each crew member must be deleted or assigned to Admin Duty before the bomber may be deleted. Deleting a bomber does not affect a squadron's unit history. Default bombers can not be deleted.
+	<p />
+	<li />If the bomber is on Flight Duty or Stand Down status, then its information is current. If the bomber is in some other status, then its information is final.
+	<p />
+</ol>
+
+<p />
+<div style="border-top: 2px #000000 solid;" /><!--Compliant cross-browser pseudo HR tag--></div>
+<p />
+<a href="B17HelpIndex.html">Help Index</a>
+<p />
+<b>Last Update:</b> 18-Feb-2005
+<p />
+&copy; Copyright 2003-2005 Preston V. McMurry III
+<p />
+</body>
+</html>
+

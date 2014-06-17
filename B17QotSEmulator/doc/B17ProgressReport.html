@@ -1,0 +1,525 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<meta name="keywords" content="B-17 Queen Skies B17QotS Avalon Hill game simulate World War II Allied strategic bombing B17QotS">
+	<meta name="description" content="&quot;B-17: Queen of the Skies&quot; Emulator (Progress Report)">
+	<meta name="author" content="Preston V. McMurry III">
+	<title>&quot;B-17: Queen of the Skies&quot; Emulator (Progress Report)</title>
+</head>
+<body bgcolor="#ffffe0">
+
+<center>
+	<font size="-1">"B-17: Queen of the Skies" Emulator</font><p />
+	<font size="+3" face="stencil" color="#005500">Progress Report</font>
+</center>
+
+<p />
+<div style="border-top: 2px #000000 solid;" /><!--Compliant cross-browser pseudo HR tag--></div>
+<p />
+
+<a href="B17ToDoList.html">Bug Report &frasl; To Do List</a>
+
+<p />
+
+<b>??-Mar-2005</b>
+
+<p />
+
+<ul>
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t16">FIXED</a>: On the "Generate Mission" tab: Clicking on the Bomber drop-down, mousing through the list of available bombers, and failing to select one before closing the drop-down causes a "Run-time error '9': Subscript out of range" error. Clicking OK terminates the emulator. Clicking on the Target drop-down, mousing through the list of available targets, and failing to select one before closing the drop-down causes a "LookupBomberTarget() Target 0 not found" error. Clicking OK in this dialog box opens a new dialog box reading "Run-time error '365': Unable to unload within this context". Clicking OK terminates the emulator. The Month, Year, Squadron, and Formation drop-downs do not exhibit this behavior.  (rkaumeier)
+	<p />
+</ul>
+
+<b>18-Feb-2005</b>
+
+<p />
+
+<ul>
+	<li /><b><font color="#00aa00">1.0b2 released to test group.</font></b>
+	<p />
+	<li />It's amazing to me how much progress has actually been made in the past 10 months. (Since the 8-Apr-2004 update.) The emulator has gone from being a pile of non-functioning, un-compileable, code to an actual game. Seems like it has been much longer than that ... :-)
+	<p />
+	<li />Added splash graphic provided by Steve Dixon.
+	<p />
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fsuggestions.t12">FEATURE</a>: Any chance of having the results of the mission either be a separate pop-up, or have that final list stay up after you select "Exit from Mission". Right now it goes past so quickly, I'm not sure who succumbed to wounds, etc. If that screen would pop up before you can Exit Mission, or that was an additional step before exiting, I think that would be a nice feature. (kfgreer1961, 8 Dec 2004)
+	<p />
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t30">BUG</a>: Should not be able to assign non-default airman to a default bomber. (The error is possible due to default bombers being listed in the bomber combo on the airman tab.) 
+	<p />
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t31">BUG</a>: Default groups and squadrons should not be updated.
+	<p />
+	<li><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t29">BUG</a>: Bombs jettisoned after release damaged.
+	<p />
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fmainchat.t23">Started discussion</a> on what technology to use for v2.0. (v1.0 is being done in Visual Basic and Access.) <font color="#00aaaa">I am thinking about doing v2.0 in a cross-platform web-based technology. Probably PHP.</font>
+	<p />
+</ul>
+
+<p />
+
+<b>5-Dec-2004</b>
+
+<p />
+
+<ul>
+	<li /><b><font color="#00aa00">1.0b1 released to test group.</font></b>
+	<p />
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t19">BUG</a>: How does POW status work? I have had members of two crews become POWs. The first plane was lost over the Netherlands, and the second deep in Germany on a mission to Chemnitz. Two crwemembers survived the first bail-out, nine the second. On both missions all the crewmembers who survived to become POWs were listed as being on Admin Duty starting with the next mission. I have to admire those nine guys who made it back from the Chemnitz raid. That's a heck of a breakout and journey back to the 8th's home turf! :-) (4 Sep 2004, rkaumeier)
+	<p />
+	<li />Entire crew died in emergency bail out after wing tore off. (Which is okay.) The error occured on exitting the mission: The airmen were unassigned, the bomber positions were still filled, and the airmen were not killed in the database. (6 Jul 2004) <b><font color="#0000cc">Same as above?</font></b>
+	<p />
+	<li />If airman is captured or killed on his 25th mission, he will actually be set to tour complete status, rather than KIA or POW status. (28 Nov 2004) <b><font color="#0000cc">Same as the two above?</font></b>
+	<p />
+	<li />When airman was invalided, he was placed on Admin duty, rather than having his last assignment left as his last assigned bomber. (28 Nov 2004) 
+	<p />
+	<li />When bomber was retired, airman was not placed on admin duty. He was still assigned to bomber (pvmiii) ... This isn't a bug, per se, because the code was completely forgotten! Also, bomber should be removed from assignment dropdown on airman tab. (28 Nov 2004) 
+	<p />
+	<li />If a bomber is shot down, it is showing up in the assignment dropdown on the airman tab. (28 Nov 2004) 
+	<p />
+</ul>
+
+<p />
+
+<b>16-Nov-2004</b>
+
+<p />
+
+<ul>
+	<li /><b><font color="#00aa00">1.0a4 released to test group.</font></b>
+	<p />
+</ul>
+
+<p />
+
+<b>7-Nov-2004</b>
+
+<p />
+
+<ul>
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t22">RE-FIXED</a>: When typing in the name to add a new bomber, when the first letter is typed, the LookupBomberSquadron() function throws a "Squadron 3 not found" error, where it was trying to lookup the squadron number for whatever bomber was current before the user started typing in the new one. (pvmiii)
+	<p />
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fmainchat.t16">QUESTION</a>: What effect does changing an airman's position have when that airman is assigned to a bomber? If the airman's position is changed to another position on his current bomber, or any other bomber, then the airman is assigned to the new position on that bomber. If a second airman already occupies that position, the second airman is assigned to admin duty. (In reality, a given bomber often had more than one crew, or individual crew were loaned out if a bomber was short for a mission.)
+	<p />
+</ul>
+
+<p />
+
+<b>6-Nov-2004</b>
+
+<p />
+
+<ul>
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t17">FIXED</a>: If I close the program by clicking on the X button in the upper right hand corner of the window, the application appears to terminate but continues to be shown as a running process in the task switcher. Starting another instance of B17 and closing it the same way adds another process. This can continue indefinitely until out of memory. This only happens from the mission screen while a mission is in progress. Using the Windows close button at any other time terminates the program and kills the process. Problem exists in both Win98 and XP. (rkaumeier)
+	<p />
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t13">FIXED</a>: A minor nitpick concerning one crewmember designation used in the YB-40: Both the bomber maintenance assign crew box and the mission screen refer to a "Mid-Top" gunner. This same position is selected as the "Mid-Upper" gunner on the airman maintenance page. (Rick)
+	<p />
+</ul>
+
+<p />
+
+<b>31-Oct-2004</b>
+
+<p />
+
+<ul>
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fsuggestions.t4">Feature</a>: Bailout over base zone, or land (option), if severely damaged or flight pilot and copilot are dead. (AFIntel)
+	<p />
+</ul>
+
+<p />
+
+<b>5-Sep-2004</b>
+
+<p />
+
+<ul>
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fmainchat.t13">FIXED</a>: When a mission is saved to HTML, the document should be HTML 4.01 transitional compliant. I also updated the emulator documentation to be compliant. Here are two samples, one for a B-17, the other for a Lancaster:<pre>
+<a href="TargetChemnitz.html">Target: Chemnitz</a>
+<a href="TargetEssen.html">Target: Essen</a></pre>
+Note how HTML was dynamically generated based on the targets' specific information.
+</ul>
+
+<p />
+
+<b>29-Aug-2004</b>
+
+<p />
+
+<ul>
+	<li /><b><font color="#00aa00">1.0a3 released to test group.</font></b>
+	<p />
+	<li />Updating an existing, but unassigned, airman to a specific bomber caused the airman to be assigned to a random default bomber. (Dakota Queen?) Also, new airmen were assigned to admin duty even when a bomber was designated. Now, a new airman may be assigned to admin duty, an empty position on a bomber, or a filled position on a bomber. (In which case the previously assigned airmen is sent to admin duty.) Likewise updating an existing airman. If you try to add or update an airman to a default bomber, the airman will be placed on admin duty. (pvmiii)
+	<p />
+	<li />Bug in TempPosSwap() causes the swapping airman to vanish from the display, which in turn causes a subscript out of range error the next time that position is referenced. <b><font color="#0000cc">At the risk of jinxing myself, after 3+ days, I think I have it fixed.</font></b>
+	<p />
+	<li />If navigator is seriously wounded, the port cheek should not be fireable. (Stbd cheek is properly set to non-fireable.)
+	<p />
+	<li />On the Bomber Maintenance Screen if you click "Add" and you have not listed a squadron for that bomber you get an "Error 91" message. (SonBae) -- Need to put validation on all add and update tabs.
+	<p />
+	<li />Slow down mission log scroll. The default is 2, which provides a quick, but smooth and readable scroll. Values may be 0 (very quick) to 10 (one second, very slow). 
+	<p />
+	<li />Mission Log now automatically scrolls to the bottom of the box -- i.e., the most recent message -- thus saving more clickage.
+	<p />	
+</ul>
+
+<p />
+
+<b>1-Aug-2004</b>
+
+<p />
+
+<ul>
+	<li />FIXED: When the images and help files are package, the directory is being lost, resulting in the files being places in the program directory rather than &frasl;doc or &frasl;images. In the SETUP.LST created by Microsoft's package & deployment wizard, make sure that the following settings are correct:<pre>
+	DefaultDir=$(ProgramFiles)&frasl;B17QotSEmulator
+	.html files have $(AppPath)&frasl;doc
+	.jpg files have $(AppPath)&frasl;image</pre>
+	If the settings are not correct, the program may not launch, nor the documentation be found.
+	<p />
+	<li />FIXED: Bomber model should not be modifiable. It causes all sorts of problems. (The docs already state this, but the check wasn't being done.) The only modifiable bomber field is squadron.
+	<p />
+	<li />FIXED: QuitBeforeWater(), which allows the user to bail out before crossing water, was allowing negative last zone, which threw an array error. 
+	<p />
+	<li />FIXED: If the bomber is not on duty status at the conclusion of a mission -- either due to being shot down, or due to the loss of crew -- it should not be listed on the bomber combo on the mission tab.
+	<p />
+	<li />FIXED: Create group '9 group'. Try to add squadron '99 squad' to '9 group'. AddSquadron() bails when it tries to insert the '99 squad' into the squadron combo on the bomber tab. The combo index is off because the combo is filtered by type of bomber in squadron. Deleting squadrons also causes a array index error to be thrown on the squadron combo on the bomber page. (pvmiii) 
+	<p />	
+</ul>
+
+<p />
+
+<b>25-Jul-2004</b>
+
+<p />
+
+<ul>
+	<li /><b><font color="#00aa00">1.0a2 released to test group.</font></b>
+	<p />
+	<li />FIXED: After running a mission, I clicked on the save button. As the save screen came up, I then clicked on cancel. This caused the program to abort with the following error message: "run time error 32755". (Mike Peccolo)
+	<p />
+	<li />FIXED: If you click on a medium cyan fighter before selecting a medium cyan gun, the fighter is greyed out.
+	<p />
+	<li />Implemented realistic tail numbers. The Lancaster numbers resemble real tail numbers; the American tail numbers <i>are</i> real tail numbers, randomly determined. 
+	<p />
+	<li />Users have the option to bail out&frasl;crashland in land zones prior to a water zone if the bomber might otherwise have to ditch in the water zone. 
+	<p />
+	<li />Red Tail Angels: This option allows for the chance of 15th Air Force bombers being escorted by the 332nd Fighter Group, the famous Tuskegee Airmen, which did not lose a single bomber to German fighters. If this option and unescorted are both chosen, then the mission will be unescorted.
+	<p />
+</ul>
+
+<p />
+
+<b>12-Jul-2004</b>
+
+<p />
+
+<ul>
+	<li />Cleaned up code, including fixing form sizes.
+	<p />
+	<li />Added bomb sight and environmental gauges.
+	<p />
+	<li />Hid bomb-oriented information for YB-40s. (Because they didn't carry bombs.)
+	<p />
+	<li />Oops Factor: Missions to Mulhouse and Friedrichshaven may accidentally bomb Switzerland. (Especially in bad weather.)
+	<p />
+	<li />Crew Experience: Inexperienced crews are more likely to miss the target and have accidents, while veteran crews are less likely to experience such mishaps. (Added the Airman.LeadCrewExp field to the database.)
+<pre>
+    Gunners:    If gunner has <= 5 missions, DM -1 to hit, plus an unmodified 1 to hit jams the weapon. 
+                (After which normal unjamming rules apply.)
+             
+    Pilot:      If random event generates aerial collision and pilot and copilot have missions <= 5, 
+                DM +1 to severity roll. If pilot or copilot has missions >= 11, DM -1 to severity roll.
+             
+    Navigator & 
+    Bombardier: If both navigator and bombardier have missions >= 11, and both have one "lead crew" 
+                mission (flying in lead-low squadron) to a target, then DM +1 to 06BombRun() on each
+                subsequent lead-low mission to the same target. Lead crews may start earning experience
+                in April, 1943.
+</pre>
+	<p />
+	<li />FIXED: Fixed bug that was writing the bonus Me-109 -- for high, low or out of formation, bombers -- over the last fighter in a wave. (Thus removing potential 6th fighter.)
+	<p />
+	<li />FIXED: Mid-Upper gun is appearing on B-17s other than the YB-40 model.
+	<p />
+	<li />FIXED: Even though the ammo box is greyed out, and the ammo is 0, the gun may still be fired at an enemy fighter if the user clicks on the ammo box, then the fighter, then "Fire Guns".
+	<p />
+	<li />FIXED: Selecting a German fighter, without first selecting a weapon, throws a run-time 340 error (array element 0 doesn't exist).
+	<p />
+	<li />FIXED: Inoperative ball turret can still fire:<pre>
+	Waist: Ball Turret - Ball turret inoperable. Gunner trapped.
+	Wave 2 (Attack 1): 3 fighters
+	Fighter cover: Poor
+	0 enemy fighters chased off by cover
+	Nose hit FW190 at 12 High - FCA
+	Stbd Cheek missed.
+	Stbd Waist missed.
+	Top Turret missed.
+	Ball Turret hit Me109 at 3 Level - FBOA</pre>
+	<p />
+	<li />FIXED: One engine operating: May fly one additional zone, then either ditch, crash or bail out. May fly one zone further than that by throwing all ammo and handheld extinguishers overboard, plus jettisoning bombs. (If bomb bay doors are jammed, this can't be done.)
+	<p />
+</ul>
+
+<p />
+
+<b>5-Jul-2004</b>
+
+<p />
+
+<ul>
+	<li /><b><font color="#00aa00">1.0a released to test group.</font></b>
+	<p />
+	<li />FIXED: Many issues related to flying over the Alps in the 15th Air Force variant. (This was a bitch to fix.)
+	<p />
+	<li />FIXED: Deleting an airman that is assigned to a bomber does not set the position to unmanned, resulting in a lookup error which shuts down the emulator. 
+	<p />
+	<li />FIXED: Unescorted mission appears to occassionally generate a single friendly fighter.
+	<p />
+	<li />FIXED: Switching from one target to another causes problems.
+	<p />
+	<li />FIXED: Roll twice on table O3 (not three times) for light flak when at low altitude.
+	<p />
+	<li />FIXED: Spend two turns in every zone if one engine out and bombs aboard, or two or more engines out. Spend two turns in odd-numbered zones if out of formation and navigation system inoperable.
+	<pre>
+	I just realized that you only roll for enemy once per zone when out 
+	formation, not twice in every zone. It's only twice per zone if engines are 
+	out, or twice every other zone if the navigation system is out. I'd probably 
+	have a couple of planes still flying if I hadn't being playing incorrectly 
+	for so long ... :-(
+</pre>
+	<p />
+	<li />Contrails: In zones 2-12, if weather is clear, roll 1d6. On 5 or 6, contrails form. If contrails form, apply +1 to tables B-1, B-2 and O-2. (The variant states O-3, but that makes no sense as O-3 is a 2d6 table, whereas O-2 is a 1d6 table with graduated results.) Contrails apply to both outbound and return trip in the zone in which they are rolled. Contrails do not apply to night missions (Lancasters). From the "Theater Modifications" article in "The General" (Volume 24, #6).
+	<p />
+</ul>
+
+<p />
+
+<b>24-Jun-2004</b>
+
+<p />
+
+<ul>
+	<li />FIXED: Bomber spent two turns in every zone, regardless of damage, if out of formation.
+	<p />
+	<li />FIXED: Bug caused bombers flying back-to-back missions to switch base from England to Italy.
+	<p />
+	<li />FIXED: Many issues related to B-17Cs, and some related to B-17Es.
+	<p />
+	<li />Continued working on internal (within code) and external (user visible) documentation.
+	<p />
+	<li />Added option to fly mission completely unescorted. (For the brave or foolhardy ...)
+	<p />
+	<li />Added 30 new targets: 7 in France, 2 in Belgium, 2 in Holland, 1 in Denmark, 2 in Czechoslovakia and 16 in Germany. Two of the targets are in Zone 12! Click and save this image to view it full size. (Only the viewing area has been reduced, not the image itself.) There are now 121 targets in the emulator.
+	<p />
+</ul>
+
+<p />
+
+<b>21-Jun-2004</b>
+
+<p />
+
+<ul>
+	<li />Working on internal (within code) and external (user visible) documentation.
+	<p />
+</ul>
+
+<p />
+
+<b>16-Jun-2004</b>
+<p />
+<ul>
+	<li />Continuing to test and debug. I have run hundreds of missions. I'd like to have an alpha release in a couple of weeks.
+	<p />
+<!--
+	<li />Lots of opposition. Time to move some ammo around ...
+	<p />
+	<img src="../image/AmmoSwap.jpg">
+-->
+	<!--img src="../image/FrostAndJam.JPG"-->
+	<!--img src="../image/WillTheyMakeIt.jpg"-->
+	<!--img src="../image/LongWayHome.jpg"-->
+</ul>
+
+<p />
+
+<p />
+<b>20-May-2004</b>
+<p />
+<ul>
+	<li />Added the following new functions and&frasl;or functionality: <pre>
+	UnjamGuns()
+	ConsumeOil()
+	DropToLowAltitude() <-- ask if the user wants to descend
+	LoseAltitude() <-- actually does the descent
+	MechanicalFailure()
+	RemoveTempOptions()
+	DisplayTempOptions()
+	cboMonth_Click()
+	chkTimePeriodSpecificFormations_Click()
+	AdjustMissionOptions()
+	DisplayBombBayAmmo()
+	txtBombBayAmmo_LostFocus()</pre>
+	<li />Did a lot of testing of variants, such as random events, mechanical failures, time period specific formations, formation defensive gunnery, evade flak, alternate weather, German fighter pilot skill, JG26 stationed in Abbeville, and Ju88s used as fighters.
+	<p />
+</ul>
+
+<p />
+
+<p />
+<b>13-May-2004</b>
+<p />
+<ul>
+	<li />Actively testing and debugging the mission engine. (In other words, playtesting the *game*, rather than the supporting screens.) Also did work on the following functions:<pre>
+	TempPosSwap() <-- e.g. bombardier fires cheek gun ...
+	UndoTempPosSwaps() ... then returns to position
+	SprayFireAllowed()</pre>
+	<li />Added gunnery tables for the B-17C, B-17E, B-17G, YB-40, B-24D, B-24E, B-24G&frasl;H&frasl;J, B-24 L&frasl;M and Lancaster. 
+	<p />
+	<li />Regarding the use of color: Generally speaking, green (or grey) indicates the object is okay. Yellow is a warning, light wound or light damage. Red is system failure, serious damage or serious wound. Black indicates death or very severe damage. Medium cyan indicates guns with potential targets, or the potential targets themselves. Pale cyan indicates a gun that has been assigned to a target, plus the target it was assigned to.
+	<p />
+	<li />If you see a gap in the gun or crew list, that is because the hidden position does not actually exist on the bomber model you are flying. 
+	<p />
+</ul>
+
+<p />
+
+<b>4-May-2004</b>
+<p />
+<ul>
+	<li />Continued work on the mission engine. The following functions have either been added, modified or are in progress:<pre>
+	InitializeMissionInfo()
+	RefreshMissionInfo()
+	InitializeCrew()
+	RefreshCrew()
+	InitializeGuns()
+	RefreshGuns()
+	ExitPrevZone()
+	cmdTakeOff_Click()
+	cmdInterrupt_Click()
+	GetWaveSize()
+	</pre>
+	<p />
+	<li />Actually had a successful compile for the first time in over a year. (Since I was heads down just hammering out the basic charts, without any testing.)
+	<p />
+</ul>
+
+<p />
+
+<b>30-Apr-2004</b>
+<p />
+<ul>
+	<li />Added "gauges" to the mission form. The "gauges" are actually a few labels, colored to indicate the status of major systems such as engines, ailerons, fuel, etc. Nothing fancy, but it adds a bit of flavor.
+	<p />
+	<li />Continued work on the mission engine. The following functions have either been added, modified or are in progress:<pre>
+	B7RandomEvents()
+	Swap Ammo Form
+	SwapAmmo()
+	InitializeGauges()
+	RefreshGauges()
+	ColorEngineGauge()
+	ColorOilPressureGauge()
+	ColorFuelGauge()
+	OverWater()
+	CrashLanding()
+	optBailout_Click()
+	optCrashDitch_Click()
+	NormalZoneCombat()
+	TargetZoneCombat()
+	AbortMission()
+	optAbortMission_Click()
+	optContinueMission_Click()</pre>
+	<p />
+	<li />Since luck is a bomber parameter, a rabbits foot will always be expended where a die roll results in a bomber being shot down. (Which would cause all accumulated luck to be lost, so it might as well be used.) Luck will also be used to save ace gunners, who are valuable to keeping a bomber in the air, and to save ball gunner from being crushed in an inoperative turret.
+	<p />
+</ul>
+
+<p />
+
+<b>23-Apr-2004</b>
+<p />
+<ul>
+	<li />Added Flak Evasion and Formation Defensive Gunnery variants from "The General" (Volume 24, #6).
+	<p />
+	<li />Continued work on the mission engine. The following functions have either been added, modified or are in progress:<pre>
+	DefensiveFire()
+	M1DefensiveFire() <-- different than above function
+	M2HitDamageAgainstGermanFighter()
+	M5SprayAreaFire()
+	EvasiveActionAllowed()
+	OffensiveFire()
+	B5AreaDamage()
+	B5AreaDamageB17()
+	B5AreaDamageB24()
+	B5AreaDamageLanc()
+	B5AreaDamageRouter()
+	B6SuccessiveAttacks()
+	PassingFireAllowed()
+	PassingFireSetup()
+	Miscellaneous coloring functions that provide standard field backgrounds
+	lblGun_Click()</pre>
+	<p />
+</ul>
+
+<p />
+
+<b>17-Apr-2004</b>
+<p />
+<ul>
+	<li />Have spent the past week working on the mission engine. The following functions have either been added, modified or are in progress:<pre>
+	FlyMission()
+	TakeOff()
+	EnterZone()
+	FlakCombat()
+	AirToAirCombat()
+	lblToHit_Click()
+	GunIsManned()
+	MayFireGun()
+	PreAssignGuns()
+	HasATarget()
+	GetMaxRemovals()
+	FightersInWave()
+	RemoveFightersFromWave()
+	DisplayWave()
+	Interrupt()</pre>
+	<p />
+	<li />Amongst other things, I am trying to reduce the amount of clickage that occurs while a mission is in progress. After this is done, you will only have to click after you have provided some sort of necessary input. (Such as allocating defensive fire.)
+
+	<p />
+</ul>
+
+<p />
+
+<b>8-Apr-2004</b>
+<p />
+<ul>
+	<li />I just realized that this was not displaying on the internet, so whatever was wrong has been corrected. 
+	<p />
+	<li />I have finished putting the colored cardstock charts into code. No idea if it works, but shoehorning all the various variants -- including the B-24 and Lancaster -- into the code took some doing. The charts are not complete, but the vast majority of the initial effort is done. 
+	<p />
+	<li />The next step is to analyze and psuedocode the entire mission process from takeoff through final landing. (Assuming the bomber returns.) That will determine where to place the chart calls within the overall scheme of things. For those who've tested the original alpha of this game, you will realize that much of that is probably already done. But given that the charts had to be substantially rewritten (basically from scratch) to handle the variants, the same effort must be made regarding the mission process. In addition, the mission process may be cleaned up &frasl; modularized for ease of future expansion.
+	<p />
+	<li />Despite the fact that this help file has not been updated in 11 months, I have actually been occassionally working on the program ...
+	<p />
+</ul>
+
+<p />
+
+<b>9-May-2003</b>
+<p />
+<ul>
+	<li /><a href="B17GenerateMissionHelp.html">Generate Mission</a> completed.
+	<p />
+	<li />Mission sheets completed. If you want to run a paper game, rather than a computer game, the emulator will generate the mission for you. 
+</ul>
+
+<p />
+<div style="border-top: 2px #000000 solid;" /><!--Compliant cross-browser pseudo HR tag--></div>
+<p />
+<a href="B17HelpIndex.html">Help Index</a>
+<p />
+<b>Last Update:</b> 18-Feb-2005
+<p />
+&copy; Copyright 2003-2005 Preston V. McMurry III
+<p />
+</body>
+</html>
+

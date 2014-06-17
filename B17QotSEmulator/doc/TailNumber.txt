@@ -1,0 +1,586 @@
+B-17C (38)
+
+		' 40-2042 to 40-2079 
+
+		strManufacturer = "Boeing"
+		strPlant = "Seattle, WA"
+
+		intRoll = RandomDX(38)
+
+		' 40-2042 to 40-2079
+		strTailNum = "40-" & CStr( 2041 + intRoll ) & "-BO"
+		
+B-17E (512)
+
+		' 41-2393 to 41-2669 and 41-9011 to 41-9245 
+		
+		strManufacturer = "Boeing"
+		strPlant = "Seattle, WA"
+
+		intRoll = RandomDX(512)
+		
+		If intRoll <= 277 Then
+			' 41-2393 to 41-2669
+			strTailNum = "41-" & CStr( 2392 + intRoll ) & "-BO"
+		Else
+			' 41-9011 to 41-9245
+			strTailNum = "41-" & CStr( 9010 + RandomDX(235) ) & "-BO"
+		End If
+
+B-17F (3,406)
+
+		' Boeing production: 41-24340 to 24639; 42-5050 to 42-5484; 42-29467 to 42-31031 
+		' Douglas production: 42-2964 to 42-3562; 42-37714 to 42-37720 
+		' Lockheed-Vega production: 42-5705 to 42-6204 
+		' 
+		' 2300 aircraft built by Boeing 
+		' 605 aircraft built by Douglas 
+		' 500 aircraft built by Lockheed-Vega 
+
+		intRoll = RandomDX(3406)
+		
+		If intRoll <= 2300 Then
+
+			strManufacturer = "Boeing"
+			strPlant = "Seattle, WA"
+
+			intRoll = RandomDX(606)
+			
+			If intRoll <= 300 Then
+
+				' 41-24340 to 24639
+				strTailNum = "41-" & CStr( 24339 + intRoll ) & "-BO"
+
+			ElseIf intRoll >= 301 _
+			And intRoll <= 735 Then
+
+				' 42-5050 to 42-5484
+				strTailNum = "42-" & CStr( 5049 + RandomDX(435) ) & "-BO"
+
+			Else
+				' 42-29467 to 42-31031
+				strTailNum = "42-" & CStr( 29466 + RandomDX(1565) ) & "-BO"
+			End If
+
+		ElseIf intRoll >= 2301 _
+		And intRoll <= 2906 Then
+
+			strManufacturer = "Douglas"
+			strPlant = "Long Beach, CA"
+
+			intRoll = RandomDX(606)
+			
+			If intRoll <= 599 Then
+				' 42-2964 to 42-3562
+				strTailNum = "41-" & CStr( 2963 + intRoll ) & "-DL"
+			Else
+				' 42-37714 to 42-37720
+				strTailNum = "42-" & CStr( 37713 + RandomDX(7) ) & "-DL"
+			End If
+	
+		Else
+
+			strManufacturer = "Lockheed-Vega"
+			strPlant = "Burbank, CA"
+
+			intRoll = RandomDX(500)
+		
+			' 42-5705 to 42-6204
+			strTailNum = "42-" & CStr( 5704 + intRoll ) & "-VE"
+
+		End If
+
+B-17G (8,679)
+
+		' Boeing production: 42-31032 to 42-32116; 42-97058 to 42-97407; 42-102379 to 42-102978; 43-37509 to 43-39508 
+		' Douglas production: 42-37716; 42-37721 to 42-38213; 42-106984 to 42-107233; 44-6001 to 44-7000; 44-83236 to 44-83885 
+		' Lockheed-Vega production: 42-39758 to 42-40057; 42-97436 to 42-9798035; 44-8001 to 44-9000; 44-85492 to 44-85841 
+		' 
+		' 4035 aircraft built by Boeing 
+		' 2394 aircraft built by Douglas 
+		' 2250 aircraft built by Lockheed-Vega 
+
+		intRoll = RandomDX(8679)
+		
+		If intRoll <= 4035 Then
+
+			strManufacturer = "Boeing"
+			strPlant = "Seattle, WA"
+
+			intRoll = RandomDX(4035)
+			
+			If intRoll <= 1085 Then
+
+				' 42-31032 to 42-32116
+				strTailNum = "42-" & CStr( 31031 + intRoll ) & "-BO"
+
+			ElseIf intRoll >= 1086 _
+			And intRoll <= 2435 Then
+
+				' 42-97058 to 42-97407
+				strTailNum = "42-" & CStr( 97057 + RandomDX(350) ) & "-BO"
+
+			ElseIf intRoll >= 2436 _
+			And intRoll <= 3035 Then
+
+				' 42-102379 to 42-102978
+				strTailNum = "42-" & CStr( 102378 + RandomDX(600) ) & "-BO"
+
+			Else
+
+				' 43-37509 to 43-39508
+				strTailNum = "43-" & CStr( 37508 + RandomDX(2000) ) & "-BO"
+
+			End If
+
+		ElseIf intRoll >= 4306 _
+		And intRoll <= 6429 Then
+		
+			strManufacturer = "Douglas"
+			strPlant = "Long Beach, CA"
+
+			intRoll = RandomDX(2394)
+			
+			If intRoll = 1 Then
+
+				' 42-37716
+				strTailNum = "42-37716-DL"
+
+			ElseIf intRoll >= 2436 _
+			And intRoll <= 3035 Then
+
+				' 42-37721 to 42-38213
+				strTailNum = "42-" & CStr( 37720 + RandomDX(493) ) & "-DL"
+
+			ElseIf intRoll >= 2436 _
+			And intRoll <= 3035 Then
+
+				' 42-106984 to 42-107233
+				strTailNum = "42-" & CStr( 106983 + RandomDX(250) ) & "-DL"
+
+			ElseIf intRoll >= 2436 _
+			And intRoll <= 3035 Then
+
+				' 44-6001 to 44-7000
+				strTailNum = "44-" & CStr( 6000 + RandomDX(1000) ) & "-DL"
+
+			Else
+
+				' 44-83236 to 44-83885
+				strTailNum = "44-" & CStr( 83235 + RandomDX(650) ) & "-DL"
+
+			End If
+	
+		Else
+
+			strManufacturer = "Lockheed-Vega"
+			strPlant = "Burbank, CA"
+
+			intRoll = RandomDX(2250)
+			
+			If intRoll <= 300 Then
+
+				' 42-39758 to 42-40057
+				strTailNum = "42-" & CStr( 39757 + intRoll ) & "-VE"
+
+			ElseIf intRoll >= 301 _
+			And intRoll <= 900 Then
+
+				' 42-97436 to 42-98035
+				strTailNum = "42-" & CStr( 97435 + RandomDX(600) ) & "-VE"
+
+			ElseIf intRoll >= 901 _
+			And intRoll <= 1901 Then
+
+				' 44-8001 to 44-9000
+				strTailNum = "44-" & CStr( 8000 + RandomDX(1000) ) & "-VE"
+
+			Else
+
+				' 44-85492 to 44-85841
+				strTailNum = "44-" & CStr( 85491 + RandomDX(350) ) & "-VE"
+
+			End If
+
+		End If
+
+YB-40 
+
+B-24D (2,698)
+
+		' 2,381 built by Consolidated at the San Diego, California plant. 
+		' 305 built by Consolidated at the Fort Worth, Texas plant. 
+		' 10 built by Douglas at the Tulsa Oklahoma plant.
+		' 
+		' 40-2349 to 40-2368 (CO) -- first 20 B-24Ds ever
+		' 41-1087 to 41-1142 CO
+		' 41-11598 (CO)
+		' 41-23640 to 41-23755 CO
+		' 41-23759 to 41-24339 CO
+		' 42-40058 to 42-41257 CO
+		' 42-72765 to 42-72963 CO
+		' 41-23756 to 41-23758 DT
+		' 41-29074 and 41-29075 (CF) -- first two CF aircraft
+		' 42-63752 to 42-64046 CF
+
+		intRoll = RandomDX(2698)
+		
+		If intRoll <= 2381 Then
+
+			strManufacturer = "Consolidated"
+			strPlant = "San Diego, CA"
+			
+			' Unknown serial numbers = 208
+
+			intRoll = RandomDX(2173)
+			
+			If intRoll <= 20 Then
+
+				' 40-2349 to 40-2368
+				strTailNum = "40-" & CStr( 2348 + intRoll ) & "-CO"
+
+			ElseIf intRoll >= 1086 _
+			And intRoll <= 2435 Then
+
+				' 41-1087 to 41-1142
+				strTailNum = "41-" & CStr( 1086 + RandomDX(56) ) & "-CO"
+
+			ElseIf intRoll >= 2436 _
+			And intRoll <= 3035 Then
+
+				' 41-11598
+				strTailNum = "41-11598-CO"
+
+			ElseIf intRoll >= 2436 _
+			And intRoll <= 3035 Then
+
+				' 41-23640 to 41-23755
+				strTailNum = "41-" & CStr( 23639 + RandomDX(116) ) & "-CO"
+
+			ElseIf intRoll >= 2436 _
+			And intRoll <= 3035 Then
+
+				' 41-23759 to 41-24339
+				strTailNum = "41-" & CStr( 23758 + RandomDX(581) ) & "-CO"
+
+			ElseIf intRoll >= 2436 _
+			And intRoll <= 3035 Then
+
+				' 42-40058 to 42-41257
+				strTailNum = "42-" & CStr( 40057 + RandomDX(1200) ) & "-CO"
+
+			Else
+
+				' 42-72765 to 42-72963
+				strTailNum = "42-" & CStr( 72764 + RandomDX(199) ) & "-CO"
+
+			End If
+
+		ElseIf intRoll >= 2382_
+		And intRoll <= 2686 Then
+		
+			strManufacturer = "Consolidated"
+			strPlant = "Ft. Worth, TX"
+
+			intRoll = RandomDX(296)
+			
+			' Unknown serial numbers = 9
+
+			If intRoll <= 300 Then
+
+				' 41-29074 to 41-29075
+				strTailNum = "41-" & CStr( 29073 + intRoll ) & "-CF"
+
+			Else
+
+				' 42-63752 to 42-64046
+				strTailNum = "42-" & CStr( 63751 + RandomDX(295) ) & "-CF"
+
+			End If
+
+		Else
+		
+			strManufacturer = "Douglas"
+			strPlant = "Tulsa, OK"
+
+			' Unknown serial numbers = 7
+
+			' 41-23756 to 41-23758
+			strTailNum = "41-" & CStr( 23755 + RandomDX(3) ) & "-DT"
+
+		End If
+		
+
+B-24E (801)
+
+		' 41-28409 to 41-28573; 41-29007 to 41-29115; 42-6976 to 42-7464; 42-7770; 42-64395 to 42-64431; 
+		' 490 B-24E-FO built by Ford at the Willow plant in 6 production blocks. 
+		' 165 B-24E-DT built by Douglas at the Tulsa plant using Ford sub-assemblies (5 blocks) 
+		' 146 B-24E-CF built by Consolidated at the Fort Worth plant using Ford sub-assemblies (4 blocks). 
+
+		intRoll = RandomDX(801)
+		
+		If intRoll <= 490 Then
+
+			strManufacturer = "Ford"
+			strPlant = "Willow Run, MI"
+
+			intRoll = RandomDX(490)
+			
+			If intRoll <= 489 Then
+
+				' 42-6976 to 42-7464
+				strTailNum = "42-" & CStr( 6975 + intRoll ) & "-FO"
+
+			Else
+
+				' 42-7770
+				strTailNum = "42-7770"
+
+			End If
+
+		ElseIf intRoll >= 491 _
+		And intRoll <= 656 Then
+		
+			strManufacturer = "Douglas"
+			strPlant = "Tulsa, OK"
+
+			intRoll = RandomDX(165)
+			
+			' 41-28409 to 41-28573
+			strTailNum = "41-" & CStr( 28408 + intRoll ) & "-DT"
+
+		Else
+
+			strManufacturer = "Consolidated"
+			strPlant = "Ft. Worth, TX"
+
+			intRoll = RandomDX(146)
+			
+			If intRoll <= 109 Then
+
+				' 41-29007 to 41-29115
+				strTailNum = "41-" & CStr( 29006 + intRoll ) & "-CF"
+
+			Else
+
+				' 42-64395 to 42-64431
+				strTailNum = "42-" & CStr( 64394 + RandomDX(37) ) & "-CF"
+
+			End If
+
+		End If
+
+B-24G (430)
+
+		' Serial numbers: 42-78045 to 42-78474 
+		' 25 built as B-24G (42-78045 to 42-78069) 
+		' 405 built as improved B-24G-1 (block numbers 1, 5, 10, 15, and 16) (42-78070 and later) 
+
+B-24H (3,100)
+
+		' Serial numbers: 41-28574 to 41-29006; 41-29116 to 41-29608; 42-50277 to 42-50451; 42-51077 to 42-51225; 42-52077 to 42-52776; 42-64432 to 42-64501; 42-7465 to 42-7769; 42-94729 to 42-95503 
+		' 
+		' 1780 built by Ford at their Willow Run plant in 7 production blocks 
+		' 738 assembled by Consolidated at their Fort Worth plant. 
+		' 582 assembled by Douglas at their Tulsa plant. 
+
+B-24J (6,678)
+
+		x' 2792 built by Consolidated at their San Diego plant in 43 production blocks.
+		x' 1587 built by Ford at their Willow Run plant in 4 production blocks. 
+		x' 1558 built by Consolidated at their Fort Worth plant in 25 production blocks. 
+		x' 536 built by North American at their Dallas plant in 3 production blocks. 
+		x' 205 built by Douglas at their Tulsa plant in 3 production blocks. 
+
+		' 42-50509 to 42-51076 FO = 568
+		' 42-51431 to 42-52076 FO = 646
+		' 42-95504 to 42-95628 FO = 125
+		' 44-48754 to 44-49001 FO = 248 = 1587x
+
+		' 42-51226 to 42-51430 DT = 205 = 205x
+
+		' 42-72964 to 42-73514 CO = 551
+		' 42-99936 to 42-100435 CO = 500
+		' 42-109789 to 42-110188 CO = 400
+		' 44-10253 to 44-10302 CO = 50
+		' 44-40049 to 44-41389 CO = 341 = 1842 (950 missing)
+
+		' 42-50452 to 42-50508 CF = 57
+		' 42-64047 to 42-64394 CF = 348
+		' 42-99736 to 42-99935 CF = 200
+		' 44-10303 to 44-10752 CF = 450
+		' 44-44049 to 44-44501 CF = 453 = 1310 (248 missing)
+
+		' 42-78475 to 42-78794 NT = 320
+		' 44-28061 to 44-28276 NT = 216 = 536x
+
+		' 44-28277 to 44-28710 Cancelled contract
+
+
+		
+		' 42-50452 to 42-50508 CF = 57
+		' 42-50509 to 42-51076 FO = 568
+		' 42-51431 to 42-52076 FO = 646
+		' 42-51226 to 42-51430 DT = 205
+		' 42-64047 to 42-64394 CF = 348
+		' 42-72964 to 42-73514 CO = 551
+		' 42-78475 to 42-78794 NT = 320
+		' 42-95504 to 42-95628 FO = 125
+		' 42-99736 to 42-99935 CF = 200
+		' 42-99936 to 42-100435 CO = 500
+		' 42-109789 to 42-110188 CO = 400
+		' 44-10253 to 44-10302 CO = 50
+		' 44-10303 to 44-10752 CF = 450
+		' 44-28061 to 44-28276 NT = 216
+		' 44-28277 to 44-28710 Cancelled contract
+		' 44-40049 to 44-41389 CO = 341
+		' 44-44049 to 44-44501 CF = 453
+		' 44-48754 to 44-49001 FO = 247
+
+
+		B-24G (430)
+
+			G-North American (430)
+
+				strManufacturer = "North American"
+				strPlant = "Dallas, TX"
+	
+				' 42-78045 to 42-78474 NT
+				strTailNum = "42-" & CStr( 78044 + RandomDX(430) ) & "-NT"
+
+		B-24H (3100)
+		
+			H-Ford (1780)
+	
+				strManufacturer = "Ford"
+				strPlant = "Willow Run, MI"
+	
+				' 42-7465 to 42-7769
+				' 42-52077 to 42-52776
+				' 42-94729 to 42-95503
+
+				strTailNum = "42-" & CStr( 7464 + RandomDX(305) ) & "-FO"
+				strTailNum = "42-" & CStr( 52076 + RandomDX(700) ) & "-FO"
+				strTailNum = "42-" & CStr( 94728 + RandomDX(775) ) & "-FO"
+			
+			H-Douglas (582)
+	
+				strManufacturer = "Douglas"
+				strPlant = "Tulsa, OK"
+
+				' 41-28574 to 41-29006
+				' 42-51077 to 42-51225
+
+				strTailNum = "41-" & CStr( 28573 + RandomDX(433) ) & "-DT"
+				strTailNum = "42-" & CStr( 51076 + RandomDX(149) ) & "-DT"
+
+			H-Consolidated (738)
+			
+				strManufacturer = "Consolidated"
+				strPlant = "Ft. Worth, TX"
+	
+				' 41-29116 to 41-29608
+				' 42-50277 to 42-50451
+				' 42-64432 to 42-64501
+			
+				strTailNum = "41-" & CStr( 29115 + RandomDX(493) ) & "-CF"
+				strTailNum = "42-" & CStr( 50276 + RandomDX(175) ) & "-CF"
+				strTailNum = "42-" & CStr( 64431 + RandomDX(70) ) & "-CF"
+
+		B-24J (6,678)
+
+			J-Ford (1587)
+	
+				strManufacturer = "Ford"
+				strPlant = "Willow Run, MI"
+	
+				strTailNum = "42-" & CStr( 50508 + RandomDX(568) ) & "-FO"
+				strTailNum = "42-" & CStr( 51430 + RandomDX(646) ) & "-FO"
+				strTailNum = "42-" & CStr( 95503 + RandomDX(125) ) & "-FO"
+				strTailNum = "44-" & CStr( 48753 + RandomDX(248) ) & "-FO"
+
+			J-Douglas (205)
+	
+				strManufacturer = "Douglas"
+				strPlant = "Tulsa, OK"
+	
+				strTailNum = "42-" & CStr( 51225 + RandomDX(205) ) & "-DT"
+
+			J-Consolidated (2792)
+	
+				strManufacturer = "Consolidated"
+				strPlant = "San Diego, CA"
+	
+				' Unknown serial numbers = 950
+
+				strTailNum = "42-" & CStr( 72963 + RandomDX(551) ) & "-CO"
+				strTailNum = "42-" & CStr( 99935 + RandomDX(500) ) & "-CO"
+				strTailNum = "42-" & CStr( 109788 + RandomDX(400) ) & "-CO"
+				strTailNum = "44-" & CStr( 10252 + RandomDX(50) ) & "-CO"
+				strTailNum = "44-" & CStr( 40048 + RandomDX(341) ) & "-CO"
+
+			J-Consolidated (1558)
+	
+				strManufacturer = "Consolidated"
+				strPlant = "Ft. Worth, TX"
+	
+				' Unknown serial numbers = 248
+
+				strTailNum = "42-" & CStr( 50451 + RandomDX(57) ) & "-CF"
+				strTailNum = "42-" & CStr( 64046 + RandomDX(348) ) & "-CF"
+				strTailNum = "42-" & CStr( 99735 + RandomDX(200) ) & "-CF"
+				strTailNum = "44-" & CStr( 10302 + RandomDX(450) ) & "-CF"
+				strTailNum = "44-" & CStr( 44048 + RandomDX(453) ) & "-CF"
+
+			J-North American (536)
+	
+				strManufacturer = "North American"
+				strPlant = "Dallas, TX"
+	
+				strTailNum = "42-" & CStr( 78474 + RandomDX(320) ) & "-NT"
+				strTailNum = "44-" & CStr( 28060 + RandomDX(216) ) & "-NT"
+
+B-24L (1,667)
+
+		Serial numbers: 44-41390 to 44-41806; 44-49002 to 44-50251 
+
+		Consolidated built 417 aircraft at its San Diego plant. 
+		Ford built 1,250 aircraft at its Willow Run plant. 
+
+B-24M (2,593)
+
+		Serial numbers: 44-41390 to 44-41806; 44-49002 to 44-50251 
+		
+		Consolidated built 916 aircraft at its San Diego plant. 
+		Ford built 1,677 aircraft at its Willow Run plant. 
+
+		B-24L (1,667)
+
+			Serial numbers: 44-41390 to 44-41806; 44-49002 to 44-50251 
+
+			L-Consolidated (417)
+	
+				strManufacturer = "Consolidated"
+				strPlant = "San Diego, CA"
+	
+			L-Ford (1250)
+	
+				strManufacturer = "Ford"
+				strPlant = "Willow Run, MI"
+	
+		B-24M (2,593)
+
+			M-Consolidated (916)
+	
+				strManufacturer = "Consolidated"
+				strPlant = "San Diego, CA"
+	
+			M-Ford (1667)
+	
+				Serial numbers: 44-41390 to 44-41806; 44-49002 to 44-50251 
+	
+				strManufacturer = "Ford"
+				strPlant = "Willow Run, MI"
+	
+

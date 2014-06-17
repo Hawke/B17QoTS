@@ -1,0 +1,372 @@
+B-17
+
+MISSION	DATE 	 TARGET	AIRCRAFT **
+T/O - NE - Lost	LEAD CREW
+PHOTOS
+Mission 001	Nov 17, 1942	St Nazaire, France	16 - 16* - 0	  
+Mission 002	Nov 18, 1942	St Nazaire, France	21 - 2 - 0	  
+Mission 003	Nov 22, 1942	Lorient, France	18 - 7 - 0	  
+Mission 004	Nov 23, 1942	St Nazaire, France	12 - 0 - 1	  
+Mission 005	Dec 06, 1942	Lille, France	20 - 5 - 0	  
+Mission 006	Dec 12, 1942	Rouen, France	20 - 12* - 2	  
+Mission 007	Dec 20, 1942	Romilly, France	21 - 7 - 2	  
+Mission 008	Dec 30, 1942	Lorient (Keroman), France	16 - 6 - 0	  
+Mission 009	Jan 03, 1943	St Nazaire, France	17 - 3 - 4	  
+Mission 010	Jan 13, 1943	Lille, France	19 - 1 - 0	  
+Mission 011	Jan 23, 1943	Lorient/Brest, France	21 - 2 - 7	  
+Mission 012	Jan 27, 1943	Wilhelmshaven, Germany	11 - 3 - 0	Lead
+Mission 013	Feb 02, 1943	Hamm, Germany (cxl-WX)	11 - 11 - 0	  
+Mission 014	Feb 04, 1943	Osnabruck, Germany	13 - 6 - 1	  
+Mission 015	Feb 14, 1943	Hamm, Germany (cxl-WX) 	17 - 17 - 0	  
+Mission 016	Feb 16, 1943	St Nazaire, France	14 - 2 - 2	  
+Mission 017	Feb 26, 1943	Wilhelmshaven, Germany	19 - 7 - 0	  
+Mission 018	Feb 27, 1943	Brest, France	16 - 1 - 0	  
+Mission 019	Mar 04, 1943	Rotterdam, Holland	18 - 2 - 0	Lead
+Mission 020	Mar 06, 1943	Lorient, France	18 - 1 - 1	Lead
+Mission 021	Mar 08, 1943	Rennes, France	19 - 7 - 0	Lead
+Mission 022	Mar 12, 1943	Rouen, France	18 - 6 - 0	  
+Mission 023	Mar 13, 1943	Amiens/Longeau, France	20 - 1 - 0	  
+Mission 024	Mar 18, 1943	Vegesack, Germany	20 - 0 - 3	Lead
+Mission 025	Mar 22, 1943	Wilhelmshaven, Germany	18 - 3 - 0	  
+Mission 026	Mar 28, 1943	Rouen, France	18 - 1 - 0	Lead  High
+Mission 027	Mar 31, 1943	Rotterdam, Netherlands	20 - 3 - 2	Lead
+Mission 028	Apr 04, 1943	Paris, France	23 - 3 - 1	Lead
+Mission 029	Apr 05, 1943	Antwerp, Belgium	21 - 4 - 0	  
+Mission 030	Apr 16, 1943	Lorient, France	21 - 5 - 0	Lead
+Mission 031	Apr 17, 1943	Bremen, Germany	29 - 0 - 0	Lead
+Mission 032	May 01, 1943	St Nazaire, France	19 - 9 - 2	  
+Mission 033	May 04, 1943	Antwerp, Belgium	27 - 6 - 0	Lead  High
+Mission 034	May 13, 1943	Meaulte, France	21 - 0 - 0	Lead
+Mission 035	May 14, 1943	Kiel, Germany	27 - 2 - 1	Lead
+Mission 036	May 15, 1943	Heligoland Island, Germany	24 - 2 - 1	Lead
+Mission 037	May 17, 1943	Lorient, France	21 - 3 - 0	  
+Mission 038	May 19, 1943	Kiel, Germany	27 - 4 - 0	Lead
+Mission 039	May 21, 1943	Wilhelmshaven, Germany	19 - 1 - 0	Lead
+Mission 040	May 29, 1943	St Nazaire, France	30 - 2 - 1	Lead
+Mission 041	Jun 11, 1943	Wilhelmshaven, Germany	25 - 6 - 1	Lead
+Mission 042	Jun 13, 1943	Bremen, Germany	27 - 4 - 0	Lead
+Mission 043	Jun 22, 1943	Huls, Germany	28 - 2 - 1	Lead  High
+Recall	Jun 23, 1943	Villacoublay, France	21 - 21 - 0	Lead
+Mission 044	Jun 25, 1943	Hamburg, Germany	25 - 3 - 3	Lead
+Mission 045	Jun 26, 1943	Paris, France	20 - 20* - 0	  
+Mission 046	Jun 28, 1943	Beaumont Le Roger, France	18 - 1 - 0	Lead
+Mission 047	Jun 29, 1943	Paris, France	19 - 19 - 0	Lead
+Mission 048	Jul 04, 1943	Le Mans, France	24 - 4 - 1	Lead
+Mission 049	Jul 10, 1943	Poix/Abbeyville, France	26 - 23* - 0	  
+Mission 050	Jul 14, 1943	Paris, France	21 - 1 - 1	  
+Mission 051	Jul 17, 1943	Hannover, Germany	27 - 27* - 0 [A]	Lead
+Mission 052	Jul 24, 1943	Heroya, Norway	20 - 0 - 0	Lead
+Mission 053	Jul 25, 1943	Hamburg, Germany	20 - 0 - 1	Lead
+Mission 054	Jul 26, 1943	Hamburg, Germany	20 - 5 - 0	  
+Mission 055	Jul 29, 1943	Heligoland Island, Germany	20 - 0 - 0	  
+Mission 056	Jul 30, 1943	Kassel, Germany	23 - 4 - 1	Lead
+Mission 057	Aug 12, 1943	Geisenkirchen, Germany	20 - 1 - 1	Lead
+Mission 058	Aug 15, 1943	Amiens, France	20 - 2 - 0	  
+Mission 059	Aug 16, 1943	Paris, France	20 - 0 - 0	Lead
+Mission 060	Aug 17, 1943	Schweinfurt, Germany	29 - 2 - 0	  
+Mission 061	Aug 19, 1943	Gilze-Rijen, Netherlands	20 - 9 - 2	  
+Mission 062	Aug 23, 1943	Search Mission	6 - 0 - 0	  
+Mission 063	Aug 24, 1943	Diversion Mission	18 - 0 - 0	  
+Mission 064	Aug 27, 1943	Watten, France	20 - 1 - 1	Lead
+Mission 065	Aug 31, 1943	Amiens-Gilsy, France	20 - 11 - 1	Lead
+Mission 066	Sep 03, 1943	Rommilly/Seine, France	19 - 4 - 0	Low
+Mission 067	Sep 06, 1943	Stuttgart, Germany	19 - 2 - 2	Lead
+Mission 068	Sep 07, 1943	Brussels, Belgium	14 - 1 - 0	  
+Mission 069	Sep 09, 1943	Douai, France	18 - 0 - 0	  
+Mission 070	Sep 16, 1943	Nantes, France	19 - 0 - 0	Lead
+Mission 071	Sep 23, 1943	Nantes, France	19 - 4 - 0	  
+Mission 072	Sep 27, 1943	Emden, Germany	20 - 14* - 0	Lead
+Mission 073	Oct 02, 1943	Emden, Germany	20 - 1 - 1	Lead
+Mission 074	Oct 04, 1943	Heddernheim/Frankfurt, Germany	21 - 6 - 1	  
+Mission 075	Oct 08, 1943	Bremen, Germany	22 - 1 - 0	Lead
+Mission 076	Oct 09, 1943	Anklam, Germany	20 - 2 - 1	Lead
+Mission 077	Oct 10, 1943	Coesfeld, Germany	21 - 1 - 0	Lead
+Mission 078	Oct 14, 1943	Schweinfurt, Germany	20 - 2 - 2	Lead
+Mission 079	Oct 20, 1943	Duren, Germany	19 - 19* - 2	Lead
+Mission 080	Nov 03, 1943	Wilhelmshaven, Germany	23 - 1 - 0	  
+Mission 081	Nov 05, 1943	Gelsenkirchen, Germany	19 - 0 - 1	Lead
+Mission 082	Nov 16, 1943	Knaben, Norway	20 - 20* - 0	Lead
+Mission 083	Nov 26, 1943	Bremen, Germany	35 - 1 - 1	  
+Mission 084	Nov 29, 1943	Bremen, Germany	20 - 5 - 2	  
+Mission 085	Dec 01, 1943	Solingen, Germany	20 - 3 - 2	Lead
+Mission 086	Dec 05, 1943	St Jean D'Angley, France 	20 - 20* - 0	Lead
+Mission 087	Dec 11, 1943	Emden, Germany	20 - 0 - 0	Lead
+Mission 088	Dec 13, 1943	Bremen, Germany	40 - 3 - 0	A-High  B-High
+Mission 089	Dec 16, 1943	Bremen, Germany	20 - 0 - 0	  
+Mission 090	Dec 20, 1943	Bremen, Germany	21 - 3 - 3	Lead
+Mission 091	Dec 22, 1943	Osnabruck, Germany	20 - 20* - 0	  
+Mission 092	Dec 24, 1943	Vacqueriette, France	27 - 18* - 0	Lead
+Mission 093	Dec 30, 1943	Ludwigshafen, Germany	33 - 3 - 1	Lead
+Mission 094	Dec 31, 1943	Ship Osorno (near France)	20 - 20* - 0	  
+Mission 095	Jan 04, 1944	Kiel, Germany	37 - 21* - 1	Lead
+Mission 096	Jan 05, 1944	Kiel, Germany	23 - 11 - 1	  
+Mission 097	Jan 07, 1944	Ludwigshafen, Germany	36 - 2 - 0	Lead
+Mission 098	Jan 11, 1944	Oschersleben, Germany	38 - 6 - 11	Lead    Low
+Mission 099	Jan 14, 1944	Le Meillard, France	18 - 1 - 1	Lead
+Mission 100	Jan 21, 1944	Bois Coquerel, France	29 - 7* - 0	A-Lead  B-Lead
+Mission 101	Jan 29, 1944	Frankfurt, Germany	39 - 1 - 1	B-High
+Mission 102	Jan 30, 1944	Brunswick, Germany	36 - 2 - 0	Lead
+Mission 103	Feb 03, 1944	Wilhelmshaven, Germany	39 - 10 - 1	Lead  Low
+Mission 104	Feb 04, 1944	Frankfurt, Germany	38 - 6 - 0	Lead
+Mission 105	Feb 05, 1944	Orleans, France	20 - 0 - 0	  
+Mission 106	Feb 06, 1944	Dijon, France	23 - 22*- 1	Lead
+Mission 107	Feb 08, 1944	Frankfurt, Germany	22 - 5 - 0	  
+Mission 108	Feb 11, 1944	Frankfurt, Germany	21 - 6 - 2	  
+Mission 109	Feb 20, 1944	Leipzig, Germany	38 - 6 - 1	Lead
+Mission 110	Feb 21, 1944	Diepholz, Germany	36 - 18* - 0	Lead
+Mission 111	Feb 22, 1944	Aschersleben, Germany	36 - 4 - 5	A-Lead  B-Lead
+Mission 112	Feb 24, 1944	Schweinfurt, Germany	27 - 3 - 2	Lead
+Mission 113	Feb 25, 1944	Stuttgart, Germany	31 - 4 - 0	Lead
+Mission 114	Feb 28, 1944	Bois Coquerol, France	23 - 13* - 1	Lead
+Mission 115	Mar 02, 1944	Frankfurt, Germany 	31 - 5 - 1	Lead
+Mission 116	Mar 03, 1944	Berlin (Erkner), Germany	27 - 27* - 0	  
+Mission 117	Mar 04, 1944	Bonn/Köln, Germany	27 - 5 - 0	  
+Mission 118	Mar 06, 1944	Berlin (Erkner), Germany	27 - 1 - 0	Lead
+Mission 119	Mar 08, 1944	Berlin (Erkner), Germany	22 - 1 - 1	Lead
+Mission 120	Mar 09, 1944	Berlin, Germany	18 - 1 - 0	Lead
+Mission 121	Mar 16, 1944	Augsburg, Germany	29 - 3 - 0	Lead
+Mission 122	Mar 18, 1944	Lechfeld, Germany	29 - 1 - 0	Lead
+Mission 123	Mar 19, 1944	Wizernes, France	23 - 1 - 0	  
+Mission 124	Mar 20, 1944	Frankfurt, Germany	21 - 1 - 0	Lead
+Mission 125	Mar 22, 1944	Berlin, Germany	28 - 1 - 0	Lead
+Mission 126	Mar 23, 1944	Hamm/Ahlen, Germany	28 - 0 - 0	Lead
+Mission 127	Mar 24, 1944	Frankfurt, Germany	22 - 1 - 0	  
+Mission 128	Mar 26, 1944	Wizernes, France	20 - 1 - 1	  
+Mission 129	Mar 27, 1944	Chartres, France	26 - 0 - 0	Lead
+Mission 130	Mar 28, 1944	Dijon/Longvic, France	22 - 1 - 0	Lead
+Mission 131	Mar 29, 1944	Stedorf, Germany	22 - 0 - 0	  
+Mission 132	Apr 09, 1944	Marienburg, Germany	40 - 9 - 1	A-Lead  B-Lead
+Mission 133	Apr 10, 1944	Brussels/Evere, Belgium	21 - 0 - 0	Lead
+Mission 134	Apr 11, 1944	Sorau, Germany	33 - 2 - 0	High  Low
+Mission 135	Apr 13, 1944	Schweinfurt, Germany	20 - 1 - 1	Lead
+Mission 136	Apr 18, 1944	Oranienburg, Germany	35 - 2 - 1	  
+Mission 137	Apr 19, 1944	Kassel, Germany	21 - 1 - 0	Lead
+Mission 138	Apr 20, 1944	Sottevast, France	28 - 0 - 0	Lead
+Mission 139	Apr 22, 1944	Hamm, Germany	30 - 1 - 2	Lead
+Mission 140	Apr 24, 1944	Oberpfaffenhofen, Germany 	28 - 4 - 3	Lead
+Mission 141	Apr 25, 1944	Metz/Frescaty, France	21 - 1 - 1	Lead
+Mission 142	Apr 27, 1944	Sottevast, France	18 - 1 - 0	Lead    Low
+Mission 143	Apr 27, 1944	Toul/C'de Metz, France	20 - 0 - 0	Lead
+Mission 144	Apr 29, 1944	Berlin, Germany	20 - 2 - 2	  
+Mission 145	Apr 30, 1944	Lyon/Bron, France	20 - 0 - 0	Lead
+Mission 150	May 04, 1944	Berlin, Germany (Recall)	33 - 33* - 0 [B]	  
+Mission 146	May 07, 1944	Berlin, Germany	36 - 1 - 0	Lead
+Mission 147	May 08, 1944	Berlin, Germany	18 - 1 - 0	Lead
+Mission 148	May 08, 1944	Sottevast, France	19 - 3 - 0	Lead
+Mission 149	May 09, 1944	Thionville, France	12 - 0 - 0	Lead
+Mission 151	May 11, 1944	Saarbrucken, Germany	37 - 0 - 1	A-Lead  B-Lead
+Mission 152	May 12, 1944	Merseburg, Germany	17 - 2 - 0	Lead
+Mission 153	May 13, 1944	Stettin-Posen, Germany	13 - 0 - 0	Lead
+Mission 154	May 15, 1944	Mimoyecques, France	20 - 1 - 0	  
+Mission 155	May 19, 1944	Berlin, Germany	37 - 2 - 1	A-Lead  B-Lead
+Mission 156	May 20, 1944	Orly, France	12 - 0 - 0	  
+Mission 157	May 22, 1944	Kiel, Germany	12 - 0 - 0	Lead
+Mission 158	May 23, 1944	Saarbrucken, Germany	22 - 2 - 0	  
+Mission 159	May 24, 1944	Berlin, Germany	38 - 4 - 1	Lead
+Mission 160	May 25, 1944	Blainville, France 	24 - 0 - 0	Lead    Low
+Mission 161	May 27, 1944	Mannheim, Germany	37 - 1 - 0	Lead
+Mission 162	May 28, 1944	Cologne, Germany	19 - 1 - 0	  
+Mission 163	May 28, 1944	Rotha-Dessau, Germany	16 - 1 - 1	Lead
+Mission 164	May 29, 1944	Posen, Poland	35 - 0 - 0	A-Lead  B-Lead
+Mission 165	May 30, 1944	Halberstadt, Germany	36 - 4 - 1	Lead
+Mission 166	May 31, 1944	Gilze-Rijen, Netherlands	12 - 1 - 0	Lead
+Mission 167	Jun 02, 1944	Dannes, France	19 - 0 - 0	  
+Mission 168	Jun 02, 1944	Juvisy, France	12 - 0 - 0	  
+Mission 169	Jun 03, 1944	St Cecily, France	19 - 0 - 0	  
+Mission 170	Jun 04, 1944	Le Touquet, France	34 - 2 - 0	  
+Mission 171	Jun 05, 1944	Azeville/Caen, France	35 - 0 - 0	A-Lead  B-Lead
+Mission 172	Jun 06, 1944	Caen, France	34 - 2 - 0	  
+Mission 173	Jun 06, 1944	Caen, France	6 - 6* - 0 	  
+Mission 174	Jun 06, 1944	Vire S. Noir, France	33 - 2 - 0	  
+Mission 175	Jun 07, 1944	Flers/Noireau, France	36 - 2 - 0	  
+Mission 176	Jun 08, 1944	Orleans, France	48 - 2 - 0	  
+Mission 177	Jun 10, 1944	Nantes, France	36 - 2 - 1	Lead
+Mission 178	Jun 12, 1944	Cambrai/Epinoy, France	36 - 2 - 1	Lead
+Mission 179	Jun 13, 1944	Evreux, France	40 - 4 - 0	  
+Mission 180	Jun 14, 1944	Creil/Coulom, France	39 - 3 - 0	  
+Mission 181	Jun 15, 1944	La Possonnier, France	36 - 1 - 0	Lead
+Mission 182	Jun 16, 1944	Juvin Court, France	40 - 3 - 0	  
+Mission 183	Jun 18, 1944	Hamburg, Germany	36 - 2 - 0	  
+Mission 184	Jun 19, 1944	Fiefs/Predefin, France	40 - 0 - 0	  
+Mission 185	Jun 19, 1944	Fiefs/Predefin, France	40 - 0 - 0	  
+Mission 186	Jun 20, 1944	Hamburg, Germany	39 - 4 - 1	  
+Mission 187	Jun 21, 1944	Berlin, Germany	42 - 3 - 3	  
+Mission 188	Jun 22, 1944	Wizernes, France	14 - 1 - 1	  
+Mission 189	Jun 22, 1944	Lille, France	26 - 2 - 1	  
+Mission 190	Jun 24, 1944	Bremen, Germany	33 - 1 - 1	  
+Mission 191	Jun 25, 1944	Toulouse/Francazal, France	13 - 0 - 1	Lead
+Mission 192	Jun 25, 1944	Sens/Coulanges, France	21 - 4 - 0	Lead  High
+Mission 193	Jun 28, 1944	Juvin Court, France	26 - 1 - 1	  
+Mission 194	Jun 29, 1944	Heiterblick (Leipzig), Germany	36 - 8 - 1	Lead    Low
+Mission 195	Jun 30, 1944	Le Culot/Coxyde, Belgium	35 - 1 - 0	Lead
+Mission 196	Jul 05, 1944	Gilze-Rijen, Netherlands	39 - 2 - 0	Lead
+Mission 197	Jul 06, 1944	Beaumetz/Les-Aire, France	38 - 0 - 0	Lead
+Mission 198	Jul 07, 1944	Muckau-Leipzig, Germany	38 - 4 - 0	Lead
+Mission 199	Jul 08, 1944	Etaples, France	39 - 2 - 0	  
+Mission 200	Jul 09, 1944	Chateaudun, France	37 - 1 - 0	  
+Mission 201	Jul 11, 1944	Munich, Germany	38 - 2 - 0	Lead
+Mission 202	Jul 12, 1944	Munich, Germany	40 - 1 - 0	  
+Mission 203	Jul 13, 1944	Munich, Germany	38 - 3 - 1	  
+Mission 204	Jul 16, 1944	Munich, Germany	20 - 1 - 0	Lead
+Mission 205	Jul 17, 1944	Peronne/Jussy, France	50 - 2 - 0	  
+Mission 206	Jul 18, 1944	Peenemunde, Germany	38 - 0 - 0	  
+Mission 207	Jul 19, 1944	Hollriegelskreuth, Germany	37 - 2 - 1	  
+Mission 208	Jul 20, 1944	Dessau, Germany	37 - 2 - 0	  
+Mission 209	Jul 21, 1944	Lugwigshafen, Germany	39 - 1 - 0	  
+Mission 210	Jul 23, 1944	Creil, France	38 - 2 - 2	  
+Mission 211	Jul 24, 1944	St. Lo, France	38 - 1 - 0	  
+Mission 212	Jul 25, 1944	St. Lo, France	39 - 12* - 0	  
+Mission 213	Jul 28, 1944	Merseburg, Germany	37 - 0 - 0	  
+Mission 214	Jul 29, 1944	Merseburg, Germany	51 - 4 - 0	  
+Mission 215	Jul 31, 1944	Munich, Germany	38 - 2 - 0	  
+Mission 216	Aug 01, 1944	Orleans/Bricy, France	39 - 0 - 0	  
+Mission 217	Aug 03, 1944	Fresnoy/Crepieul, France	39 - 0 - 0	Lead
+Mission 218	Aug 04, 1944	Peenemunde, Germany	39 - 0 - 0	  
+Mission 219	Aug 04, 1944	Graveline-Fleury, France	11 - 0 - 0	  
+Mission 220	Aug 05, 1944	7 No-ball Targets, France	39 - 1 - 0	  
+Mission 221	Aug 06, 1944	Genshagen, Germany	39 - 1 - 0	  
+Mission 222	Aug 07, 1944	Chartres/St. Ouen, France	37 - 2 - 0	Lead
+Mission 223	Aug 08, 1944	Caen, France	36 - 0 - 0	Lead
+Mission 224	Aug 09, 1944	Pirmasens, Germany	41 - 0 - 0	  
+Mission 225	Aug 11, 1944	Brest, France	38 - 3 - 0	  
+Mission 226	Aug 12, 1944	Metz, France	39 - 1 - 0	  
+Mission 227	Aug 13, 1944	Eureux-Bernay, France	39 - 0 - 0	  
+Mission 228	Aug 14, 1944	Stuttgart, Germany	39 - 0 - 0	  
+Mission 229	Aug 15, 1944	Wiesbaden, Germany	39 - 0 - 9	  
+Mission 230	Aug 18, 1944	Liege/Val Bendit, Belgium	39 - 1 - 0	  
+Mission 231	Aug 24, 1944	Merseburg, Germany	39 - 4 - 2	  
+Mission 232	Aug 25, 1944	Anklam, Germany	15 - 0 - 0	  
+Mission 233	Aug 27, 1944	Esbjerg, Denmark	37 - 12* - 2	  
+Mission 234	Aug 30, 1944	Cauche D'Ecques, France	39 - 20* - 0	Lead
+Mission 235	Sep 03, 1944	Ludwigshafen, Germany	39 - 3 - 0	  
+Mission 236	Sep 05, 1944	Ludwigshafen, Germany	39 - 3 - 0	Lead
+Mission 237	Sep 08, 1944	Ludwigshafen, Germany	39 - 0 - 0	  
+Mission 238	Sep 09, 1944	Ludwigshafen, Germany	37 - 4 - 1	  
+Mission 239	Sep 10, 1944	Stuttgart, Germany	26 - 0 - 0	Lead
+Mission 240	Sep 11, 1944	Lutzkendorf, Germany	26 - 1 - 0	  
+Mission 241	Sep 12, 1944	Brux, Czechoslovakia	26 - 3 - 2	Lead
+Mission 242	Sep 13, 1944	Eisenach-Merseburg, Germany	15 - 8 - 2	Lead
+Mission 243	Sep 17, 1944	Eindhoven, Netherlands	37 - 1 - 0	  
+Mission 244	Sep 19, 1944	Osnabruck/Hamm, Germany	36 - 1 - 0	  
+Mission 245	Sep 21, 1944	Mainz, Germany	30 - 3 - 0	Lead
+Mission 246	Sep 26, 1944	Osnabruck, Germany	39 - 2 - 1	  
+Mission 247	Sep 27, 1944	Cologne (Köln), Germany	39 - 1 - 0	Lead
+Mission 248	Sep 28, 1944	Magdeburg, Germany	28 - 4 - 11	  
+Mission 249	Oct 02, 1944	Cologne (Köln), Germany	38 - 2 - 0	  
+Mission 250	Oct 03, 1944	Wesseling-Cologne, Germany	38 - 3 - 0	Lead
+Mission 251	Oct 05, 1944	Cologne (Köln), Germany	38 - 2 - 0	Lead
+Mission 252	Oct 06, 1944	Stralsund-Politz, Germany	31 - 2 - 0	Lead
+Mission 253	Oct 07, 1944	Dresden, Germany 	35 - 2 - 0	Lead
+Mission 254	Oct 09, 1944	Schweinfurt, Germany	37 - 0 - 0	  
+Mission 255	Oct 11, 1944	Wesseling, Germany 	47 - 2 - 2	Lead
+Mission 256	Oct 14, 1944	Saarbrucken, Germany	26 - 2 - 0	  
+Mission 257	Oct 15, 1944	Cologne (Köln), Germany	13 - 0 - 1	High
+Mission 258	Oct 17, 1944	Cologne (Köln), Germany	34 - 0 - 0	Lead
+Mission 259	Oct 18, 1944	Cologne (Köln), Germany	27 - 2 - 0	  
+Mission 260	Oct 19, 1944	Mannheim, Germany	35 - 0 - 0	  
+Mission 261	Oct 22, 1944	Brunswick, Germany	39 - 1 - 0	  
+Mission 262	Oct 25, 1944	Hamm, Germany	39 - 1 - 0	Lead
+Mission 263	Oct 26, 1944	Munster, Germany	48 - 1 - 0	Lead
+Mission 264	Oct 30, 1944	Hamm, Germany	39 - 1 - 0	  
+Mission 265	Nov 01, 1944	Gelsenkirchen, Germany	48 - 4 - 0	  
+Mission 266	Nov 02, 1944	Sterkade, Germany	49 - 0 - 1	Lead
+Mission 267	Nov 04, 1944	Bottrop/Hamm, Germany 	39 - 0 - 0	Lead
+Mission 268	Nov 05, 1944	Frankfurt, Germany	39 - 1 - 0	  
+Mission 269	Nov 06, 1944	Bottrop/Hamm, Germany 	46 - 0 - 0	Lead
+Mission 270	Nov 09, 1944	Metz, Germany 	39 - 2 - 2	Lead
+Mission 271	Nov 10, 1944	Cologne (Köln), Germany	52 - 1 - 1	Lead
+Mission 272	Nov 11, 1944	Gelsenkirchen, Germany	39 - 2 - 1	Lead
+Mission 273	Nov 16, 1944	Weisweiler/Echweiler	55 - 0 - 0	  
+Mission 274	Nov 20, 1944	Gelsenkirchen, Germany	50 - 0 - 0	  
+Mission 275	Nov 21, 1944	Merseburg, Germany	39 - 2 - 4	Lead  High
+Mission 276	Nov 23, 1944	Gelsenkirchen, Germany	26 - 0 - 0	Lead
+Mission 277	Nov 26, 1944	Altenbeken/Osnabruck	58 - 1 - 1	Lead
+Mission 278	Nov 27, 1944	Offenburg, Germany	40 - 0 - 0	  
+Mission 279	Nov 29, 1944	Misburg (Merseburg), Germany	39 - 1 - 0	Lead
+Mission 280	Nov 30, 1944	Zeitz, Germany	39 - 2 - 0	Lead
+Mission 281	Dec 02, 1944	Oberlahnstein, Germany	39 - 0 - 0	Lead
+Mission 282	Dec 04, 1944	Soest, Germany	43 - 1 - 0	  
+Mission 283	Dec 06, 1944	Merseburg, Germany	39 - 3 - 0	Lead
+Mission 284	Dec 09, 1944	Stuttgart, Germany	42 - 0 - 0	Lead
+Mission 285	Dec 11, 1944	Mannheim, Germany	52 - 4 - 0	  
+Mission 286	Dec 12, 1944	Merseburg, Germany	38 - 1 - 0	Lead
+Mission 287	Dec 18, 1944	Koblenz, Germany 	40 - 1 - 0	Lead
+Mission 288	Dec 19, 1944	Kall/Blankenheim, Germany	39 - 0 - 0	  
+Mission 289	Dec 23, 1944	Ehrang, Germany	43 - 0 - 0	  
+Mission 290	Dec 24, 1944	Merzhausen, Germany	50 - 2 - 1	  
+Mission 291	Dec 27, 1944	Euskirchen, Germany	42 - 0 - 0	  
+Mission 292	Dec 29, 1944	Bullay, Germany	42 - 0 - 0	Lead
+Mission 293	Dec 30, 1944	Kaiserlautern, Germany 	41 - 0 - 0	Lead
+Mission 294	Dec 31, 1944	Neuss, Germany	41 - 2 - 0	Lead
+Mission 295	Jan 01, 1945	Kassel, Germany	39 - 0 - 0	Lead
+Mission 296	Jan 03, 1945	St. Vith, Belgium	43 - 1 - 0	Lead
+Mission 297	Jan 05, 1945	Nider-Breisig, Germany	41 - 1 - 0	Lead
+Mission 298A	Jan 06, 1945	Cologne (Köln), Germany 	41 - 1 - 0	Lead
+Mission 298B	Jan 07, 1945	Kall, Germany	40 - 0 - 0	Lead
+Mission 299	Jan 08, 1945	Schweich/Koblenz, Germany	40 - 2 - 0	Lead
+Mission 300	Jan 10, 1945	Bonn/Hanglelan & others, Germany 	43 - 1 - 1	Lead
+Mission 301	Jan 13, 1945	Mannheim, Germany	41 - 1 - 3	  
+Mission 302	Jan 15, 1945	Ingolstadt, Germany	26 - 1 - 0	  
+Mission 303	Jan 17, 1945	Paderborn, Germany	41 - 1 - 0	  
+Mission 304	Jan 20, 1945	Mannheim, Germany	40 - 1 - 0	Lead
+Mission 305	Jan 21, 1945	Aschaffenburg, Germany	13 - 1 - 2	  
+Mission 306	Jan 22, 1945	Sterkrade, Germany	26 - 0 - 1	Lead
+Mission 307	Jan 23, 1945	Neuss, Germany	13 - 0 - 0	  
+Mission 308	Jan 28, 1945	Cologne (Köln), Germany	16 - 0 - 0	  
+Mission 309	Jan 29, 1945	Siegen, Germany	29 - 1 - 0	  
+Mission 310	Feb 01, 1945	Mannheim, Germany	39 - 1 - 0	  
+Mission 311	Feb 03, 1945	Berlin, Germany	39 - 1 - 0	  
+Mission 312	Feb 06, 1945	Friedrichoda, Germany	39 - 1 - 0	Lead
+Mission 313	Feb 09, 1945	Lutzkendorf, Germany	39 - 1 - 3	Lead
+Mission 314	Feb 14, 1945	Dresden, Germany	39 - 3 - 0	Lead
+Mission 315	Feb 15, 1945	Dresden, Germany	39 - 1 - 1	Lead
+Mission 316	Feb 16, 1945	Langendreer, Germany	39 - 21* - 1 [C]	  
+Mission 317	Feb 19, 1945	Gelsenkirchen, Germany	38 - 1 - 0	Lead
+Mission 318	Feb 20, 1945	Nurnberg, Germany	39 - 2 - 0	Lead
+Mission 319	Feb 21, 1945	Nurnberg, Germany	39 - 1 - 0	Lead
+Mission 320	Feb 22, 1945	Ulzen, Germany	39 - 3 - 0	Lead
+Mission 321	Feb 23, 1945	Kitzingen, Germany	39 - 0 - 0	  
+Mission 322	Feb 24, 1945	Hamburg, Germany	39 - 0 - 0	Lead
+Mission 323	Feb 25, 1945	Friedrichshafen, Germany	38 - 0 - 0	Lead
+Mission 324	Feb 26, 1945	Berlin, Germany	39 - 0 - 1	  
+Mission 325	Feb 27, 1945	Leipzig, Germany	39 - 1 - 0	Lead
+Mission 326	Feb 28, 1945	Hagen, Germany 	39 - 0 - 0	Lead
+Mission 327	Mar 01, 1945	Bruchsal, Germany	39 - 0 - 0	  
+Mission 328	Mar 02, 1945	Chemnitz, Germany	39 - 0 - 0	Lead
+Mission 329	Mar 03, 1945	Hannover, Germany	39 - 0 - 0	Lead
+Mission 330	Mar 04, 1945	Ulm, Germany	39 - 1 - 0	Lead
+Mission 330A	Mar 06, 1945	Air-Sea Rescue	4 - 0 - 0	  
+Mission 331	Mar 07, 1945	Dortmund/Harpenerweg, Germany	39 - 0 - 0	  
+Mission 332	Mar 08, 1945	Essen, Germany	39 - 1 - 1	  
+Mission 333	Mar 10, 1945	Schwerte, Germany	39 - 0 - 0	Lead
+Mission 334	Mar 11, 1945	Bremen, Germany	40 - 0 - 0	Lead
+Mission 335	Mar 12, 1945	Betzdorf, Germany	40 - 0 - 0	  
+Mission 336	Mar 14, 1945	Minden, Germany 	40 - 0 - 0	Lead
+Mission 337	Mar 15, 1945	Zossen, Germany	40 - 0 - 1	  
+Mission 338	Mar 17, 1945	Bohlen/Erfurt, Germany 	40 - 0 - 0	Lead
+Mission 339	Mar 18, 1945	Berlin, Germany	40 - 2 - 2	Lead
+Mission 340	Mar 19, 1945	Plauen, Germany 	39 - 0 - 1	Lead
+Mission 341	Mar 20, 1945	Hamburg, Germany	39 - 0 - 2	Lead
+Mission 342	Mar 21, 1945	Hopsten/Hesepe, Germany	39 - 0 - 0	Lead
+Mission 343	Mar 22, 1945	Buer, Germany	40 - 0 - 0	  
+Mission 344	Mar 23, 1945	Gladbeck, Germany 	39 - 0 - 0	Lead
+Mission 345	Mar 24, 1945	Furstenau, Germany 	35 - 1 - 0	Lead  Officers
+Mission 346	Mar 24, 1945	Twente-Enschede, Netherlands 	14 - 0 - 0	Lead
+Mission 347	Mar 28, 1945	Berlin/Spandau, Germany 	40 - 0 - 3	Lead
+Mission 348	Mar 30, 1945	Bremen, Germany	37 - 1 - 1	  
+Mission 349	Mar 31, 1945	Halle, Germany	34 - 1 - 0	  
+Mission 350	Apr 03, 1945	Kiel, Germany 	39 - 1 - 0	Lead
+Mission 351	Apr 04, 1945	Unterluss, Germany	40 - 0 - 0	  
+Mission 352	Apr 05, 1945	Bayreuth, Germany 	42 - 1 - 0	Lead
+Mission 353	Apr 06, 1945	Leipzig, Germany	39 - 0 - 2	  
+Mission 354	Apr 07, 1945	Hitzacker, Germany	39 - 0 - 0	Lead
+Mission 355	Apr 08, 1945	Schafstadt, Germany	34 - 0 - 0	  
+Mission 356	Apr 09, 1945	Wolfratshausen, Germany	38 - 0 - 0	  
+Mission 357	Apr 10, 1945	Oranienburg (Berlin), Germany 	39 - 1 - 1	Lead
+Mission 358	Apr 11, 1945	Freiham, Germany 	39 - 0 - 0	Lead
+Mission 359	Apr 14, 1945	Bordeaux/Royan, France	39 - 0 - 0	  
+Mission 360	Apr 15, 1945	Bordeaux/Royan, France	42 - 0 - 0	  
+Mission 361	Apr 16, 1945	Straubing, Germany	39 - 0 - 0	Lead
+Mission 362	Apr 17, 1945	Dresden, Germany	41 - 0 - 2	Lead
+Mission 363	Apr 20, 1945	Treunbrietzen, Germany	42 - 1 - 0	Lead
+Mission 364	Apr 25, 1945	Pilsen, Czechoslovakia	42 - 0 - 1	  

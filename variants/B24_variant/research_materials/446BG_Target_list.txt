@@ -1,0 +1,283 @@
+B-24
+
+16-Dec-43	Bremen 
+20-Dec-43	Bremen 
+22-Dec-43	Osnabruck 
+24-Dec-43	Noball target near Eclimeux, France (buzz bomb launch site) 
+30-Dec-43	Ludwigshaven 
+31-Dec-43	Cognac, France 
+4-Jan-44	Kiel 
+5-Jan-44	Kiel 
+7-Jan-44	Ludwigshaven 
+11-Jan-44	Brunswick 
+14-Jan-44	Noball target, St Pierre-des-Jonquies, France 
+21-Jan-44	Noball target in France (exact location not known) 
+28-Jan-44	Noball target X1/A/85 
+29-Jan-44	Frankfurt 
+30-Jan-44	Brunswick 
+31-Jan-44	Noball target X1/A/7 in France 
+4-Feb-44	Frankfurt 
+5-Feb-44	Tours, France  
+6-Feb-44	Noball target; Eclimeux, France 
+8-Feb-44	Noball targets; Pas de Calais, France 
+10-Feb-44	Gilze-Rijen airfield, Holland 
+11-Feb-44	Noball target, French coast 
+13-Feb-44	Noball targets, Pa de Calais, France 
+20-Feb-44	Gotha 
+21-Feb-44	Handorf 
+22-Feb-44	Gotha  
+24-Feb-44	Gotha 
+25-Feb-44	Furth 
+28-Feb-44	Noball targetX1/A/101 
+2-Mar-44	Frankfurt 
+3-Mar-44	Germandorf 
+5-Mar-44	Mont de son, France 
+6-Mar-44	Genshagen/Berlin 
+8-Mar-44	Erkner 
+9-Mar-44	Berlin
+11-Mar-44	Noball target; Wizernes, France 
+13-Mar-44	Noball target; Siracourt, France 
+16-Mar-44	Friedrichshaven 
+18-Mar-44	Friedrichshaven 
+20-Mar-44	Frankfurt 
+22-Mar-44	Berlin 
+23-Mar-44	Handorf 
+24-Mar-44	Nancy, France 
+29-Mar-44	Noball target; Watten 
+1-Apr-44	Ludwigshaven 
+6-Apr-44	Noball target; Watten 
+8-Apr-44	Brunswick 
+9-Apr-44	Totow 
+10-Apr-44	Bourges, France  
+11-Apr-44	Bernburg 
+13-Apr-44	Oberpfaffenhofen 
+18-Apr-44	Rathenow 
+18-Apr-44	Noball target; Waffen 
+19-Apr-44	Guttersloh 
+20-Apr-44	Noball target; Siracourt 
+22-Apr-44	Hamm 
+24-Apr-44	Gablingen 
+25-Apr-44	Mannheim 
+26-Apr-44	Paderborn 
+27-Apr-44	Noball target; Wizernes 
+27-Apr-44	Blainville, France 
+29-Apr-44	Berlin 
+1-May-44	Noball target; Ailly-le-haut-Clocher, France  
+1-May-44	Brussels, Belgium  
+6-May-44	 Noball targets, France 
+7-May-44	Munster 
+8-May-44	Brunswick 
+9-May-44	Liege, Belgium  
+11-May-44	Mulhouse, France  
+12-May-44	Bohlen 
+13-May-44	Tutow 
+19-May-44	Brunswick 
+20-May-44	Reims, France  
+23-May-44	Orleans, France  
+24-May-44	Paris
+25-May-44	Mulhouse, France  
+27-May-44	Konz Karthaus  
+27-May-44	Fecamp, France 
+28-May-44	Merseburg-Zeitz 
+29-May-44	Tutow 
+30-May-44	Rothenburg 
+31-May-44	Longuy, France 
+2-Jun-44	Noball target; Beavoir, France  
+3-Jun-44	Berck-Sur-Mer, France  
+4-Jun-44	Sangatte, France  
+5-Jun-44	Calais, France  
+6-Jun-44	Pt. De La Percee, France 
+6-Jun-44	St Lo, France 
+6-Jun-44	Caen, France 
+7-Jun-44	Alencon, France  
+8-Jun-44	Granville, France  
+10-Jun-44	Wimereux, France  
+11-Jun-44	Visconte-Sur-Rance, France  
+11-Jun-44	Beumont, France  
+12-Jun-44	Rennes/Ploermel, France  
+12-Jun-44	Conches, France  
+14-Jun-44	Orleans/Bricy, France  
+15-Jun-44	Tours, France 
+16-Jun-44	Noball targets; Renescure-Sautrecourt, France 
+17-Jun-44	Laval, France 
+18-Jun-44	Hamburg 
+18-Jun-44	Noball target; Watten 
+19-Jun-44	Noball targets; Haute-Cote/Bachimont, France 
+20-Jun-44	Politz 
+20-Jun-44	Noball target; Siracourt, France 
+21-Jun-44	Genshagen/Marienfelde 
+21-Jun-44	Noball target; Siracourt, France 
+22-Jun-44	Paris, France 
+24-Jun-44	Conches, France 
+24-Jun-44	Noball target; Haute-Cote, france  
+25-Jun-44	Noball targets; Boulogne/Calais/Tingry 
+28-Jun-44	Saarbrucken 
+29-Jun-44	Bernburg 
+2-Jul-44	Noballtarget; Crepy, France 
+5-Jul-44	Noball target; Foret De Lisle/Bois De Casson, France 
+6-Jul-44	Sully Sur Loire, France 
+8-Jul-44	Hamme Sur Somme, France 
+11-Jul-44	Munich 
+12-Jul-44	Munich 
+13-Jul-44	Saarbrucken 
+16-Jul-44	Saarbrucken 
+17-Jul-44	Rilly La Montagne, France 
+18-Jul-44	Caen, France  
+19-Jul-44	Strasbourg, France  
+20-Jul-44	Eisenach 
+21-Jul-44	Munich 
+24-Jul-44	Granville, France  
+25-Jul-44	St. Lo, France 
+28-Jul-44	Rilly La Montagne, France 
+29-Jul-44	Bremen 
+31-Jul-44	Ludwigshaven 
+1-Aug-44	Orleans/Bricy/Melun, France  
+2-Aug-44	Peronne, France  
+3-Aug-44	Douai, France  
+4-Aug-44	Rostock 
+5-Aug-44	Fallersleben 
+6-Aug-44	Kiel 
+7-Aug-44	Brussels/Perrone, France  
+8-Aug-44	Bretigny/Laon-Athies, France  
+10-Aug-44	Joigny/Laroche, France  
+11-Aug-44	Coulommiers, France  
+12-Aug-44	Laon/Couvron A/F, France 
+13-Aug-44	Brionne Area, France 
+14-Aug-44	Dijon/Longvic, France  
+15-Aug-44	Plantlunne, France  
+16-Aug-44	Magdeburg 
+24-Aug-44	Brunswick 
+25-Aug-44	Rostock 
+26-Aug-44	Ludwigshaven 
+27-Aug-44	Berlin 
+10-Sep-44	Heilbronn 
+12-Sep-44	Kiel 
+13-Sep-44	Ulm 
+21-Sep-44	Koblenz 
+22-Sep-44	Kassel 
+25-Sep-44	Koblenz 
+26-Sep-44	Hamm 
+27-Sep-44	Kassel 
+28-Sep-44	Kassel 
+30-Sep-44	Hamm 
+2-Oct-44	Hamm 
+3-Oct-44	Lachen/Speyerdorf 
+5-Oct-44	Lippstadt A/F  
+6-Oct-44	Harburg 
+7-Oct-44	Clausthal/Zellerfeld 
+9-Oct-44	Koblenz 
+12-Oct-44	Osnabruck 
+14-Oct-44	Cologne 
+15-Oct-44	Cologne 
+17-Oct-44	Cologne 
+19-Oct-44	Mainz 
+22-Oct-44	Hamm 
+25-Oct-44	Neumunster 
+26-Oct-44	Minden 
+30-Oct-44	Wesermunde 
+2-Nov-44	Castrop-Rauxel 
+4-Nov-44	Misburg 
+5-Nov-44	Karlsruhe 
+6-Nov-44	Minden 
+6-Nov-44	Sterkrade 
+9-Nov-44	Metz 
+10-Nov-44	Hanau Airfield  
+11-Nov-44	Bottrop 
+21-Nov-44	Hamburg 
+25-Nov-44	Bingen 
+26-Nov-44	Bielfeld 
+30-Nov-44	Neunkirchen 
+2-Dec-44	Bingen 
+4-Dec-44	Koblenz 
+6-Dec-44	Minden 
+10-Dec-44	Bingen 
+11-Dec-44	Karlsruhe 
+12-Dec-44	Hanau 
+19-Dec-44	Kyllburg 
+24-Dec-44	Rheinbach-Euskirchen/Ahrwieler 
+25-Dec-44	Murlenbach 
+26-Dec-44	Sinzig 
+27-Dec-44	Kaiserslautern 
+28-Dec-44	Bullay 
+29-Dec-44	Heimbach 
+30-Dec-44	Mechernich 
+31-Dec-44	Remagen 
+1-Jan-45	Andernach 
+3-Jan-45	Neunkirchen 
+5-Jan-45	Pirmasens 
+7-Jan-45	Rastatt 
+8-Jan-45	Clervaux 
+13-Jan-45	Worms 
+14-Jan-45	Hallendorf 
+15-Jan-45	Reutlingen 
+16-Jan-45	Ruhland 
+21-Jan-45	Heilbron 
+29-Jan-45	Munster 
+31-Jan-45	Brunswick 
+3-Feb-45	Magdeburg 
+6-Feb-45	Magdeburg 
+9-Feb-45	Magdeburg 
+14-Feb-45	Magdeburg 
+15-Feb-45	Magdeburg 
+16-Feb-45	Osnabruck 
+19-Feb-45	Siegen 
+21-Feb-45	Nunberg 
+22-Feb-45	Northheim 
+23-Feb-45	Osnabruck 
+24-Feb-45	Hanover/Misburg 
+25-Feb-45	Afshaffenburg 
+26-Feb-45	Berlin 
+27-Feb-45	Halle 
+28-Feb-45	Mershede 
+1-Mar-45	Augsburg 
+2-Mar-45	Magdeburg 
+3-Mar-45	Magdeburg 
+4-Mar-45	Donaueschingen 
+5-Mar-45	Harburg 
+7-Mar-45	Bielfeld 
+8-Mar-45	Betzdorf 
+9-Mar-45	Rheine 
+10-Mar-45	Paderborn 
+11-Mar-45	Kiel 
+12-Mar-45	Swinemunde 
+14-Mar-45	Remagen 
+15-Mar-45	Zossen 
+17-Mar-45	Hannover 
+18-Mar-45	Henningsdorf 
+19-Mar-45	Baumenheim 
+20-Mar-45	Hemmingstedt 
+20-Mar-45	Ahlorn 
+21-Mar-45	Essen 
+22-Mar-45	Kitzingen 
+23-Mar-45	Munster 
+24-Mar-45	Wesel 
+24-Mar-45	Stormede 
+30-Mar-45	Wilhelmshaven 
+31-Mar-45	Brunswick 
+4-Apr-45	Wesendorf airfield  
+4-Apr-45	Bayreuth 
+6-Apr-45	Halle 
+7-Apr-45	Dunenburg 
+8-Apr-45	Roth airfield  
+9-Apr-45	Landsberg 
+10-Apr-45	Rechlin airfield  
+11-Apr-45	Regensburg 
+14-Apr-45	Royan area, France 
+15-Apr-45	Royan area, France 
+16-Apr-45	Landshut 
+17-Apr-45	Kladno, Czechoslovakia  
+18-Apr-45	Passau 
+20-Apr-45	Muhldorf 
+21-Apr-45	Salzburg 
+25-Apr-45	Salzburg 
+
+
+
+
+
+
+
+
+
+
+

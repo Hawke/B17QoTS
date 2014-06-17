@@ -1,0 +1,38 @@
+x. If a crew member bails out and lands unhurt or survives a forced landing in France, Italy, Yugoslavia or Greece, he will be returned in time for the next mission by the Underground or Partisans on a die roll of -6- (see Note. d, Table G-7 and G-10).
+
+x. If a crew member bails out and lands unhurt or survives a forced landing in Germany, Austria, Hungary, Bulgaria, Rumania or Albania, he is automatically captured (see Note c, Table G-7 and G-10).
+
+x. If a crew member bails out and lands unhurt or survives a forced landing in Zone 1 (Allied-controlled Italy), he is automatically ready for the next mission. Seriously wounded crew members roll on Table Bl-4 Wounds, Note b.
+
+x. If a crew member bails out over the Alps, roll one die: 1-5-dies of cold and exposure, 6-rescued but captured by Germans.
+
+x. If B-17 force lands in Alps, plane is destroyed and all aboard KIA.
+
+V.The Alps
+
+x. There are two missions that require a B-17 to fly over the Alps-Steyr and Regensburg. Consult the Flight Log gazetteer to see in which zone the bomber must cross the mountains.
+
+x. A B-17 that must descend to 10000 feet for any reason does not have the altitude to cross over the Alps.
+
+x. In case of "Heat Out", a B-17 can re-climb to 20000 feet to pass over the mountains (still out of formation), but each affected crew member must roll for frostbite. The B-17 may return to 10000 feet after crossing the Alps.
+
+x. If the B-17 must stay at 10000 feet because of "Engine Out" or "Oxygen Out" it must either abort the mission (if unable to reach the target) or the crew must bailout or land the plane if unable to recross the Alps on the return leg.
+
+x. If damage to the B-17 requires descending to 10000 feet while over the Alps, the crew may bailout (except the crewman flying the plane) and the plane must crash with the pilot still aboard.
+
+VI. Weather
+
+x. In all cases except over the Alps, treat weather as in the normal game.
+
+x. When a B-17 enters the zone in which it must fly over the Alps, the player rolls for Weather Conditions in that zone only on Table O-1. Whatever weather conditions exist on the outward leg remain in force for the return leg.
+
+x. If the weather is bad, severe icing conditions prevail and the mission is aborted immediately.
+
+x. If the weather is poor, the player has the option of continuing with mission or aborting. If the decision is made to continue, the B-17 flies through dense cloud cover and snow. Player rolls two dice: 2-9-B-17 survives passage unharmed; 10-12-pilot errs and flies into mountainside (bomber is destroyed and all aboard KIA). Player must roll again on return leg.
+
+x. If weather is bad or poor, NO attacks are made by German fighters.
+
+x. If weather is good, roll one die; on a die roll of "6" only one fighter wave will appear. German fighters may make one attack regardless of attack results; no attacks from Vertical Climb or Vertical Dive positions are allowed (disregard if rolled).
+
+E. If a mission is aborted because of weather over the Alps, it still counts toward the required 25 missions of the Campaign Game.
+

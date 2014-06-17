@@ -1,0 +1,106 @@
+   Dim cnn1 As ADODB.Connection
+   Dim rstEmployees As ADODB.Recordset
+   Dim strCnn As String
+   Dim varDate As Variant
+rstEmployees.Open
+   ' Open connection.
+    strCnn = "Provider=sqloledb;Data Source=srv;Initial Catalog=pubs;User Id=sa;Password=; "
+   Set cnn1 = New ADODB.Connection
+   cnn1.Open strCnn
+   
+   ' Open employee table.
+   Set rstEmployees = New ADODB.Recordset
+   rstEmployees.CursorType = adOpenKeyset
+   rstEmployees.LockType = adLockOptimistic
+   rstEmployees.Open "employee", cnn1, , , adCmdTable
+
+   ' Assign the first employee record's hire date
+   ' to a variable, then change the hire date.
+   varDate = rstEmployees!hire_date
+   Debug.Print "Original data"
+   Debug.Print "  Name - Hire Date"
+   Debug.Print "  " & rstEmployees!fName & " " & _
+      rstEmployees!lName & " - " & rstEmployees!hire_date
+   rstEmployees!hire_date = #1/1/1900#
+   rstEmployees.Update
+   Debug.Print "Changed data"
+   Debug.Print "  Name - Hire Date"
+   Debug.Print "  " & rstEmployees!fName & " " & _
+      rstEmployees!lName & " - " & rstEmployees!hire_date
+
+   ' Requery Recordset and reset the hire date.
+   rstEmployees.Requery
+   rstEmployees!hire_date = varDate
+   rstEmployees.Update
+   Debug.Print "Data after reset"
+   Debug.Print "  Name - Hire Date"
+   Debug.Print "  " & rstEmployees!fName & " " & _
+      rstEmployees!lName & " - " & rstEmployees!hire_date
+
+   rstEmployees.Close
+   cnn1.Close
+
+'    Set en = rdoEngine.rdoEnvironments(0)
+'
+'Set rdoRS = Nothing
+'
+'
+'    Set rdoRS = cn.OpenResultset(strSQL, rdOpenStatic, rdConcurReadOnly)
+'
+'    Set rdoQ = New rdoQuery
+'
+'    With rdoQ
+'        .SQL = strSQL
+'        Set .ActiveConnection = cn
+'        Set rdoRS = .OpenResultset(rdOpenStatic, rdConcurReadOnly)
+'    End With
+
+'    Set rdoRS = cn.OpenResultset(strSQL, rdOpenStatic, rdConcurReadOnly)
+'
+'    With rdoRS
+'        If .BOF And .EOF Then
+'            MsgBox "RDO Returned 0 rows"
+'        Else
+'            .MoveLast
+'            MsgBox "RDO Returned " & .RowCount & "rows"
+'            .MoveFirst
+'        End If
+'    End With
+'
+    If rdoRS.BOF And rdoRS.EOF Then
+        MsgBox "RDO Returned 0 rows"
+    Else
+        rdoRS.MoveLast
+        MsgBox "RDO Returned " & rdoRS.RowCount & "rows"
+        rdoRS.MoveFirst
+    End If
+
+
+
+'--------------------------------------------------------------------------------
+'
+'    Set en = rdoEngine.rdoEnvironments(0)
+'    Set cn = en.OpenConnection("", rdDriverComplete, False, DSN_INFO)
+'
+'    Set cn = New rdoConnection
+'    With cn
+'        .Connect = DSN_INFO
+'        .CursorDriver = rdUseOdbc
+'        .EstablishConnection rdDriverComplete, False
+'    End With
+'
+'    Const DSN_LESS = "UID=test;PWD=test;DATABASE=B17advance.mdb;SERVER=Orion;DRIVER={SQL SERVER};DSN='';"
+'
+'    'Method 1 - OpenConnection
+'    Set cn = en.OpenConnection("", rdDriverComplete, True, DSN_LESS)
+'    'Method 2 - EstablishConnection
+'    With cn
+'        .Connect = DSN_LESS
+'        .EstablishConnection rdDriverComplete, False
+'    End With
+'
+'cn.Close
+'
+'Set dbB17 = Nothing
+
+

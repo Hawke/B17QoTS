@@ -1,0 +1,225 @@
+Aachen (tactical)
+Correction-Augsburg, Germany xxx
+Bayreuth, Germany (ry) xxx
+Bingen (ry) xxxxx
+Brussels, Belgium (ry) xxxxxxxx
+Chemnitz, Germany (ry) xxxx
+Dijon, France xxx
+Eindhoven/Nijmegen/Gilze-Rijen, Netherlands (resupply) xxxxxxxx
+Fulda xx
+Heide/Hemmingstedt (oil), Denmark xxxx
+Hof (ry) xx
+Ingolstadt, Germany (af) xxxx
+Landshut xx
+Liege/Val Bendit, Belgium (ry) xxxx
+Lyon/Bron, France xxx
+Metz/Frescaty, France xxxx
+Mulhouse, France xx
+Munich/Oberpfaffenhofen, Germany xxxxxxxxxxxx
+Neumunster (ry) xxxx
+Orleans, France xxxxxxxx
+Peenemunde, Germany xx
+Pilsen, Czechoslovakia
+Prague/Kladno (ry), Czechoslovakia 
+Reims, France 
+Soest, Germany xx
+Stettin
+Strasbourg, France 
+Swinemunde (port) xxx
+Twente-Enschede, Netherlands xx
+Ulm, Germany xxxx
+Wesel/Dulmen (tactical) xxxxx
+Wurzburg/Giebelstadt (af) xx
+
+
+Ahlorn (af)
+Ahrweiler (tactical) xx
+Altenbeken 
+Andernach
+Anklam, Germany
+Auszig, Czechoslovakia
+Bad Kreuznach (ry)
+Bad Zwischenan
+Baden-Baden/Gagenau
+Bamburg
+Bastogne (tactical) xx
+Baumenheim
+Beaumont Le Roger, France
+Betzdorf, Germany xx
+Bischofsheim (ry) xx
+Bitterfeld xx
+Bottrop xx
+Bremerhaven
+Bruchsal, Germany
+Brux, Czechoslovakia
+Buer, Germany
+Bullay, Germany xx
+Castrop/Rauxel (oil) xx
+Clausthal/Zellerfeld
+Danzig
+Datteln
+Dedenhausen (oil)
+Derben (oil) xx
+Dessau, Germany
+Diepholz, Germany xx
+Dollbergen (oil)
+Donaueschingen
+Douai, France (oil) xx
+Dressau (ry)
+Dunenburg
+Ehrang, Germany
+Eisanbach, Netherlands (tactical)
+Eisenach
+Emmerich
+Erfurt, Germany xx
+Esbjerg, Denmark
+Essen
+Freiham, Germany 
+Furstenau, Germany 
+Gablingen
+Gerlstein
+Ghent, Belgium
+Giesecke
+Gladbeck, Germany 
+Grafenwohr
+Gross Ostheim (ry)
+Gustavsburg
+Gustrow
+Hagen, Germany 
+Hallein, Austria 
+Hallendorf
+Hamburg/Minden/Harburg, Germany 
+Heimbach
+Henningsdorf
+Heroya, Norway (7/24/43)
+Hitzacker, Germany
+Hohenbudberg xx
+Hohenburg (ry)
+Hollriegelskreuth, Germany
+Holzwickede (ry)
+Hopsten/Hesepe, Germany xx
+Huls, Germany
+Kall/Blankenheim, Germany xx
+Kaltenkirchen 
+Knaben, Norway
+Kolin, Czechoslovakia
+Konz Karthaus 
+Krummel 
+Kyllburg
+Lachen/Speyerdorf
+Landau xx
+Landsberg
+Langendreer, Germany
+Le Mans, France xx
+Lechfeld, Germany xx
+Leipheim xx
+Lens, France 
+Lippstadt xx
+Mainz (ry) xx
+Marienburg, Germany
+Marx (sf)
+Mechernich
+Mershede
+Merzhausen, Germany
+Muhldorf
+Mulheim (tactical)
+Munster, Germany xx
+Murlenbach
+Nancy xx
+Nauen
+Neumarker (ry)
+Neuruppin
+Nider-Breisig, Germany
+Nienhagen (oil)
+Nordhausen
+Northeim xx
+Nurnburg/Furth (ry) xxxx
+Oberlahnstein, Germany
+Passau
+Pirmasens
+Pirna (ry)
+Plauen, Germany xx
+Rathenow
+Rechlin (af) xx
+Reutlingen
+Rositz (oil)
+Rostock (factory) xx
+Roth
+Rotha-Dessau, Germany
+Rothenburg
+Roudnice, Czechoslovakia
+Russelheim (af)
+Russelsheim (v1) xx
+Ruthen (tactical)
+Salzbergen xx
+Schafstadt, Germany
+Schleissein
+Schwabish Hall xx
+Schwandorf 
+Schwerte, Germany
+Sinzig
+Solingen, Germany xx
+Sorau, Germany
+St Jean D'Angley, France
+St Trond, Belgium 
+Stedorf, Germany
+Steinhagen
+Stormede
+Straubing, Germany
+Toulouse/Francazal, France
+Treunbrietzen, Germany
+Trier
+Ulzen, Germany
+Unterluss, Germany
+Unterschlauerbach
+Vacqueriette, France
+Varel (af) xx
+Villacoublay, France
+Weimar
+Weisweiler/Echweiler, Germany 
+Wesendorf
+Wesermunde
+Wesseling, Germany 
+Wetteldrof (tactical)
+Whittmundhafen
+Wiesbaden (af)
+Wolfratshausen, Germany
+Worms
+Wustermark (ry)
+Zossen, Germany xx
+Zwickau
+Paris/Chartres, France (af) xxx
+St Nazaire/Nantes, France xxxx
+???/Halle, Germany xxxxx
+???/Neuburg (ry) xxxx
+???/Sterkade, Germany xxx
+Berlin/Genshagen, Germany (ai) xxxx
+Berlin/Oranienburg, Germany (ry) xxxxx
+Bonn/Euskirchen, Germany xxx
+Braunschweig/Fallersleben (af) xxx
+Dortmund/Gelsenkirchen, Germany xxxxxxx
+Dresden/Bohlen (oil) xxx
+Dresden/Ruhland (oil) xxxx
+Dusseldorf/Neuss, Germany xxx
+Frankfurt/Giessen (ry) xxx
+Frankfurt/Hanau xxxxx
+Frankfurt/Kempten/Duren (tactical) xxx
+Hamm/Bielefeld xxxxxxx
+Hamm/Gutersloh xxxx
+Hannover/Misburg (oil) xxxxxx
+Koblenz/Remagen Bridge (tactical) xxx
+Koblenz/Siegen, Germany xxxxx
+Leipzig/Zeitz, Germany xxx
+Magdeburg/Bernburg xxxx
+Magdeburg/Halberstadt, Germany xxxx
+Magdeburg/Oschersleben/Aschersleben, Germany xx (heavy flak)
+Merseburg/Lutzkendorf, Germany (oil) xxxxx
+Munster/Handorf (af) xxx
+Munster/Paderborn, Germany (ry) xxxxx
+Osnabruck/Rheine (ry) xxxxx
+Saarbrucken/Kaiserlautern, Germany (ry) xxxxxx
+Saarbrucken/Neunkirchen (ind) xxxxx
+Schweinfurt/Kitzingen, Germany xxx
+Stuttgart/Heilbronn xxxx
+Tutow/Politz/Stralsund, Germany (oil) xxxx
+Tutow/Schwerin (af) xx

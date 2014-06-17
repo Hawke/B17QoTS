@@ -1,0 +1,216 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+
+[Package|Standard Setup Package 1|B17QotSEmulator]
+Icon1=B17QotSEmulator.exe
+Title1=B17QotSEmulator
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\Package
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+mission2.html=
+mission1.html=
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\richtx32.ocx=
+C:\WINDOWS\system32\comdlg32.ocx=
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+
+[Package|Standard Setup Package 1|Files Added]
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\image\15th_homebase.jpg=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17helpindex.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\image\assigncrew.jpg=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\image\emulatornortherntargetmap.jpg=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\image\missionscreen.jpg=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\image\swapammo.jpg=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17airmanmaintenancehelp.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17bombermaintenancehelp.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17credits.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17crewassignmenthelp.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17generatemissionhelp.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17groupmaintenancehelp.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17missionhelp.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17progressreport.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17references.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17squadronmaintenancehelp.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17swapammohelp.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17todolist.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b-24 variant\b24variant.zip=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\b17qotsdatabase.mdb=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\doc\b17introduction.html=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\image\alliedgains1944.jpg=
+c:\documents and settings\preston\desktop\b-17 queen of the skies\b17qotsemulator\image\alliedgains1945.jpg=
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\sound\great-escape.mp3=
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\SplashLg.jpg=
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\system32\comdlg32.ocx=Yes
+C:\WINDOWS\system32\richtx32.ocx=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\15th_homebase.jpg=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17HelpIndex.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AssignCrew.jpg=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\EmulatorNorthernTargetMap.jpg=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\MissionScreen.jpg=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\SwapAmmo.jpg=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17AirmanMaintenanceHelp.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17BomberMaintenanceHelp.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17Credits.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17CrewAssignmentHelp.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17GenerateMissionHelp.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17GroupMaintenanceHelp.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17MissionHelp.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17ProgressReport.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17References.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17SquadronMaintenanceHelp.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17SwapAmmoHelp.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17ToDoList.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B-24 Variant\B24Variant.zip=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\B17QotSDatabase.mdb=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\B17QotSEmulator.exe=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17Introduction.html=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AlliedGains1944.jpg=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AlliedGains1945.jpg=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\sound\great-escape.mp3=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\SplashLg.jpg=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\richtx32.ocx=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\15th_homebase.jpg=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17HelpIndex.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AssignCrew.jpg=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\EmulatorNorthernTargetMap.jpg=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\MissionScreen.jpg=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\SwapAmmo.jpg=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17AirmanMaintenanceHelp.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17BomberMaintenanceHelp.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17Credits.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17CrewAssignmentHelp.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17GenerateMissionHelp.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17GroupMaintenanceHelp.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17MissionHelp.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17ProgressReport.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17References.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17SquadronMaintenanceHelp.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17SwapAmmoHelp.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17ToDoList.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\Mission1.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\Mission2.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B-24 Variant\B24Variant.zip=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\B17QotSDatabase.mdb=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\B17QotSEmulator.exe=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17Introduction.html=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AlliedGains1944.jpg=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AlliedGains1945.jpg=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\sound\great-escape.mp3=$(AppPath)
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\SplashLg.jpg=$(AppPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\15th_homebase.jpg=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17HelpIndex.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AssignCrew.jpg=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\EmulatorNorthernTargetMap.jpg=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\MissionScreen.jpg=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\SwapAmmo.jpg=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17AirmanMaintenanceHelp.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17BomberMaintenanceHelp.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17Credits.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17CrewAssignmentHelp.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17GenerateMissionHelp.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17GroupMaintenanceHelp.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17MissionHelp.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17ProgressReport.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17References.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17SquadronMaintenanceHelp.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17SwapAmmoHelp.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17ToDoList.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\Mission1.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\Mission2.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B-24 Variant\B24Variant.zip=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\B17QotSDatabase.mdb=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\B17QotSEmulator.exe=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\doc\B17Introduction.html=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AlliedGains1944.jpg=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\AlliedGains1945.jpg=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\sound\great-escape.mp3=No
+C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\image\SplashLg.jpg=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=B17QotSEmulator
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\Package
+ProjectFolder=C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator
+ServerSideCab=
+File1=C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\Package\setup.exe
+File2=C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\Package\Setup.Lst
+File3=C:\Documents and Settings\Preston\Desktop\B-17 Queen of the Skies\B17QotSEmulator\Package\B17QotSEmulator.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=B-17 Queen of the Skies Emulator
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|B-17 Queen of the Skies Emulator]
+Icon1=B17QotSEmulator.exe
+Title1=B-17 Queen of the Skies Emulator
+StartIn1=$(AppPath)
+Key1=Icon1

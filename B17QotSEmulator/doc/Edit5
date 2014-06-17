@@ -1,0 +1,175 @@
+'---------------------------------------------------------------------------
+
+    ElseIf GunOccupied(STBD_WAIST_MG) = True Then ' stbd waist occupied
+        
+        If GunOccupied(BALL_TURRET_MG) = True _
+        And blnHasTunnelGun = True Then ' tunnel occupied
+    
+            If frmMission.lblGunAmmo(STBD_WAIST_MG).Tag <> "" Then ' stbd fire
+                
+                If intToGun = PORT_WAIST_MG Then ' Port fire
+                
+                    ' SWAP: tunnel -> port
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(BALL_GUNNER).CurrentSerialNum
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = Bomber.Gun(BALL_TURRET_MG).MannedBy
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = True
+                    
+                    ' Unman tunnel.
+                    Bomber.Position(BALL_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(BALL_TURRET_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(BALL_TURRET_MG).TempPosSwap = True
+                    frmMission.lblGunAmmo(BALL_TURRET_MG).Tag = ""
+                
+                ElseIf intToGun = BALL_TURRET_MG Then ' tunnel fire
+                
+                    ' do nothing
+                
+                End If
+    
+            ElseIf frmMission.lblGunAmmo(PORT_WAIST_MG).Tag <> "" Then ' Port fire
+            
+                If intToGun = BALL_TURRET_MG Then ' tunnel fire
+                
+                    ' SWAP: stbd -> port
+                    ' Switch from stbd to port side.
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = Bomber.Gun(STBD_WAIST_MG).MannedBy
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = True
+                    
+                    ' Unman stbd side.
+                    Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(STBD_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(STBD_WAIST_MG).TempPosSwap = True
+                    frmMission.lblGunAmmo(STBD_WAIST_MG).Tag = ""
+                
+                End If
+    
+            End If
+    
+        ElseIf GunOccupied(PORT_WAIST_MG) = True Then ' port waist occupied
+    
+            If frmMission.lblGunAmmo(STBD_WAIST_MG).Tag <> "" Then ' stbd fire
+                
+                If intToGun = PORT_WAIST_MG Then ' Port fire
+                
+                    ' do nothing
+                
+                ElseIf intToGun = BALL_TURRET_MG _
+                And blnHasTunnelGun = True Then ' tunnel fire
+                
+                    ' UNDO: port -> tunnel
+                    ' A quick swap was performed, but now the user wants to undo it.
+                    ' Switch from port side to tunnel.
+                    Bomber.Position(BALL_GUNNER).CurrentSerialNum = Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(BALL_TURRET_MG).MannedBy = Bomber.Gun(PORT_WAIST_MG).MannedBy
+                    Bomber.Gun(BALL_TURRET_MG).TempPosSwap = False
+                    
+                    ' Unman port side.
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = False
+                    frmMission.lblGunAmmo(PORT_WAIST_MG).Tag = ""
+                
+                End If
+    
+            ElseIf frmMission.lblGunAmmo(PORT_WAIST_MG).Tag <> "" Then ' Port fire
+            
+                If intToGun = BALL_TURRET_MG _
+                And blnHasTunnelGun = True Then ' tunnel fire
+                
+                    ' UNDO: port -> tunnel
+                    ' A quick swap was performed, but now the user wants to undo it.
+                    ' Switch from port side to tunnel.
+                    Bomber.Position(BALL_GUNNER).CurrentSerialNum = Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(BALL_TURRET_MG).MannedBy = Bomber.Gun(PORT_WAIST_MG).MannedBy
+                    Bomber.Gun(BALL_TURRET_MG).TempPosSwap = False
+                    
+                    ' Unman port side.
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = False
+                    frmMission.lblGunAmmo(PORT_WAIST_MG).Tag = ""
+                    
+                    ' SWAP: stbd -> port
+                    ' Switch from stbd to port side.
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = Bomber.Gun(STBD_WAIST_MG).MannedBy
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = True
+                    
+                    ' Unman stbd side.
+                    Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(STBD_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(STBD_WAIST_MG).TempPosSwap = True
+                    frmMission.lblGunAmmo(STBD_WAIST_MG).Tag = ""
+                
+                End If
+    
+            End If
+    
+        End If
+    
+    ElseIf GunOccupied(BALL_TURRET_MG) = True _
+    And blnHasTunnelGun = True Then ' tunnel occupied
+    
+        If GunOccupied(PORT_WAIST_MG) = True Then ' port waist occupied
+        
+            If frmMission.lblGunAmmo(STBD_WAIST_MG).Tag <> "" Then ' stbd fire
+                
+                If intToGun = PORT_WAIST_MG Then ' Port fire
+                
+                    ' UNDO: port -> stbd
+                    ' A quick swap was performed, but now the user wants to undo it.
+                    ' Switch from port to stbd side.
+                    Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(STBD_WAIST_MG).MannedBy = Bomber.Gun(PORT_WAIST_MG).MannedBy
+                    Bomber.Gun(STBD_WAIST_MG).TempPosSwap = False
+                    
+                    ' Unman port side.
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = False
+                    frmMission.lblGunAmmo(PORT_WAIST_MG).Tag = ""
+                
+                    ' SWAP: tunnel -> port
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(BALL_GUNNER).CurrentSerialNum
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = Bomber.Gun(BALL_TURRET_MG).MannedBy
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = True
+                    
+                    ' Unman tunnel.
+                    Bomber.Position(BALL_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(BALL_TURRET_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(BALL_TURRET_MG).TempPosSwap = True
+                    frmMission.lblGunAmmo(BALL_TURRET_MG).Tag = ""
+                
+                ElseIf intToGun = BALL_TURRET_MG Then ' tunnel fire
+                
+                    ' UNDO: port -> stbd
+                    ' A quick swap was performed, but now the user wants to undo it.
+                    ' Switch from port to stbd side.
+                    Bomber.Position(STBD_WAIST_GUNNER).CurrentSerialNum = Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum
+                    Bomber.Gun(STBD_WAIST_MG).MannedBy = Bomber.Gun(PORT_WAIST_MG).MannedBy
+                    Bomber.Gun(STBD_WAIST_MG).TempPosSwap = False
+                    
+                    ' Unman port side.
+                    Bomber.Position(PORT_WAIST_GUNNER).CurrentSerialNum = UNMANNED_POSITION
+                    Bomber.Gun(PORT_WAIST_MG).MannedBy = UNMANNED_MG
+                    Bomber.Gun(PORT_WAIST_MG).TempPosSwap = False
+                    frmMission.lblGunAmmo(PORT_WAIST_MG).Tag = ""
+                
+                End If
+            
+            ElseIf frmMission.lblGunAmmo(PORT_WAIST_MG).Tag <> "" Then ' Port fire
+            
+                If intToGun = BALL_TURRET_MG Then ' tunnel fire
+                
+                    ' do nothing
+        
+                End If
+
+            End If
+    
+        End If
+    
+    End If
+    
+'---------------------------------------------------------------------------

@@ -1,0 +1,228 @@
+B-17
+
+18-Mar-44	Villa Orba, Italy (with 2nd BG)	Udine A/D
+19-Mar-44	Klagenfurt, Germany (with 97th BG)	Unknown
+30-Mar-44	Imotsky, Yugoslavia	Aerodrome (airfield)
+02-Apr-44	Brod, Yugoslavia	Marshalling Yards
+03-Apr-44	Brod, Yugoslavia	Marshalling Yards
+05-Apr-44	Nis, Yugoslavia	Marshalling Yards
+06-Apr-44	Zagreb, Yugoslavia	Aerodrome (airfield)
+07-Apr-44	Treviso, Italy	Marshalling Yards
+12-Apr-44	Fischamend-Markt, Austria	Aircraft Factory
+13-Apr-44	Gyor, Hungary	Aircraft Factory
+14-Apr-44	Ploesti, Romania	Marshalling Yards
+16-Apr-44	Belgrade, Yugoslavia	A/D F or M/Y
+17-Apr-44	Belgrade, Yugoslavia	Marshalling Yards
+20-Apr-44	Vicenza, Italy	Marshalling Yards
+23-Apr-44	Wiener-Neustadt, Austria	Aircraft Factory
+24-Apr-44	Ploesti, Romania	Marshalling Yards
+28-Apr-44	Piombino, Italy	Docks
+29-Apr-44	Toulon, France	Submarine pens
+30-Apr-44	Varese, Italy	Aircraft Factory
+05-May-44	Ploesti, Romania	Oil Refinery
+06-May-44	Brasov, Romania	Oil Refinery
+07-May-44	Bucharest, Romania	Marshalling Yards
+10-May-44	Wiener-Neustadt, Austria	Aircraft Factory
+12-May-44	Portorerraio, Italy	Elba Isle docks
+13-May-44	Trento, Italy	Marshalling Yards
+14-May-44	Piacenza, Italy	Aerodrome (airfield)
+18-May-44	Ploesti, Romania	Romano-Americano O/R
+19-May-44	Portomaggiore (Porto Marghera), Italy	Oil/ Shipping
+22-May-44	Avezzano, Italy	Marshalling Yards
+24-May-44	Vienna, Austria	Atzgersdorf A/C Factory
+26-May-44	Saint-Etienne, France	Marshalling Yards
+27-May-44	Avignon, France	Marshalling Yards
+29-May-44	Wiener-Neustadt, Austria	Wallersdorf A/D
+30-May-44	Zagreb, Yugoslavia	Marshalling Yards
+31-May-44	Ploesti, Romania	Oil Refinery
+02-Jun-44	Oradea, Romania	Marshalling Yards
+04-Jun-44	Nice, France	Var River Bridge
+05-Jun-44	Pioppi Viaduct, Italy	Reno River RR Bridge
+06-Jun-44	Belgrade, Yugoslavia	Marshalling Yards
+08-Jun-44	Pola, Italy	Submarine base
+09-Jun-44	Oberpaffenhoffen, Germany	Aerodrome (airfield)
+10-Jun-44	Mestre, Italy	Porto Marghera M/Y
+11-Jun-44	Smederevo, Yugoslavia	Marshalling Yards
+13-Jun-44	Oberpaffenhoffen, Germany	Aerodrome (airfield)
+14-Jun-44	Budapest, Hungary	Oil Refinery
+16-Jun-44	Vienna, Austria	Kagran-Vacuum O/R
+22-Jun-44	Modena, Italy	Marshalling Yards
+23-Jun-44	Ploesti, Romania	Oil Refinery
+25-Jun-44	Sete, France	Marshalling Yards
+26-Jun-44	Vienna, Austria	Oil Refinery
+27-Jun-44	Budapest, Hungary	Marshalling Yards
+30-Jun-44	Banja Luka, Yugoslavia	Aerodrome (airfield)
+02-Jul-44	Dunaalbas, Austria	Oil Refinery
+04-Jul-44	Brasov, Romania	Photogen O/R
+05-Jul-44	Montpelier, France	Marshalling Yards
+06-Jul-44	Bergamo, Italy	Steel Factory
+07-Jul-44	Blechhammer, Germany	Oil/ Shipping
+08-Jul-44	Vienna, Austria	Zwolfaxing A/D
+09-Jul-44	Ploesti, Romania (1st PFF by 15th AF)	Oil Refinery
+13-Jul-44	Verona, Italy	Marshalling Yards
+14-Jul-44	Budapest, Hungary	Marshalling Yards
+15-Jul-44	Ploesti, Romania	Oil Refinery
+16-Jul-44	Vienna, Austria	Oil Depot
+18-Jul-44	Memmingen, Germany	Aerodrome (airfield)
+19-Jul-44	Munich, Germany	Oil Refinery
+20-Jul-44	Memmingen, Germany	Aerodrome (airfield)
+21-Jul-44	Brux, Czechoslovakia	Synthetic Oil Refinery
+22-Jul-44	Ploesti, Romania	Oil Refinery
+24-Jul-44	Turin, Italy	Tank Repair Works
+25-Jul-44	Linz, Austria	H. Goering Tank Works
+26-Jul-44	Wiener-Neudorf, Austria	Aircraft Factory
+28-Jul-44	Ploesti, Romania	Oil Refinery
+30-Jul-44	Brod, Yugoslavia	Marshalling Yards
+31-Jul-44	Ploesti, Romania	Xenia Oil Refinery
+03-Aug-44	Friedrichshafen, Germany	Oberraderach Hydrogen Factory
+06-Aug-44	Le Pouzin, France	Bridge
+07-Aug-44	Blechhammer, Germany	South Synthetic Oil Refinery
+09-Aug-44	Gyor, Hungary	Aircraft Component Factory
+10-Aug-44	Ploesti, Romania	Oil Refinery
+12-Aug-44	Savona, Italy	Shore Gun Emplacements
+13-Aug-44	Savona, Italy	Shore Gun Emplacements
+14-Aug-44	St. Raphael, France	Shore Gun Emplacements
+15-Aug-44	Valence, France (night take-off)	Bridge
+17-Aug-44	Nis, Yugoslavia	Aerodrome (airfield)
+18-Aug-44	Ploesti, Romania	Romano-Americano O/R
+19-Aug-44	Ploesti, Romania	Xenia Oil Refinery
+22-Aug-44	Blechhammer, Germany (secondary tgt)	Oil Refinery
+23-Aug-44	Wiener-Neustadt, Austria	Aircraft Factory
+24-Aug-44	Pardubice, Czechoslovakia	Aerodrome (airfield)
+25-Aug-44	Brno, Czechoslovakia	Aerodrome (airfield)
+26-Aug-44	Aviso, Italy	Railroad Bridge
+27-Aug-44	Blechhammer, Germany	North Oil Refinery
+28-Aug-44	Moosbierbaum, Austria	Oil Refinery
+29-Aug-44	Bohumin, Czechoslovakia	Oil Refinery
+30-Aug-44	Novi Sad, Yugoslavia	Marshalling Yards
+01-Sep-44	Tesica Morava, Yugoslavia	Railroad Bridge
+03-Sep-44	Belgrade, Yugoslavia	Sava River Railroad Bridge
+04-Sep-44	Genoa, Italy	Submarine pens
+05-Sep-44	Budapest, Hungary	Railroad Bridge
+06-Sep-44	Oradea, Romania	Railroad Bridge
+08-Sep-44	Brod, Yugoslavia	Railroad Bridge
+10-Sep-44	Vienna, Austria	Schwecat Oil Refinery
+12-Sep-44	Munich, Germany	Lechfeld Aerodrome (airfield)
+13-Sep-44	Blechhammer, Germany	Oil Refinery
+15-Sep-44	Athens, Greece	Kalamaki Aerodrome (airfield)
+17-Sep-44	Budapest, Hungary	Marshalling Yards
+18-Sep-44	Novi Sad, Yugoslavia	Railroad Bridge
+20-Sep-44	Szob, Hungary	Railroad Bridge
+21-Sep-44	Bekescaba, Hungary	Marshalling Yards
+22-Sep-44	Munich, Germany	Allach BMW Motor Works
+23-Sep-44	Brux, Czechoslovakia	Synthetic Oil Refinery
+04-Oct-44	Pordenone, Italy	Railroad Bridge
+04-Oct-44	Munich, Germany	Marshalling Yards
+07-Oct-44	Vienna, Austria	Lobau Oil Refinery
+07-Oct-44	Nove Zamky, Hungary	Marshalling Yards
+10-Oct-44	Mestre, Italy	Porto Marghera M/Y
+11-Oct-44	Graz, Austria	Motor Works
+12-Oct-44	Bologna, Italy	Bivouac Area
+13-Oct-44	Blechhammer, Germany	South Oil Refinery
+14-Oct-44	Nove Zamky, Hungary	Marshalling Yards
+16-Oct-44	Linz, Austria	Area Bombing
+17-Oct-44	Blechhammer, Germany	South Oil Refinery
+20-Oct-44	Regensburg, Germany	Oil/ Shipping
+23-Oct-44	Plaven, Germany	Industrial Area
+25-Oct-44	Klagenfurt, Germany	Aircraft Factory
+26-Oct-44	Innsbruck, Austria	Marshalling Yards
+28-Oct-44	Munich, Germany	Marshalling Yards
+02-Nov-44	Moosbierbaum, Austria	Oil Refinery
+03-Nov-44	Vienna, Austria	South Ordnance Depot
+04-Nov-44	Regensburg, Germany	Winterhofen Oil Shipping
+05-Nov-44	Vienna, Austria	Florisdorf Oil Refinery
+06-Nov-44	Deutsch Wagram, Austria	Strashoff Marshalling Yards
+07-Nov-44	Maribor, Yugoslavia	Marshalling Yards
+07-Nov-44	Vienna, Austria	Florisdorf Oil Refinery
+11-Nov-44	Salzburg, Austria	Marshalling Yards
+12-Nov-44	Blechhammer, Germany	South Oil Refinery
+15-Nov-44	Linz, Austria	Benzol Oil Refinery
+16-Nov-44	Innsbruck, Austria	Marshalling Yards
+17-Nov-44	Salzburg, Austria	Marshalling Yards
+18-Nov-44	Vienna, Austria	Oil Refinery
+18-Nov-44	Visegrad, Yugoslavia	Troop Concentrations
+19-Nov-44	Vienna, Austria	Winterhofen Oil Shipping
+20-Nov-44	Brno, Czechoslovakia	Marshalling Yards
+22-Nov-44	Munich, Germany	West Marshalling Yards
+24-Nov-44	Linz, Austria (10:30 pm briefing, 11/24; takeoff 1 am, 11/25)	Benzol Oil Refinery
+30-Nov-03	Linz, Austria (Third ship crashed on take-off, fourth ship cancelled)	Benzol Oil Refinery
+07-Dec-44	Spittel, Austria	Communications 
+08-Dec-44	Moosbierbaum, Austria	Oil Refinery
+09-Dec-44	Regensburg, Germany	Marshalling Yards
+12-Dec-44	Blechhammer, Germany	South Oil Refinery
+18-Dec-44	Odertal, Germany	Oil Refinery
+19-Dec-44	Vienna, Austria	Soporn Marshalling Yards
+20-Dec-44	Regensburg, Germany	Oil/ Shipping
+25-Dec-44	Brux, Czechoslovakia	South Synthetic Oil Refinery
+26-Dec-44	Odertal, Germany	Oil Refinery
+27-Dec-44	Linz, Austria	Marshalling Yards
+28-Dec-44	Regensburg, Germany	Oil/ Shipping
+29-Dec-44	Innsbruck, Austria/Udine, Italy	Marshalling Yards
+15-Jan-45	Vienna, Austria	S. E. Marshalling Yards
+20-Jan-45	Regensburg, Germ/Salzburg, Germ.	Oil Refinery/Marshalling Yards
+21-Jan-45	Vienna, Austria	Lobau Oil Refinery
+31-Jan-45	Moosbierbaum, Austria	Oil Refinery
+01-Feb-45	Graz, Austria	Marshalling Yards
+05-Feb-45	Regensburg, Germany	Oil/ Shipping
+07-Feb-45	Vienna, Austria	Schwecat Oil Refinery
+08-Feb-45	Vienna, Austria	Ordnance Works
+09-Feb-45	Moosbierbaum, Austria	Oil Refinery
+13-Feb-45	Vienna, Austria	Supply Depot
+14-Feb-45	Vienna, Austria	Lobau Oil Refinery
+15-Feb-45	Vienna, Austria	S.E. Goods Depot
+16-Feb-45	Bolzano, Italy	Marshalling Yards
+17-Feb-45	Linz, Austria	Main Marshalling Yards
+18-Feb-45	Linz, Austria	Marshalling Yards
+19-Feb-45	Klagenfurt, Germany	Marshalling Yards
+20-Feb-45	Vienna, Austria	Schwecat Oil Refinery
+21-Feb-45	Vienna, Austria	Marshalling Yards/Shops
+22-Feb-45	Immernstadt/Weiheim, Germany (also listed: Neustadt & Landshut, Austria)	Communications/M/Y 
+23-Feb-45	Bruck, Austria	Marshalling Yards
+24-Feb-45	Klagenfurt, Germany	Marshalling Yards
+25-Feb-45	Linz, Austria	Marshalling Yards
+27-Feb-45	Augsburg, Germany	Marshalling Yards
+28-Feb-45	Verona, Italy	Perona Railroad Bridge
+01-Mar-45	Moosbierbaum, Austria	Oil Refinery
+02-Mar-45	Linz, Austria	Marshalling Yards
+04-Mar-45	Zagreb, Yugo & Knittelfeld, Austria	Marshalling Yards
+08-Mar-45	Hegeysholom, Hungary	Marshalling Yards
+09-Mar-45	Graz, Austria	Marshalling Yards
+10-Mar-45	Verona, Italy	Perona Railroad Bridge
+12-Mar-45	Vienna, Austria	Florisdorf Oil Refinery
+13-Mar-45	Regensburg, Germany	Marshalling Yards
+14-Mar-45	Szony, Hungary	Oil Refinery
+15-Mar-45	Ruhland & Schwartzheide, Germany	Oil Refinery
+16-Mar-45	Vienna, Austria	Schwecat Oil Refinery
+19-Mar-45	Landshut, Germany	Marshalling Yards
+20-Mar-45	Vienna, Austia/Amstettin, Austria	Oil Refinery/Marshalling Yards
+21-Mar-45	Vienna, Austria	Vosendorf Oil Refinery
+22-Mar-45	Ruhland, Germany	Lauta Alum Wks/Oil Refinery
+23-Mar-45	Ruhland, Germany	Oil Refinery
+24-Mar-45	Berlin, Germany	Daimler-Benz Tank Works
+25-Mar-45	Prague, Czechoslovakia	Kbely Aerodrome
+26-Mar-45	Wiener-Neustadt, Austria	Marshalling Yards
+30-Mar-45	Vienna, Austria	North Goods Depot
+31-Mar-45	Linz, Austria	Marshalling Yards
+01-Apr-45	Maribor, Yugoslavia	Railroad Bridge
+02-Apr-45	Graz, Austria	Marshalling Yards
+05-Apr-45	Udine, Italy	Aerodrome (airfield)
+06-Apr-45	Verona, Italy	Perona Railroad Bridge
+07-Apr-45	Verona, Italy	Perona Railroad Bridge
+08-Apr-45	Campodozzo, Italy	Railroad Bridge
+09-Apr-45	Buckland, Italy	Apricot Operations (secret)
+10-Apr-45	Buckland, Italy	Charlie Operations (secret)
+11-Apr-45	Bolzano, Italy	Vipiteno Railroad Bridge
+12-Apr-45	Padua, Italy	Railroad Bridge
+15-Apr-45	Bologna, Italy	Tactical Target
+15-Apr-45	Nervesa, Italy	Railroad Bridge
+17-Apr-45	Bologna, Italy	Tactical Support, 5th U.S. Army
+18-Apr-45	Bologna, Italy	Tactical Support, 5th U.S. Army
+19-Apr-45	Inn-Rattenburg, Austria	Railroad Bridge
+20-Apr-45	Fortezzo/Brennero, Italy	Marshalling Yards
+20-Apr-45	Innsbruck, Austria	Marshalling Yards
+21-Apr-45	Rosenheim, Austria	Marshalling Yards
+23-Apr-45	Bonavigo, Italy	Highway Bridge
+24-Apr-45	Carsarsa & Malborghetto, Italy	Railroad Bridge
+25-Apr-45	Linz, Austria	Main Marshalling Yards
+26-Apr-45	Bronzola Laives, Italy	Ammunition Depot
+		

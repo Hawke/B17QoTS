@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<meta name="keywords" content="B-17 Queen Skies B17QotS Avalon Hill game simulate World War II Allied strategic bombing B17QotS">
+	<meta name="description" content="&quot;B-17: Queen of the Skies&quot; Emulator (To Do List)">
+	<meta name="author" content="Preston V. McMurry III">
+	<title>&quot;B-17: Queen of the Skies&quot; Emulator (To Do List)</title>
+</head>
+<body bgcolor="#ffffe0">
+
+<center>
+	<font size="-1">"B-17: Queen of the Skies" Emulator</font><p />
+	<font size="+3" face="stencil" color="#005500">Bug Reports<br />To Do List</font>
+</center>
+
+<p />
+<div style="border-top: 2px #000000 solid;" /><!--Compliant cross-browser pseudo HR tag--></div>
+<p />
+
+<!--
+<font size=-2>Bug numbers have the format "1.0b0013", where the decimal is the release number, the letter is the distribution level, and the trailing number is the bug number. Thus 1.0b0013 is the 13th bug found in the 1.0 beta release. Note that (a)lpha test, (b)eta test or (p)roduction.</font>
+-->
+
+<h4>Bug Reports</h4>
+<ol>
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t26">BUG</a>: When I lose a crewmember, if I click on him in the airman tab, to see what his stats were, I get an error message (I think it was a string error, but I didn't write it down), then it crashes to desktop. When I try to relaunch, I get a "run-time error '380': invalid property value" I've reinstalled it and it runs fine, just when I do that (the quick answer is 'so don't do that') it kills the game. This has happened three times to me now, though. (kfgreer1961, 8 Dec 2004) <b><font color="#00aa00">Fix in 1.0b2</font></b> (if it works)
+	<p />
+	<font size="-1">
+The error is occuring in the modAirman.bas module, in the FillAirmanTabFields() function, on this line:
+<p />
+.cboAssignment.ListIndex = prsAirman![Assignment]
+<p />
+The airman's assignment is 7, but there are only six items in the combo. The problem though, isn't that his plane (Hunters Honey II) is not in the combo -- because it is. The problem is that I am using a keyfield (7) to do an index to an array. Rather than trying to find where that keyfield occurs in the array, then pointing at that array element.
+<p />
+I'm not sure why I haven't run into that before, considering all the missions I've run. Especially since that piece of code is accessed on a near constant basis ...
+<p />
+<b>I think I have this licked, but need to test it some more ...</b>
+<p />
+<b>Similar (same?) Issue</b>: Preston - Getting a runtime error code of 380 - Invalid property value when trying to add crewman - don't understand why. I click ok and the emulator boots out. I may end up having to do a reinstall.
+(ixon, 30/Jan/2005, 10:09)
+<p />
+
+<!--
+The problem -- I am certain -- is that it is trying to do a lookup in a disabled dropdown of a value which does not exist in the dropdown, due to the dropdown being dynamically populated/depopulated/repopulated at various points in the program.
+	<p />
+Next time it happens, zip up the mdb (database) file, and mail it to me. I may be able to spot the problem in there. (Something may not have been set properly when he was killed ...) It's definitely a program problem, though, data may just be the symptom.
+-->
+	</font>
+	<p />
+	<li /><a href="http://com4.runboard.com/bb17qotsemulator.fbugreports.t2">BUG</a>: I was busy fighting off a fighter wave. As I went to assign mg fire, as I clicked on the nose guns I got the following error message, run time error "9". (MikeMarie) Am pretty sure it crashed when I selected the nose gun to assign fire. The RTE was very quick and then the emulator crashed out and closed. (SonBae)
+	<p />
+</ol>
+
+<p />
+<div style="border-top: 2px #000000 solid;" /><!--Compliant cross-browser pseudo HR tag--></div>
+<p />
+
+<h4>To Do List</h4>
+
+<p />
+
+<font size="-1">These mods are going to have to wait until v2.0.</font>
+
+<p />
+
+
+<ol>
+	<li />Add Tom Cundiff's 9th and 12th AF North African bases variant. (That is where Ploesti was launched from.)
+	<p />
+	<li /><font color="#aa00aa"><b>These purple mods have similar issues.</b></font>
+	<p />
+	<li /><font color="#aa00aa">Shuttle missions from England to Russia or Italy, and Italy to Russia.</font>
+	<p />
+	<li /><font color="#aa00aa">ALTERNATE TARGETS: This will require a DB mod for designating&frasl;determining an alternate for each target.</font>
+	<p />
+	<li /><font color="#aa00aa">Crashland in neutral territory if it is within fuel range: Sweden, if the target is Kiel, Heide, Tutow, Peenemunde, Swinemunde or Stettin; Switzerland, if the target is Friedrichshaven, Munich, Augsburg, Ulm, Bingen, Mulhouse, Dijon or Lyon; Russian territory, if the target is Berlin, Dresden, Salzburg, Prague or Pilsen, and the date is January, 1945, or later. (option)</font>
+	<p />
+	<li />Print a damage summary after the mission ends.
+	<p />
+	<li />Change the look of each maintenance tab to contain a spreadsheet, so the user can see&#47;modify more than one record at a time.
+	<p />
+	<li />Create screen to allow the user to manually set fighter cover, rather requiring random fighter cover. (option)
+	<p />
+	<li />Add sound. This may be difficult as testing with about a half dozen different techniques (including Windows APIs) has proven very unsatisfactory. 
+	<p />
+	<li />Use alternate B-3 tables. (option)
+	<p />
+	<li /><b><font color="#ff0000">TODO: add a save button with an actual save file dialog</font></b> to the mission log RTF box.
+	<p />
+	<li />Mission save should generate bomber-specific positions, ammo, etc.
+	<p />
+	<li />Implement awards system. (The current awards fields are place holders created for this future feature.) Make the awards compliant with those that existed from 1942-1945. Maybe use "Hero Points", accumulated during the mission for different acts, as a measure of what awards to give out.
+	<p />
+	<li />Use British terms where British planes are used.
+	<p />
+	<li />Record missions, histories, etc. to some sort of log file.
+	<p />
+	<li />Track more bomber-specific stats.
+	<p />
+	<li />Save mission that is in progress. (aka, 'cheat' feature)
+	<p />
+</ol>
+
+<p />
+<div style="border-top: 2px #000000 solid;" /><!--Compliant cross-browser pseudo HR tag--></div>
+<p />
+<a href="B17HelpIndex.html">Help Index</a>
+<p />
+<b>Last Update:</b> 18-Feb-2005
+<p />
+&copy; Copyright 2003-2005 Preston V. McMurry III
+<p />
+</body>
+</html>
+

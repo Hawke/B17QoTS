@@ -1,5 +1,4 @@
-modConstants = 0, 0, 447, 448, Z
-modAlignment = 66, 66, 513, 514, 
+modConstants = 0, 0, 447, 448, 
 frmHelpBrowser = 88, 88, 535, 536, , 154, 154, 601, 602, C
 frmMainMenu = 5, 14, 669, 350, , 0, 0, 667, 447, C
 frmAbout = 132, 132, 579, 580, , 22, 22, 469, 470, C

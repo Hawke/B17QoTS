@@ -1,26 +1,3 @@
-'******************************************************************************
-' frmAbout.frm
-'
-' @author Preston V. McMurry III, http://www.prestonm.com
-' @copyright (C) Copyright 2002, 2010 by Preston V. McMurry III, http://www.prestonm.com
-'
-' *****************************************************************************
-'
-' This file is part of B17QotS, the "B-17: Queen of the Skies" Emulator.
-'
-' B17QotS is free software: you can redistribute it and/or modify
-' it under the terms of the GNU General Public License as published by
-' the Free Software Foundation, either version 3 of the License, or
-' (at your option) any later version.
-'
-' B17QotS is distributed in the hope that it will be useful,
-' but WITHOUT ANY WARRANTY; without even the implied warranty of
-' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-' GNU General Public License for more details.
-'
-' You should have received a copy of the GNU General Public License
-' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
-'******************************************************************************
 VERSION 5.00
 Begin VB.Form frmAbout 
    BorderStyle     =   3  'Fixed Dialog
@@ -127,6 +104,30 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+'******************************************************************************
+' frmAbout.frm
+'
+' @author Preston V. McMurry III, http://www.prestonm.com
+' @copyright (C) Copyright 2002, 2010 by Preston V. McMurry III, http://www.prestonm.com
+'
+' *****************************************************************************
+'
+' This file is part of B17QotS, the "B-17: Queen of the Skies" Emulator.
+'
+' B17QotS is free software: you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation, either version 3 of the License, or
+' (at your option) any later version.
+'
+' B17QotS is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
+'******************************************************************************
+
 Option Explicit
 
 ' Reg Key Security Options...

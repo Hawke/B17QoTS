@@ -1,11 +1,11 @@
 VERSION 5.00
 Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} DataEnvironment1 
-   ClientHeight    =   9630
+   ClientHeight    =   10365
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   10365
-   _ExtentX        =   18283
-   _ExtentY        =   16986
+   ClientWidth     =   15870
+   _ExtentX        =   27993
+   _ExtentY        =   18283
    FolderFlags     =   1
    TypeLibGuid     =   "{4DC11317-AB74-4ADB-8431-936EB1AF2E93}"
    TypeInfoGuid    =   "{B4803612-6411-4FD5-AAD7-69FF29D76755}"

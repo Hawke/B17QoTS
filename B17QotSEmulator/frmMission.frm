@@ -1,29 +1,6 @@
-'******************************************************************************
-' frmMission.frm
-'
-' @author Preston V. McMurry III, http://www.prestonm.com
-' @copyright (C) Copyright 2002, 2010 by Preston V. McMurry III, http://www.prestonm.com
-'
-' *****************************************************************************
-'
-' This file is part of B17QotS, the "B-17: Queen of the Skies" Emulator.
-'
-' B17QotS is free software: you can redistribute it and/or modify
-' it under the terms of the GNU General Public License as published by
-' the Free Software Foundation, either version 3 of the License, or
-' (at your option) any later version.
-'
-' B17QotS is distributed in the hope that it will be useful,
-' but WITHOUT ANY WARRANTY; without even the implied warranty of
-' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-' GNU General Public License for more details.
-'
-' You should have received a copy of the GNU General Public License
-' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
-'******************************************************************************
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Begin VB.Form frmMission 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Mission:"
@@ -1939,6 +1916,30 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 '******************************************************************************
+' frmMission.frm
+'
+' @author Preston V. McMurry III, http://www.prestonm.com
+' @copyright (C) Copyright 2002, 2010 by Preston V. McMurry III, http://www.prestonm.com
+'
+' *****************************************************************************
+'
+' This file is part of B17QotS, the "B-17: Queen of the Skies" Emulator.
+'
+' B17QotS is free software: you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation, either version 3 of the License, or
+' (at your option) any later version.
+'
+' B17QotS is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
+'******************************************************************************
+
+'******************************************************************************
 ' START HERE
 '******************************************************************************
 
@@ -2017,7 +2018,7 @@ End Sub
 '******************************************************************************
 Private Sub Form_Load()
 
-    CenterForm Me
+    'CenterForm Me
     
     ' Fiddle the form bottom, as adding a menu bar otherwise seems to
     ' randomly cut off the bottom of the form
@@ -7144,7 +7145,7 @@ End Sub
 '******************************************************************************
 Private Function HasATarget(ByVal intBomberModel As Integer, ByVal intGun As Integer, ByVal intPosition As Integer) As Boolean
     Dim rsGunnery As New ADODB.Recordset
-    Dim strErrmsg As String
+    Dim strErrMsg As String
 
     HasATarget = False
     
@@ -7173,11 +7174,11 @@ CleanUp:
    
 ErrorTrap:
     
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "HasATarget() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
     
     Err.Clear
     

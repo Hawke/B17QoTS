@@ -1,32 +1,9 @@
-'******************************************************************************
-' frmCrewAssignment.frm
-'
-' @author Preston V. McMurry III, http://www.prestonm.com
-' @copyright (C) Copyright 2002, 2010 by Preston V. McMurry III, http://www.prestonm.com
-'
-' *****************************************************************************
-'
-' This file is part of B17QotS, the "B-17: Queen of the Skies" Emulator.
-'
-' B17QotS is free software: you can redistribute it and/or modify
-' it under the terms of the GNU General Public License as published by
-' the Free Software Foundation, either version 3 of the License, or
-' (at your option) any later version.
-'
-' B17QotS is distributed in the hope that it will be useful,
-' but WITHOUT ANY WARRANTY; without even the implied warranty of
-' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-' GNU General Public License for more details.
-'
-' You should have received a copy of the GNU General Public License
-' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
-'******************************************************************************
 VERSION 5.00
 Begin VB.Form frmCrewAssignment 
    Caption         =   "Crew Assignment"
    ClientHeight    =   6570
-   ClientLeft      =   165
-   ClientTop       =   735
+   ClientLeft      =   225
+   ClientTop       =   855
    ClientWidth     =   5310
    Icon            =   "frmCrewAssignment.frx":0000
    LinkTopic       =   "Form1"
@@ -697,6 +674,30 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+'******************************************************************************
+' frmCrewAssignment.frm
+'
+' @author Preston V. McMurry III, http://www.prestonm.com
+' @copyright (C) Copyright 2002, 2010 by Preston V. McMurry III, http://www.prestonm.com
+'
+' *****************************************************************************
+'
+' This file is part of B17QotS, the "B-17: Queen of the Skies" Emulator.
+'
+' B17QotS is free software: you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation, either version 3 of the License, or
+' (at your option) any later version.
+'
+' B17QotS is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
+'******************************************************************************
+
 Option Explicit
 
 Dim strErrMsg As String
@@ -718,7 +719,23 @@ Dim intCurrentAirmanOldAssigment As Integer
 ' node in the matrix.) It is possible a row may not have any nodes at all.
 Dim lvntCrewMatrix(PILOT To AMMO_STOCKER) As Variant
 Dim lvntNode() As Variant
-    
+Dim PositionNames As Variant
+Dim B17CPositions As Variant
+Dim B17CPositionNames As Variant
+Dim B17EFGPositions As Variant
+Dim B17EFGPositionNames As Variant
+Dim YB40Positions As Variant
+Dim YB40PositionNames As Variant
+Dim B24DEPositions As Variant
+Dim B24DEPositionNames As Variant
+Dim B24GHJPositions As Variant
+Dim B24GHJPositionNames As Variant
+Dim B24LMPositions As Variant
+Dim B24LMPositionNames As Variant
+Dim LancasterPositions As Variant
+Dim LancasterPositionNames As Variant
+Dim CurrentBomberPositions As Variant
+Dim CurrentBomberPositionNames As Variant
 '******************************************************************************
 ' Form_Load
 '
@@ -732,8 +749,23 @@ Dim lvntNode() As Variant
 '         and display totals.
 '******************************************************************************
 Private Sub Form_Load()
+    Dim cbo As ComboBox
     
-    CenterForm Me
+    B17CPositions = Array(PILOT, COPILOT, BOMBARDIER, ENGINEER, RADIO_OPERATOR, BALL_GUNNER, PORT_WAIST_GUNNER, STBD_WAIST_GUNNER)
+    B17CPositionNames = Array("Pilot", "Co-Pilot", "Bombardier", "Engineer", "Radio Operator", "Tunnel Gunner", "Port Waist Gunner", "Stbd. Waist Gunner")
+    B17EFGPositions = Array(PILOT, COPILOT, BOMBARDIER, NAVIGATOR, ENGINEER, RADIO_OPERATOR, BALL_GUNNER, PORT_WAIST_GUNNER, STBD_WAIST_GUNNER, TAIL_GUNNER)
+    B17EFGPositionNames = Array("Pilot", "Co-Pilot", "Bombardier", "Navigator", "Engineer", "Radio Operator", "Ball Gunner", "Port Waist Gunner", "Stbd. Waist Gunner", "Tail Gunner")
+    YB40Positions = Array(PILOT, COPILOT, NAVIGATOR, ENGINEER, RADIO_OPERATOR, NOSE_GUNNER, MID_UPPER_GUNNER, BALL_GUNNER, PORT_WAIST_GUNNER, STBD_WAIST_GUNNER, TAIL_GUNNER, AMMO_STOCKER)
+    YB40PositionNames = Array("Pilot", "Co-Pilot", "Navigator", "Engineer", "Radio Operator", "Nose Gunner", "Mid-Upper Gunner", "Ball Gunner", "Port Waist Gunner", "Stbd. Waist Gunner", "Tail Gunner", "Ammo Stocker")
+    B24DEPositions = Array(PILOT, COPILOT, BOMBARDIER, NAVIGATOR, ENGINEER, RADIO_OPERATOR, BALL_GUNNER, STBD_WAIST_GUNNER, TAIL_GUNNER)
+    B24DEPositionNames = Array("Pilot", "Co-Pilot", "Bombardier", "Navigator", "Engineer", "Radio Operator", "Tunnel Gunner", "Waist Gunner", "Tail Gunner")
+    B24GHJPositions = Array(PILOT, COPILOT, BOMBARDIER, NAVIGATOR, ENGINEER, RADIO_OPERATOR, NOSE_GUNNER, BALL_GUNNER, STBD_WAIST_GUNNER, TAIL_GUNNER)
+    B24GHJPositionNames = Array("Pilot", "Co-Pilot", "Bombardier", "Navigator", "Engineer", "Radio Operator", "Nose Gunner", "Ball Gunner", "Waist Gunner", "Tail Gunner")
+    B24LMPositions = Array(PILOT, COPILOT, BOMBARDIER, NAVIGATOR, ENGINEER, RADIO_OPERATOR, NOSE_GUNNER, BALL_GUNNER, STBD_WAIST_GUNNER, TAIL_GUNNER)
+    B24LMPositionNames = Array("Pilot", "Co-Pilot", "Bombardier", "Navigator", "Engineer", "Radio Operator", "Nose Gunner", "Floor Ring Gunner", "Waist Gunner", "Stinger Gunner")
+    LancasterPositions = Array(PILOT, BOMBARDIER, NAVIGATOR, ENGINEER, RADIO_OPERATOR, MID_UPPER_GUNNER, TAIL_GUNNER)
+    LancasterPositionNames = Array("Pilot", "Bomb Aimer", "Navigator", "Flight Engineer", "Wireless Operator", "Mid-Upper Gunner", "Tail Gunner")
+'    CenterForm Me
 
     ' Fiddle the form bottom, as adding a menu bar otherwise seems to
     ' randomly cut off the bottom of the form
@@ -750,6 +782,10 @@ Private Sub Form_Load()
 '       "varAirmanCurrentlyOnTab = " & varAirmanCurrentlyOnTab & vbCrLf & _
 '       "prsAirman![Name] = " & prsAirman![Name]
     
+    For Each cbo In cboCrewPosition
+        cbo.Tag = cbo.Index
+    Next
+    
     With frmMainMenu
     
         Me.Caption = .cmdAssignCrew.Caption & " Dialog " & " (" & .cboName(BOMBER_TAB).Text & ")"
@@ -762,35 +798,35 @@ Private Sub Form_Load()
         Select Case (.cboBomberModel(BOMBER_TAB).ListIndex + 1)
             
             Case B17_C:
-            
-                Call PositionB17CCombos
+                CurrentBomberPositions = B17CPositions
+                CurrentBomberPositionNames = B17CPositionNames
             
             Case B17_E, B17_F, B17_G:
+                CurrentBomberPositions = B17EFGPositions
+                CurrentBomberPositionNames = B17EFGPositionNames
             
-                Call PositionB17EFGCombos
-                
             Case YB40:
-            
-                Call PositionYB40Combos
+                CurrentBomberPositions = YB40Positions
+                CurrentBomberPositionNames = YB40PositionNames
                 
             Case B24_D, B24_E:
-            
-                Call PositionB24DECombos
+                CurrentBomberPositions = B24DEPositions
+                CurrentBomberPositionNames = B24DEPositionNames
                 
             Case B24_GHJ:
-            
-                Call PositionB24GHJCombos
+                CurrentBomberPositions = B24GHJPositions
+                CurrentBomberPositionNames = B24GHJPositionNames
                 
             Case B24_LM:
-            
-                Call PositionB24LMCombos
+                CurrentBomberPositions = B24LMPositions
+                CurrentBomberPositionNames = B24LMPositionNames
                 
             Case AVRO_LANCASTER:
-        
-                Call PositionAvroLancasterCombos
-                
+                CurrentBomberPositions = LancasterPositions
+                CurrentBomberPositionNames = LancasterPositionNames
         End Select
-
+        
+        Call PositionCrewCombos
         ' Fill in the text portion of the visible and enabled combos.
 
 'MsgBox "Call FillCrewAssignmentDialogFields"
@@ -811,7 +847,7 @@ Private Sub Form_Load()
         
             Call DisableCrewPositionCombos
             cmdOK.Visible = False
-            CenterControl fraCancelHelp, Me
+            'CenterControl fraCancelHelp, Me
         
         End If
 
@@ -1632,576 +1668,46 @@ Private Function ValidData()
 
 End Function
 
-'******************************************************************************
-' PositionB17CCombos
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
-' NOTES:  Position and label Lancaster-specific controls
-'******************************************************************************
-Private Sub PositionB17CCombos()
-' TODO: remove commented values
-
-    lblCrewPosition(PILOT).Left = 120
-    lblCrewPosition(PILOT).Top = 120
-    lblCrewPosition(PILOT).Caption = "Pilot"
-    cboCrewPosition(PILOT).Left = 120
-    cboCrewPosition(PILOT).Top = 480
-    cboCrewPosition(PILOT).Top = 480
-    
-    lblCrewPosition(COPILOT).Left = 120
-    lblCrewPosition(COPILOT).Top = 1080
-    lblCrewPosition(COPILOT).Caption = "Co-Pilot"
-    cboCrewPosition(COPILOT).Left = 120
-    cboCrewPosition(COPILOT).Top = 1440
-    
-    lblCrewPosition(BOMBARDIER).Left = 120
-    lblCrewPosition(BOMBARDIER).Top = 2040
-    lblCrewPosition(BOMBARDIER).Caption = "Bombardier"
-    cboCrewPosition(BOMBARDIER).Left = 120
-    cboCrewPosition(BOMBARDIER).Top = 2400
-    
-    txtSerialNumber(NAVIGATOR).Text = HIDDEN_POSITION
-'    lblCrewPosition(NAVIGATOR).Left = 120
-'    lblCrewPosition(NAVIGATOR).Top = 3000
-'    lblCrewPosition(NAVIGATOR).Caption = "Navigator"
-'    cboCrewPosition(NAVIGATOR).Left = 120
-'    cboCrewPosition(NAVIGATOR).Top = 3360
-    
-    lblCrewPosition(ENGINEER).Left = 120
-    lblCrewPosition(ENGINEER).Top = 3000 '3960
-    lblCrewPosition(ENGINEER).Caption = "Engineer"
-    cboCrewPosition(ENGINEER).Left = 120
-    cboCrewPosition(ENGINEER).Top = 3360 '4320
-    
-    lblCrewPosition(RADIO_OPERATOR).Left = 120
-    lblCrewPosition(RADIO_OPERATOR).Top = 3960 '4920
-    lblCrewPosition(RADIO_OPERATOR).Caption = "Radio Operator"
-    cboCrewPosition(RADIO_OPERATOR).Left = 120
-    cboCrewPosition(RADIO_OPERATOR).Top = 4320 '5280
-    
-    txtSerialNumber(NOSE_GUNNER).Text = HIDDEN_POSITION
-    
-    txtSerialNumber(MID_UPPER_GUNNER).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(BALL_GUNNER).Left = 120 '2760
-    lblCrewPosition(BALL_GUNNER).Top = 4920 '120
-    lblCrewPosition(BALL_GUNNER).Caption = "Tunnel Gunner"
-    cboCrewPosition(BALL_GUNNER).Left = 120 '2760
-    cboCrewPosition(BALL_GUNNER).Top = 5280 '480
-    
-    lblCrewPosition(PORT_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(PORT_WAIST_GUNNER).Top = 120 '1080
-    lblCrewPosition(PORT_WAIST_GUNNER).Caption = "Port Waist Gunner"
-    cboCrewPosition(PORT_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(PORT_WAIST_GUNNER).Top = 480 '1440
-    
-    lblCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(STBD_WAIST_GUNNER).Top = 1080 '2040
-    lblCrewPosition(STBD_WAIST_GUNNER).Caption = "Stbd. Waist Gunner"
-    cboCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(STBD_WAIST_GUNNER).Top = 1440 '2400
-    
-    txtSerialNumber(TAIL_GUNNER).Text = HIDDEN_POSITION
-    
-    txtSerialNumber(AMMO_STOCKER).Text = HIDDEN_POSITION
-    
-End Sub
-
-'******************************************************************************
-' PositionB17EFGCombos
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
-' NOTES:  Position and label Lancaster-specific controls
-'******************************************************************************
-Private Sub PositionB17EFGCombos()
-
-    lblCrewPosition(PILOT).Left = 120
-    lblCrewPosition(PILOT).Top = 120
-    lblCrewPosition(PILOT).Caption = "Pilot"
-    cboCrewPosition(PILOT).Left = 120
-    cboCrewPosition(PILOT).Top = 480
-    txtSerialNumber(PILOT).Text = 0
-    
-    lblCrewPosition(COPILOT).Left = 120
-    lblCrewPosition(COPILOT).Top = 1080
-    lblCrewPosition(COPILOT).Caption = "Co-Pilot"
-    cboCrewPosition(COPILOT).Left = 120
-    cboCrewPosition(COPILOT).Top = 1440
-    txtSerialNumber(COPILOT).Text = 0
-    
-    lblCrewPosition(BOMBARDIER).Left = 120
-    lblCrewPosition(BOMBARDIER).Top = 2040
-    lblCrewPosition(BOMBARDIER).Caption = "Bombardier"
-    cboCrewPosition(BOMBARDIER).Left = 120
-    cboCrewPosition(BOMBARDIER).Top = 2400
-    txtSerialNumber(BOMBARDIER).Text = 0
-    
-    lblCrewPosition(NAVIGATOR).Left = 120
-    lblCrewPosition(NAVIGATOR).Top = 3000
-    lblCrewPosition(NAVIGATOR).Caption = "Navigator"
-    cboCrewPosition(NAVIGATOR).Left = 120
-    cboCrewPosition(NAVIGATOR).Top = 3360
-    txtSerialNumber(NAVIGATOR).Text = 0
-    
-    lblCrewPosition(ENGINEER).Left = 120
-    lblCrewPosition(ENGINEER).Top = 3960
-    lblCrewPosition(ENGINEER).Caption = "Engineer"
-    cboCrewPosition(ENGINEER).Left = 120
-    cboCrewPosition(ENGINEER).Top = 4320
-    txtSerialNumber(ENGINEER).Text = 0
-    
-    lblCrewPosition(RADIO_OPERATOR).Left = 120
-    lblCrewPosition(RADIO_OPERATOR).Top = 4920
-    lblCrewPosition(RADIO_OPERATOR).Caption = "Radio Operator"
-    cboCrewPosition(RADIO_OPERATOR).Left = 120
-    cboCrewPosition(RADIO_OPERATOR).Top = 5280
-    txtSerialNumber(RADIO_OPERATOR).Text = 0
-    
-    txtSerialNumber(NOSE_GUNNER).Text = HIDDEN_POSITION
-    
-    txtSerialNumber(MID_UPPER_GUNNER).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(BALL_GUNNER).Left = 2760
-    lblCrewPosition(BALL_GUNNER).Top = 120
-    lblCrewPosition(BALL_GUNNER).Caption = "Ball Gunner"
-    cboCrewPosition(BALL_GUNNER).Left = 2760
-    cboCrewPosition(BALL_GUNNER).Top = 480
-    txtSerialNumber(BALL_GUNNER).Text = 0
-    
-    lblCrewPosition(PORT_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(PORT_WAIST_GUNNER).Top = 1080
-    lblCrewPosition(PORT_WAIST_GUNNER).Caption = "Port Waist Gunner"
-    cboCrewPosition(PORT_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(PORT_WAIST_GUNNER).Top = 1440
-    txtSerialNumber(PORT_WAIST_GUNNER).Text = 0
-    
-    lblCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(STBD_WAIST_GUNNER).Top = 2040
-    lblCrewPosition(STBD_WAIST_GUNNER).Caption = "Stbd. Waist Gunner"
-    cboCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(STBD_WAIST_GUNNER).Top = 2400
-    txtSerialNumber(STBD_WAIST_GUNNER).Text = 0
-    
-    lblCrewPosition(TAIL_GUNNER).Left = 2760
-    lblCrewPosition(TAIL_GUNNER).Top = 3000
-    lblCrewPosition(TAIL_GUNNER).Caption = "Tail Gunner"
-    cboCrewPosition(TAIL_GUNNER).Left = 2760
-    cboCrewPosition(TAIL_GUNNER).Top = 3360
-    txtSerialNumber(TAIL_GUNNER).Text = 0
-    
-    txtSerialNumber(AMMO_STOCKER).Text = HIDDEN_POSITION
-    
-End Sub
-
-'******************************************************************************
-' PositionYB40Combos
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
-' NOTES:  Position and label Lancaster-specific controls
-'******************************************************************************
-Private Sub PositionYB40Combos()
-
-    lblCrewPosition(PILOT).Left = 120
-    lblCrewPosition(PILOT).Top = 120
-    lblCrewPosition(PILOT).Caption = "Pilot"
-    cboCrewPosition(PILOT).Left = 120
-    cboCrewPosition(PILOT).Top = 480
-    cboCrewPosition(PILOT).Top = 480
-    
-    lblCrewPosition(COPILOT).Left = 120
-    lblCrewPosition(COPILOT).Top = 1080
-    lblCrewPosition(COPILOT).Caption = "Co-Pilot"
-    cboCrewPosition(COPILOT).Left = 120
-    cboCrewPosition(COPILOT).Top = 1440
-
-    txtSerialNumber(BOMBARDIER).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(NAVIGATOR).Left = 120
-    lblCrewPosition(NAVIGATOR).Top = 2040
-    lblCrewPosition(NAVIGATOR).Caption = "Navigator"
-    cboCrewPosition(NAVIGATOR).Left = 120
-    cboCrewPosition(NAVIGATOR).Top = 2400
-    
-    lblCrewPosition(ENGINEER).Left = 120
-    lblCrewPosition(ENGINEER).Top = 3000
-    lblCrewPosition(ENGINEER).Caption = "Engineer"
-    cboCrewPosition(ENGINEER).Left = 120
-    cboCrewPosition(ENGINEER).Top = 3360
-    
-    lblCrewPosition(RADIO_OPERATOR).Left = 120
-    lblCrewPosition(RADIO_OPERATOR).Top = 3960
-    lblCrewPosition(RADIO_OPERATOR).Caption = "Radio Operator"
-    cboCrewPosition(RADIO_OPERATOR).Left = 120
-    cboCrewPosition(RADIO_OPERATOR).Top = 4320
-    
-    lblCrewPosition(NOSE_GUNNER).Left = 120
-    lblCrewPosition(NOSE_GUNNER).Top = 4920
-    lblCrewPosition(NOSE_GUNNER).Caption = "Nose Gunner"
-    cboCrewPosition(NOSE_GUNNER).Left = 120
-    cboCrewPosition(NOSE_GUNNER).Top = 5280
-    
-    lblCrewPosition(MID_UPPER_GUNNER).Left = 2760
-    lblCrewPosition(MID_UPPER_GUNNER).Top = 120
-    lblCrewPosition(MID_UPPER_GUNNER).Caption = "Mid-Upper Gunner"
-    cboCrewPosition(MID_UPPER_GUNNER).Left = 2760
-    cboCrewPosition(MID_UPPER_GUNNER).Top = 480
-    
-    lblCrewPosition(BALL_GUNNER).Left = 2760
-    lblCrewPosition(BALL_GUNNER).Top = 1080
-    lblCrewPosition(BALL_GUNNER).Caption = "Ball Gunner"
-    cboCrewPosition(BALL_GUNNER).Left = 2760
-    cboCrewPosition(BALL_GUNNER).Top = 1440
-    
-    lblCrewPosition(PORT_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(PORT_WAIST_GUNNER).Top = 2040
-    lblCrewPosition(PORT_WAIST_GUNNER).Caption = "Port Waist Gunner"
-    cboCrewPosition(PORT_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(PORT_WAIST_GUNNER).Top = 2400
-    
-    lblCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(STBD_WAIST_GUNNER).Top = 3000
-    lblCrewPosition(STBD_WAIST_GUNNER).Caption = "Stbd. Waist Gunner"
-    cboCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(STBD_WAIST_GUNNER).Top = 3360
-    
-    lblCrewPosition(TAIL_GUNNER).Left = 2760
-    lblCrewPosition(TAIL_GUNNER).Top = 3960
-    lblCrewPosition(TAIL_GUNNER).Caption = "Tail Gunner"
-    cboCrewPosition(TAIL_GUNNER).Left = 2760
-    cboCrewPosition(TAIL_GUNNER).Top = 4320
-    
-    lblCrewPosition(AMMO_STOCKER).Left = 2760
-    lblCrewPosition(AMMO_STOCKER).Top = 4920
-    lblCrewPosition(AMMO_STOCKER).Caption = "Ammo Stocker"
-    cboCrewPosition(AMMO_STOCKER).Left = 2760
-    cboCrewPosition(AMMO_STOCKER).Top = 5280
-    
-End Sub
-
-'******************************************************************************
-' PositionB24DECombos
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
-' NOTES:  Position and label Lancaster-specific controls
-'******************************************************************************
-Private Sub PositionB24DECombos()
-
-    lblCrewPosition(PILOT).Left = 120
-    lblCrewPosition(PILOT).Top = 120
-    lblCrewPosition(PILOT).Caption = "Pilot"
-    cboCrewPosition(PILOT).Left = 120
-    cboCrewPosition(PILOT).Top = 480
-    cboCrewPosition(PILOT).Top = 480
-    
-    lblCrewPosition(COPILOT).Left = 120
-    lblCrewPosition(COPILOT).Top = 1080
-    lblCrewPosition(COPILOT).Caption = "Co-Pilot"
-    cboCrewPosition(COPILOT).Left = 120
-    cboCrewPosition(COPILOT).Top = 1440
-    
-    lblCrewPosition(BOMBARDIER).Left = 120
-    lblCrewPosition(BOMBARDIER).Top = 2040
-    lblCrewPosition(BOMBARDIER).Caption = "Bombardier"
-    cboCrewPosition(BOMBARDIER).Left = 120
-    cboCrewPosition(BOMBARDIER).Top = 2400
-    
-    lblCrewPosition(NAVIGATOR).Left = 120
-    lblCrewPosition(NAVIGATOR).Top = 3000
-    lblCrewPosition(NAVIGATOR).Caption = "Navigator"
-    cboCrewPosition(NAVIGATOR).Left = 120
-    cboCrewPosition(NAVIGATOR).Top = 3360
-    
-    lblCrewPosition(ENGINEER).Left = 120
-    lblCrewPosition(ENGINEER).Top = 3960
-    lblCrewPosition(ENGINEER).Caption = "Engineer"
-    cboCrewPosition(ENGINEER).Left = 120
-    cboCrewPosition(ENGINEER).Top = 4320
-    
-    lblCrewPosition(RADIO_OPERATOR).Left = 120
-    lblCrewPosition(RADIO_OPERATOR).Top = 4920
-    lblCrewPosition(RADIO_OPERATOR).Caption = "Radio Operator"
-    cboCrewPosition(RADIO_OPERATOR).Left = 120
-    cboCrewPosition(RADIO_OPERATOR).Top = 5280
-    
-    txtSerialNumber(NOSE_GUNNER).Text = HIDDEN_POSITION
-    
-    txtSerialNumber(MID_UPPER_GUNNER).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(BALL_GUNNER).Left = 2760
-    lblCrewPosition(BALL_GUNNER).Top = 120
-    lblCrewPosition(BALL_GUNNER).Caption = "Tunnel Gunner"
-    cboCrewPosition(BALL_GUNNER).Left = 2760
-    cboCrewPosition(BALL_GUNNER).Top = 480
-    
-    txtSerialNumber(PORT_WAIST_GUNNER).Text = UNMANNED_POSITION
-    
-    lblCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(STBD_WAIST_GUNNER).Top = 1080
-    lblCrewPosition(STBD_WAIST_GUNNER).Caption = "Waist Gunner"
-    cboCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(STBD_WAIST_GUNNER).Top = 1440
-    
-    lblCrewPosition(TAIL_GUNNER).Left = 2760
-    lblCrewPosition(TAIL_GUNNER).Top = 2040
-    lblCrewPosition(TAIL_GUNNER).Caption = "Tail Gunner"
-    cboCrewPosition(TAIL_GUNNER).Left = 2760
-    cboCrewPosition(TAIL_GUNNER).Top = 2400
-    
-    txtSerialNumber(AMMO_STOCKER).Text = HIDDEN_POSITION
-    
-End Sub
-
-'******************************************************************************
-' PositionB24GHJCombos
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
-' NOTES:  Position and label Lancaster-specific controls
-'******************************************************************************
-Private Sub PositionB24GHJCombos()
-
-    lblCrewPosition(PILOT).Left = 120
-    lblCrewPosition(PILOT).Top = 120
-    lblCrewPosition(PILOT).Caption = "Pilot"
-    cboCrewPosition(PILOT).Left = 120
-    cboCrewPosition(PILOT).Top = 480
-    cboCrewPosition(PILOT).Top = 480
-    
-    lblCrewPosition(COPILOT).Left = 120
-    lblCrewPosition(COPILOT).Top = 1080
-    lblCrewPosition(COPILOT).Caption = "Co-Pilot"
-    cboCrewPosition(COPILOT).Left = 120
-    cboCrewPosition(COPILOT).Top = 1440
-    
-    lblCrewPosition(BOMBARDIER).Left = 120
-    lblCrewPosition(BOMBARDIER).Top = 2040
-    lblCrewPosition(BOMBARDIER).Caption = "Bombardier"
-    cboCrewPosition(BOMBARDIER).Left = 120
-    cboCrewPosition(BOMBARDIER).Top = 2400
-    
-    lblCrewPosition(NAVIGATOR).Left = 120
-    lblCrewPosition(NAVIGATOR).Top = 3000
-    lblCrewPosition(NAVIGATOR).Caption = "Navigator"
-    cboCrewPosition(NAVIGATOR).Left = 120
-    cboCrewPosition(NAVIGATOR).Top = 3360
-    
-    lblCrewPosition(ENGINEER).Left = 120
-    lblCrewPosition(ENGINEER).Top = 3960
-    lblCrewPosition(ENGINEER).Caption = "Engineer"
-    cboCrewPosition(ENGINEER).Left = 120
-    cboCrewPosition(ENGINEER).Top = 4320
-    
-    lblCrewPosition(RADIO_OPERATOR).Left = 120
-    lblCrewPosition(RADIO_OPERATOR).Top = 4920
-    lblCrewPosition(RADIO_OPERATOR).Caption = "Radio Operator"
-    cboCrewPosition(RADIO_OPERATOR).Left = 120
-    cboCrewPosition(RADIO_OPERATOR).Top = 5280
-    
-    lblCrewPosition(NOSE_GUNNER).Left = 2760
-    lblCrewPosition(NOSE_GUNNER).Top = 120
-    lblCrewPosition(NOSE_GUNNER).Caption = "Nose Gunner"
-    cboCrewPosition(NOSE_GUNNER).Left = 2760
-    cboCrewPosition(NOSE_GUNNER).Top = 480
-    
-    txtSerialNumber(MID_UPPER_GUNNER).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(BALL_GUNNER).Left = 2760
-    lblCrewPosition(BALL_GUNNER).Top = 1080
-    lblCrewPosition(BALL_GUNNER).Caption = "Ball Gunner"
-    cboCrewPosition(BALL_GUNNER).Left = 2760
-    cboCrewPosition(BALL_GUNNER).Top = 1440
-    
-    txtSerialNumber(PORT_WAIST_GUNNER).Text = UNMANNED_POSITION
-    
-    lblCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(STBD_WAIST_GUNNER).Top = 2040
-    lblCrewPosition(STBD_WAIST_GUNNER).Caption = "Waist Gunner"
-    cboCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(STBD_WAIST_GUNNER).Top = 2400
-    
-    lblCrewPosition(TAIL_GUNNER).Left = 2760
-    lblCrewPosition(TAIL_GUNNER).Top = 3000
-    lblCrewPosition(TAIL_GUNNER).Caption = "Tail Gunner"
-    cboCrewPosition(TAIL_GUNNER).Left = 2760
-    cboCrewPosition(TAIL_GUNNER).Top = 3360
-    
-    txtSerialNumber(AMMO_STOCKER).Text = HIDDEN_POSITION
-    
-End Sub
-
-'******************************************************************************
-' PositionB24LMCombos
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
-' NOTES:  Position and label Lancaster-specific controls
-'******************************************************************************
-Private Sub PositionB24LMCombos()
-
-    lblCrewPosition(PILOT).Left = 120
-    lblCrewPosition(PILOT).Top = 120
-    lblCrewPosition(PILOT).Caption = "Pilot"
-    cboCrewPosition(PILOT).Left = 120
-    cboCrewPosition(PILOT).Top = 480
-    cboCrewPosition(PILOT).Top = 480
-    
-    lblCrewPosition(COPILOT).Left = 120
-    lblCrewPosition(COPILOT).Top = 1080
-    lblCrewPosition(COPILOT).Caption = "Co-Pilot"
-    cboCrewPosition(COPILOT).Left = 120
-    cboCrewPosition(COPILOT).Top = 1440
-    
-    lblCrewPosition(BOMBARDIER).Left = 120
-    lblCrewPosition(BOMBARDIER).Top = 2040
-    lblCrewPosition(BOMBARDIER).Caption = "Bombardier"
-    cboCrewPosition(BOMBARDIER).Left = 120
-    cboCrewPosition(BOMBARDIER).Top = 2400
-    
-    lblCrewPosition(NAVIGATOR).Left = 120
-    lblCrewPosition(NAVIGATOR).Top = 3000
-    lblCrewPosition(NAVIGATOR).Caption = "Navigator"
-    cboCrewPosition(NAVIGATOR).Left = 120
-    cboCrewPosition(NAVIGATOR).Top = 3360
-    
-    lblCrewPosition(ENGINEER).Left = 120
-    lblCrewPosition(ENGINEER).Top = 3960
-    lblCrewPosition(ENGINEER).Caption = "Engineer"
-    cboCrewPosition(ENGINEER).Left = 120
-    cboCrewPosition(ENGINEER).Top = 4320
-    
-    lblCrewPosition(RADIO_OPERATOR).Left = 120
-    lblCrewPosition(RADIO_OPERATOR).Top = 4920
-    lblCrewPosition(RADIO_OPERATOR).Caption = "Radio Operator"
-    cboCrewPosition(RADIO_OPERATOR).Left = 120
-    cboCrewPosition(RADIO_OPERATOR).Top = 5280
-    
-    lblCrewPosition(NOSE_GUNNER).Left = 2760
-    lblCrewPosition(NOSE_GUNNER).Top = 120
-    lblCrewPosition(NOSE_GUNNER).Caption = "Nose Gunner"
-    cboCrewPosition(NOSE_GUNNER).Left = 2760
-    cboCrewPosition(NOSE_GUNNER).Top = 480
-    
-    txtSerialNumber(MID_UPPER_GUNNER).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(BALL_GUNNER).Left = 2760
-    lblCrewPosition(BALL_GUNNER).Top = 1080
-    lblCrewPosition(BALL_GUNNER).Caption = "Floor Ring Gunner"
-    cboCrewPosition(BALL_GUNNER).Left = 2760
-    cboCrewPosition(BALL_GUNNER).Top = 1440
-    
-    txtSerialNumber(PORT_WAIST_GUNNER).Text = UNMANNED_POSITION
-    
-    lblCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    lblCrewPosition(STBD_WAIST_GUNNER).Top = 2040
-    lblCrewPosition(STBD_WAIST_GUNNER).Caption = "Waist Gunner"
-    cboCrewPosition(STBD_WAIST_GUNNER).Left = 2760
-    cboCrewPosition(STBD_WAIST_GUNNER).Top = 2400
-    
-    lblCrewPosition(TAIL_GUNNER).Left = 2760
-    lblCrewPosition(TAIL_GUNNER).Top = 3000
-    lblCrewPosition(TAIL_GUNNER).Caption = "Stinger Gunner"
-    cboCrewPosition(TAIL_GUNNER).Left = 2760
-    cboCrewPosition(TAIL_GUNNER).Top = 3360
-    
-    txtSerialNumber(AMMO_STOCKER).Text = HIDDEN_POSITION
-    
-End Sub
-
-'******************************************************************************
-' PositionAvroLancasterCombos
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
-' NOTES:  Position and label Lancaster-specific controls
-'******************************************************************************
-Private Sub PositionAvroLancasterCombos()
-
-    lblCrewPosition(PILOT).Left = 120
-    lblCrewPosition(PILOT).Top = 120
-    lblCrewPosition(PILOT).Caption = "Pilot"
-    cboCrewPosition(PILOT).Left = 120
-    cboCrewPosition(PILOT).Top = 480
-    
-    txtSerialNumber(COPILOT).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(BOMBARDIER).Left = 120
-    lblCrewPosition(BOMBARDIER).Top = 1080
-    lblCrewPosition(BOMBARDIER).Caption = "Bomb Aimer"
-    cboCrewPosition(BOMBARDIER).Left = 120
-    cboCrewPosition(BOMBARDIER).Top = 1440
-    
-    lblCrewPosition(NAVIGATOR).Left = 120
-    lblCrewPosition(NAVIGATOR).Top = 2040
-    lblCrewPosition(NAVIGATOR).Caption = "Navigator"
-    cboCrewPosition(NAVIGATOR).Left = 120
-    cboCrewPosition(NAVIGATOR).Top = 2400
-    
-    lblCrewPosition(ENGINEER).Left = 120
-    lblCrewPosition(ENGINEER).Top = 3000
-    lblCrewPosition(ENGINEER).Caption = "Flight Engineer"
-    cboCrewPosition(ENGINEER).Left = 120
-    cboCrewPosition(ENGINEER).Top = 3360
-    
-    lblCrewPosition(RADIO_OPERATOR).Left = 120
-    lblCrewPosition(RADIO_OPERATOR).Top = 3960
-    lblCrewPosition(RADIO_OPERATOR).Caption = "Wireless Operator"
-    cboCrewPosition(RADIO_OPERATOR).Left = 120
-    cboCrewPosition(RADIO_OPERATOR).Top = 4320
-    
-    txtSerialNumber(NOSE_GUNNER).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(MID_UPPER_GUNNER).Left = 120
-    lblCrewPosition(MID_UPPER_GUNNER).Top = 4920
-    lblCrewPosition(MID_UPPER_GUNNER).Caption = "Mid-Upper Gunner"
-    cboCrewPosition(MID_UPPER_GUNNER).Left = 120
-    cboCrewPosition(MID_UPPER_GUNNER).Top = 5280
-    
-    txtSerialNumber(BALL_GUNNER).Text = HIDDEN_POSITION
-    
-    txtSerialNumber(PORT_WAIST_GUNNER).Text = HIDDEN_POSITION
-    
-    txtSerialNumber(STBD_WAIST_GUNNER).Text = HIDDEN_POSITION
-    
-    lblCrewPosition(TAIL_GUNNER).Left = 2760
-    lblCrewPosition(TAIL_GUNNER).Top = 120
-    lblCrewPosition(TAIL_GUNNER).Caption = "Rear Gunner"
-    cboCrewPosition(TAIL_GUNNER).Left = 2760
-    cboCrewPosition(TAIL_GUNNER).Top = 480
-    
-    txtSerialNumber(AMMO_STOCKER).Text = HIDDEN_POSITION
-    
+Private Sub PositionCrewCombos()
+'Position and label bomber crew comboboxes
+    Dim X  As Integer
+    Dim Y As Integer
+    Dim i As Integer
+    Dim j As Integer
+    Dim hasPosition As Boolean
+    Dim firstColumn As Boolean
+    Dim bomberPositions As Integer
+    
+    X = 120
+    Y = 120
+    firstColumn = True
+    
+    For i = cboCrewPosition.LBound To cboCrewPosition.UBound
+        hasPosition = False
+        For j = LBound(CurrentBomberPositions) To UBound(CurrentBomberPositions)
+            If CurrentBomberPositions(j) = i Then
+                hasPosition = True
+                lblCrewPosition(i).Caption = CurrentBomberPositionNames(j)
+                bomberPositions = bomberPositions + 1
+            End If
+        Next
+        If hasPosition Then
+            lblCrewPosition(i).Left = X
+            lblCrewPosition(i).Top = Y
+            Y = Y + 360
+            cboCrewPosition(i).Left = X
+            cboCrewPosition(i).Top = Y
+            Y = Y + 600
+            txtSerialNumber(i).Text = UNMANNED_POSITION
+        Else
+            txtSerialNumber(i).Text = HIDDEN_POSITION
+        End If
+        If firstColumn And bomberPositions > (UBound(CurrentBomberPositions) - LBound(CurrentBomberPositions)) / 2 Then
+            X = 2760
+            Y = 120
+            firstColumn = False
+        End If
+    Next
 End Sub
 
 '******************************************************************************

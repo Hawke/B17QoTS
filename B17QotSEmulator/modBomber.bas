@@ -1,3 +1,4 @@
+Attribute VB_Name = "modBomber"
 '******************************************************************************
 ' modBomber.bas
 '
@@ -22,7 +23,6 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modBomber"
 Option Explicit
 
 Public prsBomber As New ADODB.Recordset
@@ -1175,7 +1175,7 @@ Public Sub AdjustAvailableBombers()
         
         intBomberMission = intTemp
 
-        If prsAirman![Assignment] = ADMIN_DUTY Then
+        If IsNull(prsAirman("Assignment")) Then
             .cboAssignment.Text = "Admin Duty"
         Else
             If LookupBomber(prsAirman![Assignment], LOOKUP_BY_KEYFIELD, strAssignment) = True Then

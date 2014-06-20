@@ -1,3 +1,4 @@
+Attribute VB_Name = "modGroup"
 '******************************************************************************
 ' modGroup.bas
 '
@@ -22,7 +23,6 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modGroup"
 ' The table is named "GroupT" because "Group" is a reserved SQL word.
 
 Option Explicit
@@ -30,7 +30,7 @@ Option Explicit
 Public prsGroup As New ADODB.Recordset
 Public varGroupCurrentlyOnTab As Variant
 
-Dim strErrmsg As String
+Dim strErrMsg As String
 
 '******************************************************************************
 ' FillGroupTabFields
@@ -53,26 +53,26 @@ Public Function FillGroupTabFields() As Boolean
     With frmMainMenu
         ' Populate the non-lookup fields.
         
-        .txtKeyField(GROUP_TAB).Text = prsGroup![KeyField]
-        .cboName(GROUP_TAB).Text = prsGroup![Name]
-        .txtSorties(GROUP_TAB).Text = prsGroup![Sorties]
-        .txtKills(GROUP_TAB).Text = prsGroup![Kills]
-        .txtPlanesLost(GROUP_TAB).Text = prsGroup![PlanesLost]
-        .txtKIA(GROUP_TAB).Text = prsGroup![KIA]
-        .txtMIA(GROUP_TAB).Text = prsGroup![MIA]
-        .txtWounded(GROUP_TAB).Text = prsGroup![Wounded]
-        .txtPOW(GROUP_TAB).Text = prsGroup![POW]
-        .txtMedalOfHonor(GROUP_TAB).Text = prsGroup![MedalOfHonor]
-        .txtDistinguishedServiceCross(GROUP_TAB).Text = prsGroup![DistinguishedServiceCross]
-        .txtSilverStar(GROUP_TAB).Text = prsGroup![SilverStar]
-        .txtDistinguishedFlyingCross(GROUP_TAB).Text = prsGroup![DistinguishedFlyingCross]
-        .txtBronzeStarV(GROUP_TAB).Text = prsGroup![BronzeStarV]
-        .txtPurpleHeart(GROUP_TAB).Text = prsGroup![PurpleHeart]
-        .txtAirMedal(GROUP_TAB).Text = prsGroup![AirMedal]
-        .txtDistinguishedUnitCitation(GROUP_TAB).Text = prsGroup![DistinguishedUnitCitation]
-        .txtMeritoriousUnitCitation(GROUP_TAB).Text = prsGroup![MeritoriousUnitCitation]
-    
-        Select Case prsGroup![Base]
+        .txtKeyField(GROUP_TAB).Text = prsGroup("KeyField").Value
+        .cboName(GROUP_TAB).Text = prsGroup("Name").Value
+        .txtSorties(GROUP_TAB).Text = prsGroup("Sorties").Value
+        .txtKills(GROUP_TAB).Text = prsGroup("Kills").Value
+        .txtPlanesLost(GROUP_TAB).Text = prsGroup("PlanesLost").Value
+        .txtKIA(GROUP_TAB).Text = prsGroup("KIA").Value
+        .txtMIA(GROUP_TAB).Text = prsGroup("MIA").Value
+        .txtWounded(GROUP_TAB).Text = prsGroup("Wounded").Value
+        .txtPOW(GROUP_TAB).Text = prsGroup("POW").Value
+        .txtMedalOfHonor(GROUP_TAB).Text = prsGroup("MedalofHonor").Value
+        .txtDistinguishedServiceCross(GROUP_TAB).Text = prsGroup("DistinguishedServiceCross").Value
+        .txtSilverStar(GROUP_TAB).Text = prsGroup("SilverStar").Value
+        .txtDistinguishedFlyingCross(GROUP_TAB).Text = prsGroup("DistinguishedFlyingCross").Value
+        .txtBronzeStarV(GROUP_TAB).Text = prsGroup("BronzeStarV").Value
+        .txtPurpleHeart(GROUP_TAB).Text = prsGroup("PurpleHeart").Value
+        .txtAirMedal(GROUP_TAB).Text = prsGroup("AirMedal").Value
+        .txtDistinguishedUnitCitation(GROUP_TAB).Text = prsGroup("DistinguishedUnitCitation").Value
+        .txtMeritoriousUnitCitation(GROUP_TAB).Text = prsGroup("MeritoriousUnitCitation").Value
+        
+        Select Case prsGroup("base")
             Case ENGLAND_TER:
                 .optEngland(GROUP_TAB).Value = True
             Case ITALY_TER:
@@ -81,7 +81,7 @@ Public Function FillGroupTabFields() As Boolean
         
         ' Populate the recordset lookup fields.
         
-        If LookupAirman(prsGroup![Commander], LOOKUP_BY_KEYFIELD, strCommander) = False Then
+        If LookupAirman(prsGroup("Commander").Value, LOOKUP_BY_KEYFIELD, strCommander) = False Then
             FillGroupTabFields = False
             Exit Function
         Else
@@ -94,7 +94,7 @@ Public Function FillGroupTabFields() As Boolean
         ' If this is a default Group, disable the fields, otherwise ensure
         ' they are enabled.
         
-        If prsGroup![Default] = True Then
+        If prsGroup("Default").Value Then
             .chkDefault(GROUP_TAB).Value = vbChecked
             
             .cboCommander(GROUP_TAB).Enabled = False
@@ -181,8 +181,7 @@ Public Function GetGroupRecordset() As Boolean
     pobjCmnd.CommandText = "SELECT * FROM GroupT ORDER BY Name"
 
     prsGroup.CursorLocation = adUseClient
-    prsGroup.Open pobjCmnd, , adOpenStatic, adLockBatchOptimistic
-    prsGroup!KeyField.Properties("Optimize") = True
+    prsGroup.Open pobjCmnd, , adOpenKeyset, adLockBatchOptimistic
     prsGroup.Sort = "Name ASC"
     
     Exit Function
@@ -195,11 +194,11 @@ CleanUp:
    
 ErrorTrap:
     
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "GetGroupRecordset() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
     
     Err.Clear
     
@@ -260,10 +259,10 @@ Public Function LookupGroup(ByVal LookupKeyField As Integer, ByVal LookupType As
     ' If the group had been found, we would have previously exitted.
     ' Therefore, an error condition exists.
     
-    strErrmsg = "LookupGroup() " & vbCrLf & vbCrLf & _
+    strErrMsg = "LookupGroup() " & vbCrLf & vbCrLf & _
                 "Group " & LookupKeyField & " not found."
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
 End Function
 
@@ -392,12 +391,12 @@ Public Function AddGroup() As Boolean
         End If
         
         If IsDupeGroupName() = True Then
-            strErrmsg = "Failed to add group." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to add group." & vbCrLf & vbCrLf & _
                         "The " & _
                         .cboName(GROUP_TAB).Text & _
                         " already exists."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -416,24 +415,7 @@ Public Function AddGroup() As Boolean
         
             prsGroup.AddNew
             
-            prsGroup![KeyField] = intKeyField
-            prsGroup![Name] = .cboName(GROUP_TAB).Text
-            prsGroup![Sorties] = 0
-            prsGroup![Kills] = 0
-            prsGroup![PlanesLost] = 0
-            prsGroup![KIA] = 0
-            prsGroup![MIA] = 0
-            prsGroup![Wounded] = 0
-            prsGroup![POW] = 0
-            prsGroup![MedalOfHonor] = 0
-            prsGroup![DistinguishedServiceCross] = 0
-            prsGroup![SilverStar] = 0
-            prsGroup![DistinguishedFlyingCross] = 0
-            prsGroup![BronzeStarV] = 0
-            prsGroup![PurpleHeart] = 0
-            prsGroup![AirMedal] = 0
-            prsGroup![DistinguishedUnitCitation] = 0
-            prsGroup![MeritoriousUnitCitation] = 0
+            prsGroup.Fields("Name").Value = .cboName(GROUP_TAB).Text
             
             If LookupAirman((.cboCommander(GROUP_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX, strIgnore) = False Then
 ' qwe            Call ExitEmulator
@@ -452,12 +434,12 @@ Public Function AddGroup() As Boolean
                 prsGroup![Base] = ITALY_TER
             End If
         
-            prsGroup![Default] = vbUnchecked
+            prsGroup![Default] = False
             
             prsGroup.UpdateBatch
-    
         pobjConn.CommitTrans
-        
+        prsGroup.Resync
+
         pintOpenTrans = pintOpenTrans - 1
             
         ' Insert into group tab name combo, then change the group tab to
@@ -496,11 +478,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "AddGroup() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -534,11 +516,11 @@ Public Function ModifyGroup() As Boolean
         ' Default groups cannot be deleted.
         
         If prsGroup![Default] = True Then
-            strErrmsg = "Failed to update group." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to update group." & vbCrLf & vbCrLf & _
                         prsGroup![Name] & _
                         " is a default group."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -547,12 +529,12 @@ Public Function ModifyGroup() As Boolean
         If ValidateRequiredInput(.cboName(GROUP_TAB)) = False Then
             Exit Function
         ElseIf .cboName(GROUP_TAB).Text <> prsGroup![Name] Then
-            strErrmsg = "Failed to update group." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to update group." & vbCrLf & vbCrLf & _
                         "You are not allowed to change the " & _
                         prsGroup![Name] & _
                         "'s name."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -598,11 +580,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "ModifyGroup() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -641,11 +623,11 @@ Public Function DeleteGroup() As Boolean
         ' Default groups cannot be deleted.
         
         If prsGroup![Default] = True Then
-            strErrmsg = "Failed to delete group." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to delete group." & vbCrLf & vbCrLf & _
                         prsGroup![Name] & _
                         " is a default group."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -654,14 +636,14 @@ Public Function DeleteGroup() As Boolean
         ' Determine if the group has assigned squadrons.
         
         If HasAssignedSquadron(strSquadronList) = True Then
-            strErrmsg = "Failed to delete group." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to delete group." & vbCrLf & vbCrLf & _
                         strSquadronList & _
                         " are assigned to the " & _
                         prsGroup![Name] & _
                         ". A group cannot be deleted if it has " & _
                         "dependent squadrons."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -741,11 +723,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "DeleteGroup() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 

@@ -1,3 +1,4 @@
+Attribute VB_Name = "modAirman"
 '******************************************************************************
 ' modAirman.bas
 '
@@ -22,13 +23,12 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modAirman"
 Option Explicit
 
 Public prsAirman As New ADODB.Recordset
 Public varAirmanCurrentlyOnTab As Variant
 
-Dim strErrmsg As String
+Dim strErrMsg As String
 
 '******************************************************************************
 ' FillAirmanTabFields
@@ -51,7 +51,7 @@ Public Function FillAirmanTabFields() As Boolean
     
     FillAirmanTabFields = True
 
-Call AdjustAvailableBombers ' Nov04
+    Call AdjustAvailableBombers ' Nov04
 
     With frmMainMenu
         ' Populate the non-lookup fields.
@@ -82,17 +82,17 @@ Call AdjustAvailableBombers ' Nov04
         End If
 
         ' Populate the recordset lookup fields.
-
-        If LookupBomber(prsAirman![Assignment], LOOKUP_BY_KEYFIELD, strAssignment) = False Then
-            FillAirmanTabFields = False
-            Exit Function
-        Else
-            .cboAssignment.Text = strAssignment
-            
-            ' Repoint the bomber recordset to the record displayed on the bomber tab.
-            prsBomber.Bookmark = varBomberCurrentlyOnTab
+        If Not IsNull(prsAirman("Assignment")) Then
+            If LookupBomber(prsAirman![Assignment], LOOKUP_BY_KEYFIELD, strAssignment) = False Then
+                FillAirmanTabFields = False
+                Exit Function
+            Else
+                .cboAssignment.Text = strAssignment
+                
+                ' Repoint the bomber recordset to the record displayed on the bomber tab.
+                prsBomber.Bookmark = varBomberCurrentlyOnTab
+            End If
         End If
-
         If LookupCrewPosition(prsAirman![CrewPosition], strCrewPosition) = False Then
             FillAirmanTabFields = False
             Exit Function
@@ -294,11 +294,11 @@ CleanUp:
    
 ErrorTrap:
     
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "GetAirmanRecordset() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
     
     Err.Clear
     
@@ -359,10 +359,10 @@ Public Function LookupAirman(ByVal LookupKeyField As Integer, ByVal LookupType A
     ' If the airman had been found, we would have previously exitted.
     ' Therefore, an error condition exists.
     
-    strErrmsg = "LookupAirman() " & vbCrLf & vbCrLf & _
+    strErrMsg = "LookupAirman() " & vbCrLf & vbCrLf & _
                 "Airman " & LookupKeyField & " not found."
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
 End Function
 
@@ -548,11 +548,11 @@ Call AdjustAvailableBombers ' Nov04
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "AddAirman() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -603,7 +603,7 @@ Public Function ModifyAirman() As Boolean
         ' Default airmen cannot be updated.
         
         If prsAirman![Default] = True Then
-            strErrmsg = "Failed to update airman." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to update airman." & vbCrLf & vbCrLf & _
                         frmMainMenu.cboRank.Text & _
                         " " & _
                         prsAirman![Name] & _
@@ -611,7 +611,7 @@ Public Function ModifyAirman() As Boolean
                         prsAirman![KeyField] & _
                         ", is either in flight and/or a default airman."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -620,14 +620,14 @@ Public Function ModifyAirman() As Boolean
         If ValidateRequiredInput(.cboName(AIRMAN_TAB)) = False Then
             Exit Function
         ElseIf .cboName(AIRMAN_TAB).Text <> prsAirman![Name] Then
-            strErrmsg = "Failed to update airman." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to update airman." & vbCrLf & vbCrLf & _
                         "You are not allowed to change " & _
                         frmMainMenu.cboRank.Text & _
                         " " & _
                         prsAirman![Name] & _
                         "'s name."
 
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
 
             ' This is not a severe system error, so return true.
             Exit Function
@@ -688,11 +688,11 @@ Call AdjustAvailableBombers ' Nov04
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "ModifyAirman() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -997,7 +997,7 @@ Public Function DeleteAirman() As Boolean
         ' Default airmen cannot be deleted.
         
         If prsAirman![Default] = True Then
-            strErrmsg = "Failed to delete airman." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to delete airman." & vbCrLf & vbCrLf & _
                         .cboRank.Text & _
                         " " & _
                         prsAirman![Name] & _
@@ -1005,7 +1005,7 @@ Public Function DeleteAirman() As Boolean
                         prsAirman![KeyField] & _
                         ", is either in flight and/or a default airman."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -1020,7 +1020,7 @@ Public Function DeleteAirman() As Boolean
         End If
         
         If blnCommander = True Then
-            strErrmsg = "Failed to delete airman." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to delete airman." & vbCrLf & vbCrLf & _
                         .cboRank.Text & _
                         " " & _
                         prsAirman![Name] & _
@@ -1030,7 +1030,7 @@ Public Function DeleteAirman() As Boolean
                         strUnitCommanded & _
                         " commander."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -1041,7 +1041,7 @@ Public Function DeleteAirman() As Boolean
         blnCrewman = IsCrewman(strBomberName)
         
         If blnCrewman = True Then
-            strErrmsg = .cboRank.Text & _
+            strErrMsg = .cboRank.Text & _
                         " " & _
                         prsAirman![Name] & _
                         ", serial #" & _
@@ -1054,7 +1054,7 @@ Public Function DeleteAirman() As Boolean
                         "assigned." & vbCrLf & vbCrLf & _
                         "Do you wish to continue?"
                 
-            If MsgBox(strErrmsg, (vbYesNo + vbDefaultButton2 + vbQuestion)) = vbNo Then
+            If MsgBox(strErrMsg, (vbYesNo + vbDefaultButton2 + vbQuestion)) = vbNo Then
                 Exit Function
             End If
         Else
@@ -1180,11 +1180,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "DeleteAirman() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 

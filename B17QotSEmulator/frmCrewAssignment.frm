@@ -1,23 +1,28 @@
 VERSION 5.00
 Begin VB.Form frmCrewAssignment 
+   BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Crew Assignment"
-   ClientHeight    =   6570
-   ClientLeft      =   225
-   ClientTop       =   855
-   ClientWidth     =   5310
+   ClientHeight    =   6720
+   ClientLeft      =   150
+   ClientTop       =   780
+   ClientWidth     =   5460
    Icon            =   "frmCrewAssignment.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6570
-   ScaleWidth      =   5310
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   6720
+   ScaleWidth      =   5460
+   ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin VB.Frame fraCancelHelp 
       BorderStyle     =   0  'None
       Height          =   495
       Left            =   2040
-      TabIndex        =   40
+      TabIndex        =   27
       Top             =   5880
       Width           =   2655
       Begin VB.CommandButton cmdCancel 
+         Cancel          =   -1  'True
          Caption         =   "&Cancel"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -30,7 +35,7 @@ Begin VB.Form frmCrewAssignment
          EndProperty
          Height          =   495
          Left            =   0
-         TabIndex        =   42
+         TabIndex        =   29
          Top             =   0
          Width           =   1215
       End
@@ -47,140 +52,10 @@ Begin VB.Form frmCrewAssignment
          EndProperty
          Height          =   495
          Left            =   1440
-         TabIndex        =   41
+         TabIndex        =   28
          Top             =   0
          Width           =   1215
       End
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   13
-      Left            =   2160
-      TabIndex        =   39
-      Text            =   "0"
-      Top             =   7800
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   12
-      Left            =   1200
-      TabIndex        =   38
-      Text            =   "0"
-      Top             =   7800
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   11
-      Left            =   240
-      TabIndex        =   37
-      Text            =   "0"
-      Top             =   7800
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   10
-      Left            =   4080
-      TabIndex        =   36
-      Text            =   "0"
-      Top             =   7320
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   9
-      Left            =   3120
-      TabIndex        =   35
-      Text            =   "0"
-      Top             =   7320
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   8
-      Left            =   2160
-      TabIndex        =   34
-      Text            =   "0"
-      Top             =   7320
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   7
-      Left            =   1200
-      TabIndex        =   33
-      Text            =   "0"
-      Top             =   7320
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   6
-      Left            =   240
-      TabIndex        =   32
-      Text            =   "0"
-      Top             =   7320
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   5
-      Left            =   4080
-      TabIndex        =   31
-      Text            =   "0"
-      Top             =   6840
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   4
-      Left            =   3120
-      TabIndex        =   30
-      Text            =   "0"
-      Top             =   6840
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   3
-      Left            =   2160
-      TabIndex        =   29
-      Text            =   "0"
-      Top             =   6840
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   2
-      Left            =   1200
-      TabIndex        =   28
-      Text            =   "0"
-      Top             =   6840
-      Visible         =   0   'False
-      Width           =   855
-   End
-   Begin VB.TextBox txtSerialNumber 
-      Height          =   375
-      Index           =   1
-      Left            =   240
-      TabIndex        =   27
-      Text            =   "0"
-      Top             =   6840
-      Visible         =   0   'False
-      Width           =   855
    End
    Begin VB.ComboBox cboCrewPosition 
       BeginProperty Font 
@@ -218,6 +93,7 @@ Begin VB.Form frmCrewAssignment
    End
    Begin VB.CommandButton cmdOK 
       Caption         =   "&OK"
+      Default         =   -1  'True
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   9.75
@@ -699,7 +575,7 @@ Attribute VB_Exposed = False
 '******************************************************************************
 
 Option Explicit
-
+'Size: 7440 x 5550
 Dim strErrMsg As String
 Dim varBookmark As Variant
 Dim intCurrentAirmanOldAssigment As Integer
@@ -719,7 +595,7 @@ Dim intCurrentAirmanOldAssigment As Integer
 ' node in the matrix.) It is possible a row may not have any nodes at all.
 Dim lvntCrewMatrix(PILOT To AMMO_STOCKER) As Variant
 Dim lvntNode() As Variant
-Dim PositionNames As Variant
+Dim PositionFieldNames As Variant
 Dim B17CPositions As Variant
 Dim B17CPositionNames As Variant
 Dim B17EFGPositions As Variant
@@ -736,6 +612,8 @@ Dim LancasterPositions As Variant
 Dim LancasterPositionNames As Variant
 Dim CurrentBomberPositions As Variant
 Dim CurrentBomberPositionNames As Variant
+
+
 '******************************************************************************
 ' Form_Load
 '
@@ -750,6 +628,7 @@ Dim CurrentBomberPositionNames As Variant
 '******************************************************************************
 Private Sub Form_Load()
     Dim cbo As ComboBox
+    PositionFieldNames = Array("Pilot", "CoPilot", "Bombardier", "NAVIGATOR", "Engineer", "RadioOperator", "NoseGunner", "MidUpperGunner", "BallGunner", "PortWaistGunner", "StbdWaistGunner", "TailGunner", "AmmoStocker")
     
     B17CPositions = Array(PILOT, COPILOT, BOMBARDIER, ENGINEER, RADIO_OPERATOR, BALL_GUNNER, PORT_WAIST_GUNNER, STBD_WAIST_GUNNER)
     B17CPositionNames = Array("Pilot", "Co-Pilot", "Bombardier", "Engineer", "Radio Operator", "Tunnel Gunner", "Port Waist Gunner", "Stbd. Waist Gunner")
@@ -765,7 +644,6 @@ Private Sub Form_Load()
     B24LMPositionNames = Array("Pilot", "Co-Pilot", "Bombardier", "Navigator", "Engineer", "Radio Operator", "Nose Gunner", "Floor Ring Gunner", "Waist Gunner", "Stinger Gunner")
     LancasterPositions = Array(PILOT, BOMBARDIER, NAVIGATOR, ENGINEER, RADIO_OPERATOR, MID_UPPER_GUNNER, TAIL_GUNNER)
     LancasterPositionNames = Array("Pilot", "Bomb Aimer", "Navigator", "Flight Engineer", "Wireless Operator", "Mid-Upper Gunner", "Tail Gunner")
-'    CenterForm Me
 
     ' Fiddle the form bottom, as adding a menu bar otherwise seems to
     ' randomly cut off the bottom of the form
@@ -774,9 +652,10 @@ Private Sub Form_Load()
     ' Point to the record currently on the airman tab.
     
 '    varBookmark = prsAirman.Bookmark
+    If Not (prsAirman.Fields("Assignment") = Null) Then
+        intCurrentAirmanOldAssigment = prsAirman.Fields("Assignment").Value
+    End If
     
-    intCurrentAirmanOldAssigment = prsAirman![Assignment]
-
 'MsgBox "1: intCurrentAirmanOldAssigment = " & intCurrentAirmanOldAssigment & vbCrLf & _
 '       "prsAirman![Assignment] = " & prsAirman![Assignment] & vbCrLf & _
 '       "varAirmanCurrentlyOnTab = " & varAirmanCurrentlyOnTab & vbCrLf & _
@@ -826,30 +705,27 @@ Private Sub Form_Load()
                 CurrentBomberPositionNames = LancasterPositionNames
         End Select
         
-        Call PositionCrewCombos
+        PositionCrewCombos
+        
+        ' Populate the combos that will be visible and enabled, otherwise
+        ' disable the combos.
+        PopulateCrewPositionCombos
+
+        If Not .cmdAssignCrew.Caption = "Assign Crew" Then
+        'Default Crew or Last Crew
+        
+            Call DisableCrewPositionCombos
+            cmdOK.Visible = False
+            'CenterControl fraCancelHelp, Me
+        End If
         ' Fill in the text portion of the visible and enabled combos.
 
-'MsgBox "Call FillCrewAssignmentDialogFields"
         If FillCrewAssignmentDialogFields() = False Then
 ' qwe            Call ExitEmulator
             gblnCrewAssigned = False
             Unload Me
         End If
 
-        ' Populate the combos that will be visible and enabled, otherwise
-        ' disable the combos.
-
-        If .cmdAssignCrew.Caption = "Assign Crew" Then
-        
-            Call PopulateCrewPositionCombos
-        
-        Else ' Default Crew or Last Crew
-        
-            Call DisableCrewPositionCombos
-            cmdOK.Visible = False
-            'CenterControl fraCancelHelp, Me
-        
-        End If
 
         ' Hide the combos that don't exist on the bomber.
 
@@ -859,217 +735,51 @@ Private Sub Form_Load()
     End With
 End Sub
             
-'******************************************************************************
-' FillCrewAssignmentDialogFields
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
-' NOTES:  Initialize the crew position drop downs with the names of the airmen
-'         currently assigned to the bomber. Do not lookup airmen for positions
-'         which do not exist on the bomber (indicated by "BLANK"), or for
-'         positions which are unfilled (indicated by 0).
+'        Initialize the crew position drop downs with the names of the airmen
+'        currently assigned to the bomber. Do not lookup airmen for positions
+'        which do not exist on the bomber (indicated by "BLANK"), or for
+'        positions which are unfilled (indicated by 0).
 '******************************************************************************
 Private Function FillCrewAssignmentDialogFields()
     Dim strIgnore As String
+    Dim i As Integer
+    Dim j As Integer
     
     FillCrewAssignmentDialogFields = True
 
-'MsgBox "1 - prsBomber![Name]: " & prsBomber![Name]
-    
-'MsgBox "a: " & prsBomber![PILOT]
-'    prsBomber.AbsolutePosition = 4 ' error here
-    If prsBomber![PILOT] <> UNMANNED_POSITION _
-    And prsBomber![PILOT] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![PILOT], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(PILOT).Text = prsAirman![Name]
-            txtSerialNumber(PILOT).Text = prsAirman![KeyField]
+    For i = LBound(PositionFieldNames) To UBound(PositionFieldNames)
+        'go through every position combobox
+        If prsBomber(PositionFieldNames(i)).Value = UNMANNED_POSITION Then
+            'unmanned positions are left blank
+            cboCrewPosition(i + 1).Text = vbNullString
+        ElseIf prsBomber(PositionFieldNames(i)).Value <> HIDDEN_POSITION Then
+            'hidden positions are not touched.
+            If Not LookupAirman(prsBomber(PositionFieldNames(i)), LOOKUP_BY_KEYFIELD, strIgnore) Then
+                FillCrewAssignmentDialogFields = False
+                Exit Function
+            Else
+                'this bomber has an airman assigned to this position
+                For j = 0 To cboCrewPosition(i + 1).ListCount - 1
+                    'try to find the airman in the combobox, which should contain all the airmen assigned to this bomber.
+                    If cboCrewPosition(i + 1).ItemData(j) = prsAirman("KeyField") Then
+                        'found him. Choose him in the dropdown.
+                        cboCrewPosition(i + 1).ListIndex = j
+                        Exit For
+                    End If
+                Next
+                'Crewman wasn't available for general purpose aircraft, so we'll just use their name
+                If cboCrewPosition(i + 1).ListIndex < 0 Then
+                    cboCrewPosition(i + 1).Text = prsAirman("Name")
+                End If
+            End If
         End If
-    End If
-
-'MsgBox "b: " & prsBomber![COPILOT]
-
-    If prsBomber![COPILOT] <> UNMANNED_POSITION _
-    And prsBomber![COPILOT] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![COPILOT], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(COPILOT).Text = prsAirman![Name]
-            txtSerialNumber(COPILOT).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "c: " & prsBomber![BOMBARDIER]
-    
-    If prsBomber![BOMBARDIER] <> UNMANNED_POSITION _
-    And prsBomber![BOMBARDIER] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![BOMBARDIER], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(BOMBARDIER).Text = prsAirman![Name]
-            txtSerialNumber(BOMBARDIER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "d: " & prsBomber![NAVIGATOR]
-    
-    If prsBomber![NAVIGATOR] <> UNMANNED_POSITION _
-    And prsBomber![NAVIGATOR] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![NAVIGATOR], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(NAVIGATOR).Text = prsAirman![Name]
-            txtSerialNumber(NAVIGATOR).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "e: " & prsBomber![ENGINEER]
-    
-    If prsBomber![ENGINEER] <> UNMANNED_POSITION _
-    And prsBomber![ENGINEER] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![ENGINEER], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(ENGINEER).Text = prsAirman![Name]
-            txtSerialNumber(ENGINEER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "f: " & prsBomber![RadioOperator]
-    
-    If prsBomber![RadioOperator] <> UNMANNED_POSITION _
-    And prsBomber![RadioOperator] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![RadioOperator], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(RADIO_OPERATOR).Text = prsAirman![Name]
-            txtSerialNumber(RADIO_OPERATOR).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "g: " & prsBomber![NoseGunner]
-    
-    If prsBomber![NoseGunner] <> UNMANNED_POSITION _
-    And prsBomber![NoseGunner] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![NoseGunner], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(NOSE_GUNNER).Text = prsAirman![Name]
-            txtSerialNumber(NOSE_GUNNER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "h: " & prsBomber![MidUpperGunner]
-    
-    If prsBomber![MidUpperGunner] <> UNMANNED_POSITION _
-    And prsBomber![MidUpperGunner] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![MidUpperGunner], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(MID_UPPER_GUNNER).Text = prsAirman![Name]
-            txtSerialNumber(MID_UPPER_GUNNER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "i: " & prsBomber![BallGunner]
-    
-    If prsBomber![BallGunner] <> UNMANNED_POSITION _
-    And prsBomber![BallGunner] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![BallGunner], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(BALL_GUNNER).Text = prsAirman![Name]
-            txtSerialNumber(BALL_GUNNER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "j: " & prsBomber![PortWaistGunner]
-    
-    If prsBomber![PortWaistGunner] <> UNMANNED_POSITION _
-    And prsBomber![PortWaistGunner] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![PortWaistGunner], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(PORT_WAIST_GUNNER).Text = prsAirman![Name]
-            txtSerialNumber(PORT_WAIST_GUNNER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "k: " & prsBomber![StbdWaistGunner]
-    
-    If prsBomber![StbdWaistGunner] <> UNMANNED_POSITION _
-    And prsBomber![StbdWaistGunner] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![StbdWaistGunner], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(STBD_WAIST_GUNNER).Text = prsAirman![Name]
-            txtSerialNumber(STBD_WAIST_GUNNER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "l: " & prsBomber![TailGunner]
-    
-    If prsBomber![TailGunner] <> UNMANNED_POSITION _
-    And prsBomber![TailGunner] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![TailGunner], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(TAIL_GUNNER).Text = prsAirman![Name]
-            txtSerialNumber(TAIL_GUNNER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "m: " & prsBomber![AmmoStocker]
-    
-'    If txtSerialNumber(AMMO_STOCKER).Text <> HIDDEN_POSITION _
-'    And prsBomber![AmmoStocker] <> UNMANNED_POSITION Then
-    If prsBomber![AmmoStocker] <> UNMANNED_POSITION _
-    And prsBomber![AmmoStocker] <> HIDDEN_POSITION Then
-        If LookupAirman(prsBomber![AmmoStocker], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-            FillCrewAssignmentDialogFields = False
-            Exit Function
-        Else
-            cboCrewPosition(AMMO_STOCKER).Text = prsAirman![Name]
-            txtSerialNumber(AMMO_STOCKER).Text = prsAirman![KeyField]
-        End If
-    End If
-
-'MsgBox "n"
-
-'MsgBox "2 - prsBomber![Name]: " & prsBomber![Name]
-    
+    Next
 End Function
 
-'******************************************************************************
-' PopulateCrewPositionCombos
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
 ' NOTES:  This is tricky ...
 '******************************************************************************
 Private Sub PopulateCrewPositionCombos()
-    Dim frsTemp As New ADODB.Recordset
+    Dim frsTemp As ADODB.Recordset
     Dim intPos As Integer
     Dim intIndex As Integer
     Dim strBaseFilter As String
@@ -1089,19 +799,19 @@ Private Sub PopulateCrewPositionCombos()
     ' already assigned to the bomber will be added to the combo.
     
     strBaseFilter = "Status = " & DUTY_STATUS & " AND " & _
-                    "Default = " & vbUnchecked
+                    "Default = False"
 
     ' At the very least, every visible combo should have a blank first
     ' row. After adding the blank row, fill in the other rows.
     
-    For intPos = 1 To txtSerialNumber.UBound
-        If txtSerialNumber(intPos).Text <> HIDDEN_POSITION Then
+    For intPos = cboCrewPosition.LBound To cboCrewPosition.UBound
+        If cboCrewPosition(intPos).Tag <> HIDDEN_POSITION Then
             
-            cboCrewPosition(intPos).AddItem ""
+            cboCrewPosition(intPos).AddItem vbNullString
             
-            strPositionFilter = " AND " & "CrewPosition = " & intPos
+            'strPositionFilter = " AND " & "CrewPosition = " & intPos
         
-            strFilter = strBaseFilter & strPositionFilter
+            strFilter = strBaseFilter '& strPositionFilter
         
             frsTemp.Filter = strFilter
                     
@@ -1123,7 +833,7 @@ Private Sub PopulateCrewPositionCombos()
 'MsgBox "3 - prsBomber![Name]: " & prsBomber![Name]
     
                 Do Until frsTemp.EOF
-                    If frsTemp![Assignment] = ADMIN_DUTY _
+                    If IsNull(frsTemp("Assignment")) _
                     Or frsTemp![Assignment] = prsBomber![KeyField] Then
                         intIndex = intIndex + 1
                     End If
@@ -1159,10 +869,10 @@ Private Sub PopulateCrewPositionCombos()
 
             Do Until frsTemp.EOF
 ' MsgBox "frsTemp.AbsolutePosition = " & frsTemp.AbsolutePosition
-                If frsTemp![Assignment] = ADMIN_DUTY _
+                If IsNull(frsTemp("Assignment")) _
                 Or frsTemp![Assignment] = prsBomber![KeyField] Then
                     cboCrewPosition(intPos).AddItem frsTemp![Name]
-                
+                    cboCrewPosition(intPos).ItemData(cboCrewPosition(intPos).NewIndex) = frsTemp("KeyField").Value
                     intIndex = intIndex + 1
                 
                     lvntCrewMatrix(intPos)(intIndex, 0) = frsTemp![KeyField]
@@ -1220,8 +930,8 @@ End Sub
 Private Sub DisableCrewPositionCombos()
     Dim intPos As Integer
     
-    For intPos = 1 To cboCrewPosition.UBound
-        If txtSerialNumber(intPos).Text <> HIDDEN_POSITION Then
+    For intPos = cboCrewPosition.LBound To cboCrewPosition.UBound
+        If cboCrewPosition(intPos).Tag <> HIDDEN_POSITION Then
             cboCrewPosition(intPos).Enabled = False
             cboCrewPosition(intPos).BackColor = vbButtonFace
         End If
@@ -1243,8 +953,8 @@ End Sub
 Private Sub HideUnusedCombos()
     Dim intPos As Integer
     
-    For intPos = 1 To cboCrewPosition.UBound
-        If txtSerialNumber(intPos).Text = HIDDEN_POSITION Then
+    For intPos = cboCrewPosition.LBound To cboCrewPosition.UBound
+        If cboCrewPosition(intPos).Tag = HIDDEN_POSITION Then
             lblCrewPosition(intPos).Visible = False
             cboCrewPosition(intPos).Visible = False
         ElseIf intPos = PORT_WAIST_GUNNER _
@@ -1275,22 +985,24 @@ End Sub
 '         airman recordset, we need to be more certain of which airmen we
 '         are dealing with.
 '******************************************************************************
-Private Sub cboCrewPosition_Click(intPos As Integer)
-
-    If cboCrewPosition(intPos).ListIndex = 0 Then
+Private Sub cboCrewPosition_Click(Index As Integer)
+    Dim i As Integer
+    If cboCrewPosition(Index).ListIndex = 0 Then
         ' Blank row. If this is a required position, the bomber will not be
         ' able to fly missions until the position is filled.
-        txtSerialNumber(intPos).Text = UNMANNED_POSITION
+        cboCrewPosition(Index).Tag = UNMANNED_POSITION
         Exit Sub
     End If
 
-' MsgBox "Store " & lvntCrewMatrix(intPos)(cboCrewPosition(intPos).ListIndex, 0) & " in txtSerialNumber."
-
-    ' Row is not blank. Get the airman's serial number. The combo row and
-    ' matrix node should be equal. Therefore use ListIndex to index to
-    ' the associated node.
+    'Remove the newly-selected crew member from the other comboboxes
+    For i = cboCrewPosition.LBound To cboCrewPosition.UBound
+        If i <> Index And cboCrewPosition(i).ListIndex >= 0 Then
+            If cboCrewPosition(i).ItemData(cboCrewPosition(i).ListIndex) = cboCrewPosition(Index).ItemData(cboCrewPosition(Index).ListIndex) Then
+                cboCrewPosition(i).ListIndex = 0
+            End If
+        End If
+    Next
     
-    txtSerialNumber(intPos).Text = lvntCrewMatrix(intPos)(cboCrewPosition(intPos).ListIndex, 0)
 
 End Sub
 
@@ -1446,7 +1158,7 @@ Private Function CommitAssignments() As Boolean
         
         intPositionsOnBomber = 0
         
-        For intIndex = 1 To txtSerialNumber.UBound
+        For intIndex = cboCrewPosition.LBound To cboCrewPosition.UBound
 
             If intIndex = PORT_WAIST_GUNNER _
             And (prsBomber![BomberModel] = B24_D _
@@ -1456,12 +1168,12 @@ Private Function CommitAssignments() As Boolean
             
                 ' The port waist gunner is supposed to be unmanned on B-24s.
             
-            ElseIf txtSerialNumber(intIndex).Text = UNMANNED_POSITION Then
+            ElseIf cboCrewPosition(intIndex).Tag = UNMANNED_POSITION Then
 
                 blnStandDown = True
                 intPositionsOnBomber = intPositionsOnBomber + 1
                 
-            ElseIf txtSerialNumber(intIndex).Text <> HIDDEN_POSITION Then
+            ElseIf cboCrewPosition(intIndex).Tag <> HIDDEN_POSITION Then
                 intPositionsOnBomber = intPositionsOnBomber + 1
             End If
 
@@ -1469,7 +1181,7 @@ Private Function CommitAssignments() As Boolean
 
 'MsgBox "intPositionsOnBomber = " & intPositionsOnBomber
         
-        If blnStandDown = True Then
+        If blnStandDown Then
             prsBomber![Status] = STAND_DOWN_STATUS
         Else
             prsBomber![Status] = DUTY_STATUS
@@ -1486,20 +1198,12 @@ Private Function CommitAssignments() As Boolean
 'MsgBox "intPositionsOnBomber = " & intPositionsOnBomber
         
         ' Update the bomber's modified crew.
-        
-        prsBomber![PILOT] = txtSerialNumber(PILOT).Text
-        prsBomber![COPILOT] = txtSerialNumber(COPILOT).Text
-        prsBomber![BOMBARDIER] = txtSerialNumber(BOMBARDIER).Text
-        prsBomber![NAVIGATOR] = txtSerialNumber(NAVIGATOR).Text
-        prsBomber![ENGINEER] = txtSerialNumber(ENGINEER).Text
-        prsBomber![RadioOperator] = txtSerialNumber(RADIO_OPERATOR).Text
-        prsBomber![NoseGunner] = txtSerialNumber(NOSE_GUNNER).Text
-        prsBomber![MidUpperGunner] = txtSerialNumber(MID_UPPER_GUNNER).Text
-        prsBomber![BallGunner] = txtSerialNumber(BALL_GUNNER).Text
-        prsBomber![PortWaistGunner] = txtSerialNumber(PORT_WAIST_GUNNER).Text
-        prsBomber![StbdWaistGunner] = txtSerialNumber(STBD_WAIST_GUNNER).Text
-        prsBomber![TailGunner] = txtSerialNumber(TAIL_GUNNER).Text
-        prsBomber![AmmoStocker] = txtSerialNumber(AMMO_STOCKER).Text
+        For intIndex = cboCrewPosition.LBound To cboCrewPosition.UBound
+            If cboCrewPosition(intIndex).ListIndex >= 0 Then
+                prsBomber.Fields(PositionFieldNames(intIndex - 1)).Value = _
+                    cboCrewPosition(intIndex).ItemData(cboCrewPosition(intIndex).ListIndex)
+            End If
+        Next
             
         ' Update the previous crew's assignments. Rather than record who
         ' the current crew is, then do a bunch of lookups and updates on
@@ -1530,7 +1234,7 @@ Private Function CommitAssignments() As Boolean
 
 'MsgBox "Airman " & prsAirman![Name] & "has been assigned to 0."
                 
-                prsAirman![Assignment] = ADMIN_DUTY
+                prsAirman![Assignment] = Null
                 intIndex = intIndex + 1
             End If
 
@@ -1543,9 +1247,9 @@ Private Function CommitAssignments() As Boolean
         ' the number of hidden serial number textboxes on the form, where
         ' each textbox is associated with one crew position combo.
         
-        For intIndex = 1 To txtSerialNumber.UBound
-            If txtSerialNumber(intIndex).Text = UNMANNED_POSITION _
-            Or txtSerialNumber(intIndex).Text = HIDDEN_POSITION Then
+        For intIndex = cboCrewPosition.LBound To cboCrewPosition.UBound
+            If cboCrewPosition(intIndex).Tag = UNMANNED_POSITION _
+            Or cboCrewPosition(intIndex).Tag = HIDDEN_POSITION Then
 'MsgBox "empty or hidden, get next airman's serial number"
                 GoTo Continue
             End If
@@ -1553,18 +1257,19 @@ Private Function CommitAssignments() As Boolean
 'MsgBox "Key to the airman occupying the position in question."
             
             ' Key to the airman occupying the position in question.
-
-            If LookupAirman(txtSerialNumber(intIndex).Text, LOOKUP_BY_KEYFIELD, strAirman) = False Then
-'MsgBox "airman not found"
-                CommitAssignments = False
-' qwe                Exit Function ' TODO: error out instead?
-                GoTo CleanUp
-            Else
-'MsgBox "The airman's assignment was previously wiped. Now, it will be set to the current bomber."
-                ' The airman's assignment was previously wiped. Now, it will
-                ' be set to the current bomber.
-                prsAirman![Assignment] = prsBomber![KeyField]
-
+            If cboCrewPosition(intIndex).ListIndex >= 0 Then
+                If LookupAirman(cboCrewPosition(intIndex).ItemData(cboCrewPosition(intIndex).ListIndex), LOOKUP_BY_KEYFIELD, strAirman) = False Then
+    'MsgBox "airman not found"
+                    CommitAssignments = False
+    ' qwe                Exit Function ' TODO: error out instead?
+                    GoTo CleanUp
+                Else
+    'MsgBox "The airman's assignment was previously wiped. Now, it will be set to the current bomber."
+                    ' The airman's assignment was previously wiped. Now, it will
+                    ' be set to the current bomber.
+                    prsAirman.Fields("Assignment").Value = prsBomber.Fields("KeyField").Value
+    
+                End If
             End If
         
 Continue:
@@ -1636,7 +1341,7 @@ Private Function ValidData()
     ValidData = True
     blnMissingCrew = False
 
-    For intIndex = 1 To txtSerialNumber.UBound
+    For intIndex = cboCrewPosition.LBound To cboCrewPosition.UBound
         ' Duplicate crew positions are illegal. Blank crew positions are
         ' permissible. Multiple blank crew positions should not give the
         ' duplicate error.
@@ -1649,7 +1354,7 @@ Private Function ValidData()
         
             ' The port waist gunner is supposed to be unmanned on B-24s.
         
-        ElseIf txtSerialNumber(intIndex).Text = UNMANNED_POSITION Then
+        ElseIf cboCrewPosition(intIndex).Tag = UNMANNED_POSITION Then
 
             ' The position really is blank / unoccupied.
             blnMissingCrew = True
@@ -1698,9 +1403,9 @@ Private Sub PositionCrewCombos()
             cboCrewPosition(i).Left = X
             cboCrewPosition(i).Top = Y
             Y = Y + 600
-            txtSerialNumber(i).Text = UNMANNED_POSITION
+            cboCrewPosition(i).Tag = UNMANNED_POSITION
         Else
-            txtSerialNumber(i).Text = HIDDEN_POSITION
+            cboCrewPosition(i).Tag = HIDDEN_POSITION
         End If
         If firstColumn And bomberPositions > (UBound(CurrentBomberPositions) - LBound(CurrentBomberPositions)) / 2 Then
             X = 2760

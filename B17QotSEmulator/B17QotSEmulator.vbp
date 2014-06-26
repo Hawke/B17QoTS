@@ -9,7 +9,6 @@ Module=modConstants; modConstants.bas
 Form=frmHelpBrowser.frm
 Form=frmMainMenu.frm
 Form=frmAbout.frm
-Designer=DataEnvironment1.Dsr
 Module=modSquadron; modSquadron.bas
 Module=modAirman; modAirman.bas
 Module=modGroup; modGroup.bas

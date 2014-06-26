@@ -946,11 +946,7 @@ Private Sub AssignAirmanToBomber(ByVal intNewAirman As Integer, ByVal intToPlane
         ' Set the current airman's position.
         
         prsAirman![CrewPosition] = intToPos
-        
-        ' Move the current airman to admin duty.
-        
-        prsAirman![Assignment] = ADMIN_DUTY
-    
+           
     End If
 
     prsBomber.Bookmark = varBomberCurrentlyOnTab

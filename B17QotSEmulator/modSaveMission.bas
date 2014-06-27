@@ -1,3 +1,4 @@
+Attribute VB_Name = "modSaveMission"
 '******************************************************************************
 ' modSaveMission.bas
 '
@@ -22,7 +23,6 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modSaveMission"
 Option Explicit
 
 '******************************************************************************

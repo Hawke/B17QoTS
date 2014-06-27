@@ -322,7 +322,7 @@ End Function
 '         if it is not found (which should never happen), then return false and
 '         blank.
 '******************************************************************************
-Public Function LookupAirman(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, ByRef AirmanName As String) As Boolean
+Public Function LookupAirman(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, Optional ByRef AirmanName As String = vbNullString) As Boolean
     
     Dim intIndex As Integer
     

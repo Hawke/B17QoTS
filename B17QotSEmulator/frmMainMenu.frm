@@ -152,869 +152,6 @@ Begin VB.Form frmMainMenu
    End
    Begin VB.Frame fraTab 
       Height          =   6840
-      Index           =   0
-      Left            =   120
-      TabIndex        =   0
-      Top             =   512
-      Visible         =   0   'False
-      Width           =   9515
-      Begin VB.TextBox txtKeyField 
-         BackColor       =   &H8000000F&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   375
-         Index           =   0
-         Left            =   120
-         Locked          =   -1  'True
-         TabIndex        =   9
-         TabStop         =   0   'False
-         Text            =   "txtKeyField(0)"
-         Top             =   4200
-         Visible         =   0   'False
-         Width           =   1335
-      End
-      Begin VB.CheckBox chkDefault 
-         Caption         =   "Default Group"
-         Enabled         =   0   'False
-         Height          =   375
-         Index           =   0
-         Left            =   120
-         TabIndex        =   8
-         Top             =   3720
-         Width           =   1455
-      End
-      Begin VB.Frame fraHistory 
-         Caption         =   "Unit History"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   5175
-         Index           =   0
-         Left            =   2880
-         TabIndex        =   10
-         Top             =   120
-         Width           =   6495
-         Begin VB.TextBox txtMIA 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   480
-            Locked          =   -1  'True
-            TabIndex        =   190
-            TabStop         =   0   'False
-            Top             =   2640
-            Width           =   735
-         End
-         Begin VB.TextBox txtPurpleHeart 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   35
-            TabStop         =   0   'False
-            Top             =   3120
-            Width           =   735
-         End
-         Begin VB.TextBox txtBronzeStarV 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   33
-            TabStop         =   0   'False
-            Top             =   2640
-            Width           =   735
-         End
-         Begin VB.TextBox txtDistinguishedFlyingCross 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   31
-            TabStop         =   0   'False
-            Top             =   2160
-            Width           =   735
-         End
-         Begin VB.TextBox txtSilverStar 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   29
-            TabStop         =   0   'False
-            Top             =   1680
-            Width           =   735
-         End
-         Begin VB.TextBox txtDistinguishedServiceCross 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   27
-            TabStop         =   0   'False
-            Top             =   1200
-            Width           =   735
-         End
-         Begin VB.TextBox txtMedalOfHonor 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   25
-            TabStop         =   0   'False
-            Top             =   720
-            Width           =   735
-         End
-         Begin VB.TextBox txtPOW 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   480
-            Locked          =   -1  'True
-            TabIndex        =   22
-            TabStop         =   0   'False
-            Top             =   3600
-            Width           =   735
-         End
-         Begin VB.TextBox txtWounded 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   480
-            Locked          =   -1  'True
-            TabIndex        =   20
-            TabStop         =   0   'False
-            Top             =   3120
-            Width           =   735
-         End
-         Begin VB.TextBox txtKIA 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   480
-            Locked          =   -1  'True
-            TabIndex        =   18
-            TabStop         =   0   'False
-            Top             =   2160
-            Width           =   735
-         End
-         Begin VB.TextBox txtPlanesLost 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   480
-            Locked          =   -1  'True
-            TabIndex        =   16
-            TabStop         =   0   'False
-            Top             =   1680
-            Width           =   735
-         End
-         Begin VB.TextBox txtKills 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   120
-            Locked          =   -1  'True
-            TabIndex        =   13
-            TabStop         =   0   'False
-            Top             =   840
-            Width           =   735
-         End
-         Begin VB.TextBox txtSorties 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   120
-            Locked          =   -1  'True
-            TabIndex        =   11
-            TabStop         =   0   'False
-            Top             =   360
-            Width           =   735
-         End
-         Begin VB.TextBox txtAirMedal 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   37
-            TabStop         =   0   'False
-            Top             =   3600
-            Width           =   735
-         End
-         Begin VB.TextBox txtDistinguishedUnitCitation 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   39
-            TabStop         =   0   'False
-            Top             =   4080
-            Width           =   735
-         End
-         Begin VB.TextBox txtMeritoriousUnitCitation 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H8000000F&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2880
-            Locked          =   -1  'True
-            TabIndex        =   41
-            TabStop         =   0   'False
-            Top             =   4560
-            Width           =   735
-         End
-         Begin VB.Label lblMIALabel 
-            BackStyle       =   0  'Transparent
-            Caption         =   "MIA"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   1320
-            TabIndex        =   191
-            Top             =   2640
-            Width           =   855
-         End
-         Begin VB.Label lblCasualties 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Casualties"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   -1  'True
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   120
-            TabIndex        =   15
-            Top             =   1320
-            Width           =   1095
-         End
-         Begin VB.Label lblKills 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Kills"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   960
-            TabIndex        =   14
-            Top             =   840
-            Width           =   855
-         End
-         Begin VB.Label lblSorties 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Sorties"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   960
-            TabIndex        =   12
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Label lblPOWLabel 
-            BackStyle       =   0  'Transparent
-            Caption         =   "POW"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   1320
-            TabIndex        =   23
-            Top             =   3600
-            Width           =   855
-         End
-         Begin VB.Label lblWoundedLabel 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Wounded"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   1320
-            TabIndex        =   21
-            Top             =   3120
-            Width           =   975
-         End
-         Begin VB.Label lblKIALabel 
-            BackStyle       =   0  'Transparent
-            Caption         =   "KIA"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   1320
-            TabIndex        =   19
-            Top             =   2160
-            Width           =   855
-         End
-         Begin VB.Label lblPlanesLost 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Planes Lost"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   1320
-            TabIndex        =   17
-            Top             =   1680
-            Width           =   1095
-         End
-         Begin VB.Label lblAwards 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Awards"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   -1  'True
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   2520
-            TabIndex        =   24
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Label lblMeritoriousUnitCitation 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Meritorious Unit Citation"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   42
-            Top             =   4560
-            Width           =   2175
-         End
-         Begin VB.Label lblDistinguishedUnitCitation 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Distinguished Unit Citation"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   40
-            Top             =   4080
-            Width           =   2415
-         End
-         Begin VB.Label lblAirMedal 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Air Medal"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   38
-            Top             =   3600
-            Width           =   855
-         End
-         Begin VB.Label lblPurpleHeart 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Purple Heart"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   36
-            Top             =   3120
-            Width           =   1215
-         End
-         Begin VB.Label lblBronzeStarV 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Bronze Star w/t V"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   34
-            Top             =   2640
-            Width           =   1695
-         End
-         Begin VB.Label lblDistinguishedFlyingCross 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Distinguished Flying Cross"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   32
-            Top             =   2160
-            Width           =   2415
-         End
-         Begin VB.Label lblSilverStar 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Silver Star"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   30
-            Top             =   1680
-            Width           =   1095
-         End
-         Begin VB.Label lblDistinguishedServiceCross 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Distinguished Service Cross"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   28
-            Top             =   1200
-            Width           =   2655
-         End
-         Begin VB.Label lblMedalOfHonor 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Medal of Honor"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   3720
-            TabIndex        =   26
-            Top             =   720
-            Width           =   1455
-         End
-      End
-      Begin VB.Frame fraBase 
-         Caption         =   "Base"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   1455
-         Index           =   0
-         Left            =   120
-         TabIndex        =   5
-         Top             =   2040
-         Width           =   1455
-         Begin VB.OptionButton optEngland 
-            Caption         =   "England"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   120
-            TabIndex        =   6
-            Top             =   360
-            Value           =   -1  'True
-            Width           =   1215
-         End
-         Begin VB.OptionButton optItaly 
-            Caption         =   "Italy"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Index           =   0
-            Left            =   120
-            TabIndex        =   7
-            Top             =   840
-            Width           =   1215
-         End
-      End
-      Begin VB.ComboBox cboCommander 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   360
-         Index           =   0
-         Left            =   120
-         Style           =   2  'Dropdown List
-         TabIndex        =   4
-         Top             =   1440
-         Width           =   2415
-      End
-      Begin VB.ComboBox cboName 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   360
-         Index           =   0
-         Left            =   120
-         TabIndex        =   2
-         Top             =   480
-         Width           =   2415
-      End
-      Begin VB.Label lblCommander 
-         Caption         =   "Commander"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   375
-         Index           =   0
-         Left            =   120
-         TabIndex        =   3
-         Top             =   1080
-         Width           =   1215
-      End
-      Begin VB.Label lblName 
-         Caption         =   "Name"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   375
-         Index           =   0
-         Left            =   120
-         TabIndex        =   1
-         Top             =   120
-         Width           =   735
-      End
-   End
-   Begin VB.Frame fraTab 
-      Height          =   6840
       Index           =   4
       Left            =   120
       TabIndex        =   146
@@ -1266,10 +403,12 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000000FF&
             Height          =   255
             Left            =   120
             TabIndex        =   168
             Top             =   720
+            Value           =   1  'Checked
             Width           =   1935
          End
          Begin VB.CheckBox chkGermanFighterPilotSkill 
@@ -3751,6 +2890,869 @@ Begin VB.Form frmMainMenu
          Width           =   1095
       End
    End
+   Begin VB.Frame fraTab 
+      Height          =   6840
+      Index           =   0
+      Left            =   120
+      TabIndex        =   0
+      Top             =   512
+      Visible         =   0   'False
+      Width           =   9515
+      Begin VB.TextBox txtKeyField 
+         BackColor       =   &H8000000F&
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Index           =   0
+         Left            =   120
+         Locked          =   -1  'True
+         TabIndex        =   9
+         TabStop         =   0   'False
+         Text            =   "txtKeyField(0)"
+         Top             =   4200
+         Visible         =   0   'False
+         Width           =   1335
+      End
+      Begin VB.CheckBox chkDefault 
+         Caption         =   "Default Group"
+         Enabled         =   0   'False
+         Height          =   375
+         Index           =   0
+         Left            =   120
+         TabIndex        =   8
+         Top             =   3720
+         Width           =   1455
+      End
+      Begin VB.Frame fraHistory 
+         Caption         =   "Unit History"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   5175
+         Index           =   0
+         Left            =   2880
+         TabIndex        =   10
+         Top             =   120
+         Width           =   6495
+         Begin VB.TextBox txtMIA 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   480
+            Locked          =   -1  'True
+            TabIndex        =   190
+            TabStop         =   0   'False
+            Top             =   2640
+            Width           =   735
+         End
+         Begin VB.TextBox txtPurpleHeart 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   35
+            TabStop         =   0   'False
+            Top             =   3120
+            Width           =   735
+         End
+         Begin VB.TextBox txtBronzeStarV 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   33
+            TabStop         =   0   'False
+            Top             =   2640
+            Width           =   735
+         End
+         Begin VB.TextBox txtDistinguishedFlyingCross 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   31
+            TabStop         =   0   'False
+            Top             =   2160
+            Width           =   735
+         End
+         Begin VB.TextBox txtSilverStar 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   29
+            TabStop         =   0   'False
+            Top             =   1680
+            Width           =   735
+         End
+         Begin VB.TextBox txtDistinguishedServiceCross 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   27
+            TabStop         =   0   'False
+            Top             =   1200
+            Width           =   735
+         End
+         Begin VB.TextBox txtMedalOfHonor 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   25
+            TabStop         =   0   'False
+            Top             =   720
+            Width           =   735
+         End
+         Begin VB.TextBox txtPOW 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   480
+            Locked          =   -1  'True
+            TabIndex        =   22
+            TabStop         =   0   'False
+            Top             =   3600
+            Width           =   735
+         End
+         Begin VB.TextBox txtWounded 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   480
+            Locked          =   -1  'True
+            TabIndex        =   20
+            TabStop         =   0   'False
+            Top             =   3120
+            Width           =   735
+         End
+         Begin VB.TextBox txtKIA 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   480
+            Locked          =   -1  'True
+            TabIndex        =   18
+            TabStop         =   0   'False
+            Top             =   2160
+            Width           =   735
+         End
+         Begin VB.TextBox txtPlanesLost 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   480
+            Locked          =   -1  'True
+            TabIndex        =   16
+            TabStop         =   0   'False
+            Top             =   1680
+            Width           =   735
+         End
+         Begin VB.TextBox txtKills 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   120
+            Locked          =   -1  'True
+            TabIndex        =   13
+            TabStop         =   0   'False
+            Top             =   840
+            Width           =   735
+         End
+         Begin VB.TextBox txtSorties 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   120
+            Locked          =   -1  'True
+            TabIndex        =   11
+            TabStop         =   0   'False
+            Top             =   360
+            Width           =   735
+         End
+         Begin VB.TextBox txtAirMedal 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   37
+            TabStop         =   0   'False
+            Top             =   3600
+            Width           =   735
+         End
+         Begin VB.TextBox txtDistinguishedUnitCitation 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   39
+            TabStop         =   0   'False
+            Top             =   4080
+            Width           =   735
+         End
+         Begin VB.TextBox txtMeritoriousUnitCitation 
+            Alignment       =   1  'Right Justify
+            BackColor       =   &H8000000F&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2880
+            Locked          =   -1  'True
+            TabIndex        =   41
+            TabStop         =   0   'False
+            Top             =   4560
+            Width           =   735
+         End
+         Begin VB.Label lblMIALabel 
+            BackStyle       =   0  'Transparent
+            Caption         =   "MIA"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   1320
+            TabIndex        =   191
+            Top             =   2640
+            Width           =   855
+         End
+         Begin VB.Label lblCasualties 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Casualties"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   -1  'True
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   120
+            TabIndex        =   15
+            Top             =   1320
+            Width           =   1095
+         End
+         Begin VB.Label lblKills 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Kills"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   960
+            TabIndex        =   14
+            Top             =   840
+            Width           =   855
+         End
+         Begin VB.Label lblSorties 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Sorties"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   960
+            TabIndex        =   12
+            Top             =   360
+            Width           =   855
+         End
+         Begin VB.Label lblPOWLabel 
+            BackStyle       =   0  'Transparent
+            Caption         =   "POW"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   1320
+            TabIndex        =   23
+            Top             =   3600
+            Width           =   855
+         End
+         Begin VB.Label lblWoundedLabel 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Wounded"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   1320
+            TabIndex        =   21
+            Top             =   3120
+            Width           =   975
+         End
+         Begin VB.Label lblKIALabel 
+            BackStyle       =   0  'Transparent
+            Caption         =   "KIA"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   1320
+            TabIndex        =   19
+            Top             =   2160
+            Width           =   855
+         End
+         Begin VB.Label lblPlanesLost 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Planes Lost"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   1320
+            TabIndex        =   17
+            Top             =   1680
+            Width           =   1095
+         End
+         Begin VB.Label lblAwards 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Awards"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   -1  'True
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   2520
+            TabIndex        =   24
+            Top             =   360
+            Width           =   855
+         End
+         Begin VB.Label lblMeritoriousUnitCitation 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Meritorious Unit Citation"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   42
+            Top             =   4560
+            Width           =   2175
+         End
+         Begin VB.Label lblDistinguishedUnitCitation 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Distinguished Unit Citation"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   40
+            Top             =   4080
+            Width           =   2415
+         End
+         Begin VB.Label lblAirMedal 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Air Medal"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   38
+            Top             =   3600
+            Width           =   855
+         End
+         Begin VB.Label lblPurpleHeart 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Purple Heart"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   36
+            Top             =   3120
+            Width           =   1215
+         End
+         Begin VB.Label lblBronzeStarV 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Bronze Star w/t V"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   34
+            Top             =   2640
+            Width           =   1695
+         End
+         Begin VB.Label lblDistinguishedFlyingCross 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Distinguished Flying Cross"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   32
+            Top             =   2160
+            Width           =   2415
+         End
+         Begin VB.Label lblSilverStar 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Silver Star"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   30
+            Top             =   1680
+            Width           =   1095
+         End
+         Begin VB.Label lblDistinguishedServiceCross 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Distinguished Service Cross"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   28
+            Top             =   1200
+            Width           =   2655
+         End
+         Begin VB.Label lblMedalOfHonor 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Medal of Honor"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   3720
+            TabIndex        =   26
+            Top             =   720
+            Width           =   1455
+         End
+      End
+      Begin VB.Frame fraBase 
+         Caption         =   "Base"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1455
+         Index           =   0
+         Left            =   120
+         TabIndex        =   5
+         Top             =   2040
+         Width           =   1455
+         Begin VB.OptionButton optEngland 
+            Caption         =   "England"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   120
+            TabIndex        =   6
+            Top             =   360
+            Value           =   -1  'True
+            Width           =   1215
+         End
+         Begin VB.OptionButton optItaly 
+            Caption         =   "Italy"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Index           =   0
+            Left            =   120
+            TabIndex        =   7
+            Top             =   840
+            Width           =   1215
+         End
+      End
+      Begin VB.ComboBox cboCommander 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Index           =   0
+         Left            =   120
+         Style           =   2  'Dropdown List
+         TabIndex        =   4
+         Top             =   1440
+         Width           =   2415
+      End
+      Begin VB.ComboBox cboName 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Index           =   0
+         Left            =   120
+         TabIndex        =   2
+         Top             =   480
+         Width           =   2415
+      End
+      Begin VB.Label lblCommander 
+         Caption         =   "Commander"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Index           =   0
+         Left            =   120
+         TabIndex        =   3
+         Top             =   1080
+         Width           =   1215
+      End
+      Begin VB.Label lblName 
+         Caption         =   "Name"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Index           =   0
+         Left            =   120
+         TabIndex        =   1
+         Top             =   120
+         Width           =   735
+      End
+   End
    Begin VB.Label lblTab 
       Alignment       =   2  'Center
       Appearance      =   0  'Flat
@@ -3912,7 +3914,6 @@ Attribute VB_Exposed = False
 
 Option Explicit
 
-Public OK As Boolean
 Const TabsCount = 5
 Dim CurrentTab As Integer
 
@@ -4066,8 +4067,6 @@ Private Sub Form_Load()
     prsSquadron.MoveFirst
     prsBomber.MoveFirst
     prsAirman.MoveFirst
-
-CleanUp:
 
     Exit Sub
 
@@ -4301,10 +4300,8 @@ Public Sub ExitEmulator()
     Call FreeRecordset(prsAirmanStatus)
     
     Call CloseDBConnection
-Dim a
-a = 1
-'Unload frmMainMenu
-Unload Me
+
+    Unload Me
     End
 
 End Sub
@@ -4842,8 +4839,6 @@ End Sub
 Private Sub cmdFlyMission_Click()
     ' MISSION_TAB
 
-    Dim strIgnore As String
-
     ' Validate required fields were entered/selected.
     
     If cboName(MISSION_TAB).Text = "" Then
@@ -4866,7 +4861,7 @@ Private Sub cmdFlyMission_Click()
         Exit Sub
     End If
     
-    If LookupBomber(intBomberMission(cboName(MISSION_TAB).ListIndex), LOOKUP_BY_KEYFIELD, strIgnore) = False Then
+    If LookupBomber(intBomberMission(cboName(MISSION_TAB).ListIndex), LOOKUP_BY_KEYFIELD, vbNullString) = False Then
         Call ExitEmulator
     End If
 
@@ -4903,7 +4898,6 @@ Private Sub cmdSave_Click()
     On Error GoTo ErrorTrap
     ' MISSION_TAB
     
-    Dim strIgnore As String
     Dim blnOpenFile As Boolean
     Dim strErrMsg As String
     Dim intIndex As Integer
@@ -4912,7 +4906,7 @@ Private Sub cmdSave_Click()
     Dim strBody As String
     Dim strFooter As String
 
-    If LookupBomber(intBomberMission(cboName(MISSION_TAB).ListIndex), LOOKUP_BY_KEYFIELD, strIgnore) = False Then
+    If LookupBomber(intBomberMission(cboName(MISSION_TAB).ListIndex), LOOKUP_BY_KEYFIELD) = False Then
         Call ExitEmulator
     End If
 
@@ -5017,10 +5011,9 @@ End Sub
 ' NOTES:  YB-40s have limitations depending on the range of the chosen target.
 '******************************************************************************
 Private Sub cboTarget_Click()
-    Dim strIgnore As String
 
     ' All we need is the pointer to the matching record.
-    If LookupBomberTarget((cboTarget.ListIndex + 1), LOOKUP_BY_LISTINDEX, strIgnore) = False Then
+    If LookupBomberTarget((cboTarget.ListIndex + 1), LOOKUP_BY_LISTINDEX) = False Then
         Call ExitEmulator
     End If
 
@@ -5135,7 +5128,6 @@ End Sub
 Private Sub cboName_Click(Index As Integer)
     ' GROUP_TAB, SQUADRON_TAB, BOMBER_TAB, AIRMAN_TAB, MISSION_TAB
 
-    Dim strIgnore As String
 
     ' The ListIndex property is 0-base, but emulator KeyFields are 1-base.
     ' Therefore, 1 must be added to .ListIndex before a lookup may be
@@ -5144,7 +5136,7 @@ Private Sub cboName_Click(Index As Integer)
     Select Case Index
         Case GROUP_TAB:
             
-            If LookupGroup((cboName(GROUP_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX, strIgnore) = True Then
+            If LookupGroup((cboName(GROUP_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX) = True Then
                 ' All we need is the pointer to the matching record (the
                 ' group name was selected). Fill in the tab fields.
                 If FillGroupTabFields() = False Then
@@ -5159,7 +5151,7 @@ Private Sub cboName_Click(Index As Integer)
 
         Case SQUADRON_TAB:
             
-            If LookupSquadron((cboName(SQUADRON_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX, strIgnore) = True Then
+            If LookupSquadron((cboName(SQUADRON_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX) = True Then
                 ' All we need is the pointer to the matching record (the
                 ' squadron name was selected). Fill in the tab fields.
                 If FillSquadronTabFields() = False Then
@@ -5174,7 +5166,7 @@ Private Sub cboName_Click(Index As Integer)
 
         Case BOMBER_TAB:
             
-            If LookupBomber((cboName(BOMBER_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX, strIgnore) = True Then
+            If LookupBomber((cboName(BOMBER_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX) = True Then
                 ' All we need is the pointer to the matching record (the
                 ' bomber name was selected). Fill in the tab fields.
                 If FillBomberTabFields() = False Then
@@ -5189,7 +5181,7 @@ Private Sub cboName_Click(Index As Integer)
         
         Case AIRMAN_TAB:
             
-            If LookupAirman((cboName(AIRMAN_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX, strIgnore) = True Then
+            If LookupAirman((cboName(AIRMAN_TAB).ListIndex + 1), LOOKUP_BY_LISTINDEX) = True Then
                 ' All we need is the pointer to the matching record (the
                 ' airman name was selected). Fill in the tab fields.
                 

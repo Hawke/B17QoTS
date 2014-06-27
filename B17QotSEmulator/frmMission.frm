@@ -4101,10 +4101,11 @@ Private Function ExitPrevZone() As Integer
         If Damage.OilTankLeak(intEng) = NO_OIL _
         And Damage.EngineOut(intEng) = False Then
             
-            UpdateMessage "#" & intEng & " engine shut down due to empty oil tank."
+            UpdateMessage "#" & intEng & " engine shut down due to oil tank hit."
             Damage.EngineOut(intEng) = True
         
-            If Damage.FeatheringCtrl = True Then
+            If Damage.FeatheringCtrl Then
+                'See BL-1 result 9.
                 
                 UpdateMessage "#" & intEng & " engine not feathered."
                 Damage.EngineDrag(intEng) = True

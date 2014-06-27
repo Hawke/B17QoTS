@@ -34,14 +34,14 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-'Private Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uReturnLength As Long, ByVal hwndCallback As Long) As Long
+Private Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uReturnLength As Long, ByVal hwndCallback As Long) As Long
 
 Private Sub Form_Load()
     
     Dim ret As Long
 
-    'ret = mciSendString("OPEN sound/great-escape.mp3 Alias Sonido", 0, 0, 0)
-    'ret = mciSendString("Play sonido", 0, 0, 0)
+    ret = mciSendString("OPEN sound/great-escape.mp3 Alias Sonido", 0, 0, 0)
+    'mciSendString "Play sonido", 0, 0, 0
             
     ' Pause for dramatic effect. Display, approximately, on first drum beat.
     'Sleep 6000
@@ -57,6 +57,6 @@ Private Sub picSplash_Click()
     Dim ret As Long
     
     frmMainMenu.Show
-    'ret = mciSendString("CLOSE Sonido", 0, 0, 0)
+    ret = mciSendString("CLOSE Sonido", 0, 0, 0)
     Unload Me
 End Sub

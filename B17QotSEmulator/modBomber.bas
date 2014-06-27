@@ -33,7 +33,7 @@ Public intBomberMission() As Integer
 ' kgreer (12 Dec 04)
 Public intMapBomberKeyToAssignmentIndex() As Integer
 
-Dim strErrmsg As String
+Dim strErrMsg As String
 
 '******************************************************************************
 ' FillBomberTabFields
@@ -274,11 +274,11 @@ CleanUp:
    
 ErrorTrap:
     
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "GetBomberRecordset() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
     
     Err.Clear
     
@@ -299,7 +299,7 @@ End Function
 '
 ' NOTES:  n/a
 '******************************************************************************
-Public Function LookupBomber(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, ByRef BomberName As String) As Boolean
+Public Function LookupBomber(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, Optional ByRef BomberName As String = vbNullString) As Boolean
     
     Dim intIndex As Integer
 
@@ -347,10 +347,10 @@ Public Function LookupBomber(ByVal LookupKeyField As Integer, ByVal LookupType A
     ' If the bomber had been found, we would have previously exitted.
     ' Therefore, an error condition exists.
     
-    strErrmsg = "LookupBomber() " & vbCrLf & vbCrLf & _
+    strErrMsg = "LookupBomber() " & vbCrLf & vbCrLf & _
                 "Bomber " & LookupKeyField & " not found."
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
 End Function
  
@@ -534,12 +534,12 @@ Public Function AddBomber() As Boolean
         End If
         
         If IsDupeBomberName() = True Then
-            strErrmsg = "Failed to add bomber." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to add bomber." & vbCrLf & vbCrLf & _
                         "The " & _
                         .cboName(BOMBER_TAB).Text & _
                         " already exists."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -695,11 +695,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "AddBomber() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -733,11 +733,11 @@ Public Function ModifyBomber() As Boolean
         ' Default bombers cannot be updated.
         
         If prsBomber![Default] = True Then
-            strErrmsg = "Failed to update bomber." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to update bomber." & vbCrLf & vbCrLf & _
                         prsBomber![Name] & _
                         " is a default bomber."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -746,12 +746,12 @@ Public Function ModifyBomber() As Boolean
         If ValidateRequiredInput(.cboName(BOMBER_TAB)) = False Then
             Exit Function
         ElseIf .cboName(BOMBER_TAB).Text <> prsBomber![Name] Then
-            strErrmsg = "Failed to update bomber." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to update bomber." & vbCrLf & vbCrLf & _
                         "You are not allowed to change the " & _
                         prsBomber![Name] & _
                         "'s name."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -788,11 +788,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "ModifyBomber() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -831,11 +831,11 @@ Public Function DeleteBomber() As Boolean
         ' Default bombers cannot be deleted.
         
         If prsBomber![Default] = True Then
-            strErrmsg = "Failed to delete bomber." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to delete bomber." & vbCrLf & vbCrLf & _
                         prsBomber![Name] & _
                         " is a default bomber."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -844,14 +844,14 @@ Public Function DeleteBomber() As Boolean
         ' Determine if the bomber has assigned airmen.
         
         If HasAssignedAirman(strAirmanList) = True Then
-            strErrmsg = "Failed to delete bomber." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to delete bomber." & vbCrLf & vbCrLf & _
                         strAirmanList & _
                         " are assigned to the " & _
                         prsBomber![Name] & _
                         ". A bomber cannot be deleted if it has " & _
                         "dependent airmen."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -937,11 +937,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "DeleteBomber() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -1212,7 +1212,7 @@ Public Function RetireBomber() As Boolean
     Dim strBomberStatus As String
     Dim intPos As Integer
     Dim intIndex As Integer
-    Dim strErrmsg As String
+    Dim strErrMsg As String
     Dim strIgnore As String
 
     RetireBomber = True
@@ -1302,7 +1302,7 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "RetireBomber() " & vbCrLf & vbCrLf & _
                 Err.Description & vbCrLf & vbCrLf & _
                 prsBomber!Name & vbCrLf & vbCrLf & _
@@ -1310,7 +1310,7 @@ ErrorTrap:
                 prsBomber!Status
 
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 

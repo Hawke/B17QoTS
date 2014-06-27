@@ -1,3 +1,4 @@
+Attribute VB_Name = "modGenerateMission"
 '******************************************************************************
 ' modGenerateMission.bas
 '
@@ -22,13 +23,12 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modGenerateMission"
 Option Explicit
 
 Public prsTarget As New ADODB.Recordset
 Public prsBomberTarget As New ADODB.Recordset
 
-Dim strErrmsg As String
+Dim strErrMsg As String
 
 '******************************************************************************
 ' FillMissionTabFields
@@ -44,7 +44,6 @@ Dim strErrmsg As String
 '******************************************************************************
 Public Function FillMissionTabFields() As Boolean
     
-    Dim strIgnore As String
     
     FillMissionTabFields = True
     
@@ -60,14 +59,14 @@ Public Function FillMissionTabFields() As Boolean
        "intBomberMission(.cboName(MISSION_TAB).ListIndex) = " & intBomberMission(.cboName(MISSION_TAB).ListIndex) & vbCrLf & _
        "strIgnore = " & strIgnore
     
-        If LookupBomber(intBomberMission(.cboName(MISSION_TAB).ListIndex), LOOKUP_BY_KEYFIELD, strIgnore) = False Then
+        If LookupBomber(intBomberMission(.cboName(MISSION_TAB).ListIndex), LOOKUP_BY_KEYFIELD) = False Then
             FillMissionTabFields = False
             Exit Function
         End If
 
 'MsgBox "prsBomber![BomberModel] = " & prsBomber![BomberModel]
         
-        If LookupBomberModel(prsBomber![BomberModel], strIgnore) = False Then
+        If LookupBomberModel(prsBomber![BomberModel]) = False Then
             FillMissionTabFields = False
             Exit Function
         Else
@@ -84,10 +83,10 @@ Public Function FillMissionTabFields() As Boolean
 
 'MsgBox "prsBomber![Squadron] = " & prsBomber![Squadron]
         
-        If LookupSquadron(prsBomber![Squadron], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
+        If LookupSquadron(prsBomber![Squadron], LOOKUP_BY_KEYFIELD) = False Then
             FillMissionTabFields = False
             Exit Function
-        ElseIf LookupGroup(prsSquadron![Group], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
+        ElseIf LookupGroup(prsSquadron![Group], LOOKUP_BY_KEYFIELD) = False Then
             FillMissionTabFields = False
             Exit Function
         End If
@@ -163,11 +162,11 @@ CleanUp:
    
 ErrorTrap:
     
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "GetTargetRecordset() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
     
     Err.Clear
     
@@ -225,10 +224,10 @@ Public Function LookupTarget(ByVal LookupKeyField As Integer, ByVal LookupType A
     ' If the Target had been found, we would have previously exitted.
     ' Therefore, an error condition exists.
     
-    strErrmsg = "LookupTarget() " & vbCrLf & vbCrLf & _
+    strErrMsg = "LookupTarget() " & vbCrLf & vbCrLf & _
                 "Target " & LookupKeyField & " not found."
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
 End Function
 
@@ -677,7 +676,7 @@ Public Sub PopulateTargetCombo()
                     ' England-based B17s may bomb additional targets if the
                     ' option is chosen.
                     
-                    strTypeFilter = "ExpandedTargetVariant = " & True
+                    strTypeFilter = "ExpandedTargetVariant" & True
             
                 Else
                     
@@ -748,7 +747,7 @@ End Sub
 '
 ' NOTES:  n/a
 '******************************************************************************
-Public Function LookupBomberTarget(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, ByRef TargetName As String) As Boolean
+Public Function LookupBomberTarget(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, Optional ByRef TargetName As String) As Boolean
     
     Dim intIndex As Integer
     
@@ -785,10 +784,10 @@ Public Function LookupBomberTarget(ByVal LookupKeyField As Integer, ByVal Lookup
     ' If the target had been found, we would have previously exitted.
     ' Therefore, an error condition exists.
     
-    strErrmsg = "LookupBomberTarget() " & vbCrLf & vbCrLf & _
+    strErrMsg = "LookupBomberTarget() " & vbCrLf & vbCrLf & _
                 "Target " & LookupKeyField & " not found."
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
 End Function
 

@@ -1,3 +1,4 @@
+Attribute VB_Name = "modCharts"
 '******************************************************************************
 ' modCharts.bas
 '
@@ -22,7 +23,6 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modCharts"
 Option Explicit
 
 '******************************************************************************
@@ -1610,7 +1610,7 @@ Public Sub EndMission()
     Dim intRoll As Integer
     Dim strMessage As String
     Dim strIgnore As String
-    Dim strErrmsg As String
+    Dim strErrMsg As String
     
     Dim strWound As String
     Dim intPos As Integer
@@ -1621,9 +1621,9 @@ Public Sub EndMission()
     ' from wounds, etc. -- now has to be determined.
     
     If LookupBomber(Bomber.KeyField, LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-        strErrmsg = "Could not find bomber #" & Bomber.KeyField & _
+        strErrMsg = "Could not find bomber #" & Bomber.KeyField & _
                     " in the database. The mission will be aborted."
-        MsgBox strErrmsg, (vbCritical + vbOKOnly)
+        MsgBox strErrMsg, (vbCritical + vbOKOnly)
         Exit Sub
     End If
                     
@@ -1639,9 +1639,9 @@ Public Sub EndMission()
     ' bomber must all be updated. Point at the bomber's squadron.
                 
     If LookupSquadron(prsBomber![Squadron], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-        strErrmsg = "Could not find squadron #" & prsBomber![Squadron] & _
+        strErrMsg = "Could not find squadron #" & prsBomber![Squadron] & _
                     " in the database. The mission will be aborted."
-        MsgBox strErrmsg, (vbCritical + vbOKOnly)
+        MsgBox strErrMsg, (vbCritical + vbOKOnly)
         Exit Sub
     End If
                 
@@ -1650,9 +1650,9 @@ Public Sub EndMission()
     ' Point at the squadron's group.
 
     If LookupGroup(prsSquadron![Group], LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-        strErrmsg = "Could not find group #" & prsSquadron![Group] & _
+        strErrMsg = "Could not find group #" & prsSquadron![Group] & _
                     " in the database. The mission will be aborted."
-        MsgBox strErrmsg, (vbCritical + vbOKOnly)
+        MsgBox strErrMsg, (vbCritical + vbOKOnly)
         Exit Sub
     End If
                 
@@ -1669,13 +1669,13 @@ Public Sub EndMission()
             ' Point at the airman.
                 
             If LookupAirman(Bomber.Airman(intIndex).SerialNumber, LOOKUP_BY_KEYFIELD, strIgnore) = False Then
-                strErrmsg = "Airman " & Bomber.Airman(intIndex).Name & _
+                strErrMsg = "Airman " & Bomber.Airman(intIndex).Name & _
                             "(#" & Bomber.Airman(intIndex).SerialNumber & ") " & _
                             "could not be found for post-mission update. He " & _
                             "will remain in his pre-mission state. " & vbCrLf & vbCrLf & _
                             "Continue with other post-mission updates."
     
-                MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+                MsgBox strErrMsg, (vbExclamation + vbOKOnly)
                 
                 GoTo Continue
             End If
@@ -9746,73 +9746,57 @@ Public Function B6SuccessiveAttacks() As Integer
     
 End Function
 
-'******************************************************************************
-' B7RandomEvents
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
 ' RETURN: End of mission, if the section suffered catastrophic damage.
-'
-' NOTES:  n/a
 '******************************************************************************
 Private Function B7RandomEvents() As Integer
     Dim intRoll As Integer
     Dim intEngine As Integer
     Dim intGun As Integer
     Dim strMessage As String
+    Dim bRetryRoll As Boolean
     
     ' Rule 18.0: Note that we do not re-roll as called for by the rules (Note b)
     
     intRoll = Random2D6()
     
-'If intRoll >= 8 Then
-'    intRoll = 12
-'    UpdateMessage "*** mid-air collision ***"
-'End If
-
-    frmMission.lblMiscWave.Caption = ""
+    frmMission.lblMiscWave.Caption = vbNullString
 
     Select Case intRoll
     
         Case 2:
             
-            ' Note a: This may happen multiple times, perhaps even to the
-            ' same engine.
+            'Rules Page 9, section 18.0
+            'Note a: If this random event is rolled again, the previously-failed engine may be able to restart.
             
             intEngine = RandomDX(4)
             
             If Damage.EngineOut(intEngine) = False Then
                 Damage.EngineOut(intEngine) = True
-                UpdateMessage "#" & intEngine & " engine shut down due to " & _
-                              "malfunction."
+                UpdateMessage "Engine failure in # " & intEngine & "."
                               
-                If Damage.FeatheringCtrl = True Then
-                    UpdateMessage "#" & intEngine & " engine not feathered."
+                If Damage.FeatheringCtrl Then
+                    'see BL-2 result 10
+                    UpdateMessage "  Prop not feathered."
                     Damage.EngineDrag(intEngine) = True
                     Call DropOutOfFormation
                 End If
             
                 RandomEvent.EngineFailure = True
-        
-            ElseIf Damage.OilTankLeak(intEngine) <> NO_OIL _
-            And (Damage.FeatheringCtrl = False _
-            Or Damage.EngineDrag(intEngine) = True) Then
-                
+            Else
                 ' Engine must have some oil to restart. If the engine is
                 ' dragging (blades flat to wind), it may be restarted. If
                 ' engine is not dragging (blades parallel to wind), feathering
                 ' control must be operational.
                 
+                'NOTE: the above seems wrong. Oil leak rules state: "shut off engine after x more
+                'zones", not necessarily that the engine has seized or suffered a catastrophic
+                'failure. Damage to the feathering control is only relevant when suffering a
+                'runaway engine. After all, it *miraculously* restarts.
+                
                 Damage.EngineDrag(intEngine) = False
                 Damage.EngineOut(intEngine) = False
                 UpdateMessage "#" & intEngine & " engine miraculously " & _
                               "restarts."
-                
-            Else
-                frmMission.lblMiscWave.Caption = "No Attackers"
-                UpdateMessage "No attackers."
             End If
         
         Case 3:
@@ -10134,7 +10118,7 @@ End Function
 Public Function M1DefensiveFire(ByVal intBomberModel As Integer, ByVal intGun As Integer, ByVal intPosition As Integer, ByVal strTargetType As String, ByVal intAirmanStatus As Integer) As Integer
     Dim rsGunnery As New ADODB.Recordset
     Dim intToHit As Integer
-    Dim strErrmsg As String
+    Dim strErrMsg As String
 '    Dim intAirman As Integer
     
     M1DefensiveFire = 0
@@ -10211,11 +10195,11 @@ CleanUp:
    
 ErrorTrap:
     
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "M1DefensiveFire() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
     
     Err.Clear
     

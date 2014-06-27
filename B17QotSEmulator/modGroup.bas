@@ -222,7 +222,7 @@ End Function
 '         if it is not found (which should never happen), then return false and
 '         blank.
 '******************************************************************************
-Public Function LookupGroup(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, ByRef GroupName As String) As Boolean
+Public Function LookupGroup(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, Optional ByRef GroupName As String = vbNullString) As Boolean
     
     Dim intIndex As Integer
     

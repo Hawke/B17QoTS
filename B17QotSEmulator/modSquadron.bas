@@ -1,3 +1,4 @@
+Attribute VB_Name = "modSquadron"
 '******************************************************************************
 ' modSquadron.bas
 '
@@ -22,14 +23,13 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modSquadron"
 Option Explicit
 
 Public prsSquadron As New ADODB.Recordset
 Public prsBomberSquadron As New ADODB.Recordset
 Public varSquadronCurrentlyOnTab As Variant
 
-Dim strErrmsg As String
+Dim strErrMsg As String
 
 '******************************************************************************
 ' FillSquadronTabFields
@@ -217,11 +217,11 @@ CleanUp:
    
 ErrorTrap:
     
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "GetSquadronRecordset() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
     
     Err.Clear
     
@@ -245,7 +245,7 @@ End Function
 '         if it is not found (which should never happen), then return false and
 '         blank.
 '******************************************************************************
-Public Function LookupSquadron(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, ByRef SquadronName As String) As Boolean
+Public Function LookupSquadron(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, Optional ByRef SquadronName As String = vbNullString) As Boolean
     
     Dim intIndex As Integer
     
@@ -282,10 +282,10 @@ Public Function LookupSquadron(ByVal LookupKeyField As Integer, ByVal LookupType
     ' If the squadron had been found, we would have previously exitted.
     ' Therefore, an error condition exists.
     
-    strErrmsg = "LookupSquadron() " & vbCrLf & vbCrLf & _
+    strErrMsg = "LookupSquadron() " & vbCrLf & vbCrLf & _
                 "Squadron " & LookupKeyField & " not found."
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
 End Function
 
@@ -415,12 +415,12 @@ Public Function AddSquadron() As Boolean
         End If
         
         If IsDupeSquadronName() = True Then
-            strErrmsg = "Failed to add squadron." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to add squadron." & vbCrLf & vbCrLf & _
                         "The " & _
                         .cboName(SQUADRON_TAB).Text & _
                         " already exists."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -534,11 +534,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "AddSquadron() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -572,11 +572,11 @@ Public Function ModifySquadron() As Boolean
         ' Default squadrons cannot be updated.
         
         If prsSquadron![Default] = True Then
-            strErrmsg = "Failed to update squadron." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to update squadron." & vbCrLf & vbCrLf & _
                         prsSquadron![Name] & _
                         " is a default squadron."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -585,12 +585,12 @@ Public Function ModifySquadron() As Boolean
         If ValidateRequiredInput(.cboName(SQUADRON_TAB)) = False Then
             Exit Function
         ElseIf .cboName(SQUADRON_TAB).Text <> prsSquadron![Name] Then
-            strErrmsg = "Failed to update squadron." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to update squadron." & vbCrLf & vbCrLf & _
                         "You are not allowed to change the " & _
                         prsSquadron![Name] & _
                         "'s name."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -649,11 +649,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "ModifySquadron() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -692,11 +692,11 @@ Public Function DeleteSquadron() As Boolean
         ' Default squadrons cannot be deleted.
         
         If prsSquadron![Default] = True Then
-            strErrmsg = "Failed to delete squadron." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to delete squadron." & vbCrLf & vbCrLf & _
                         prsSquadron![Name] & _
                         " is a default squadron."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -705,14 +705,14 @@ Public Function DeleteSquadron() As Boolean
         ' Determine if the squadron has assigned bombers.
         
         If HasAssignedBomber(strBomberList) = True Then
-            strErrmsg = "Failed to delete squadron." & vbCrLf & vbCrLf & _
+            strErrMsg = "Failed to delete squadron." & vbCrLf & vbCrLf & _
                         strBomberList & _
                         " are assigned to the " & _
                         prsSquadron![Name] & _
                         ". A squadron cannot be deleted if it has " & _
                         "dependent squadrons."
     
-            MsgBox strErrmsg, (vbExclamation + vbOKOnly)
+            MsgBox strErrMsg, (vbExclamation + vbOKOnly)
             
             ' This is not a severe system error, so return true.
             Exit Function
@@ -794,11 +794,11 @@ CleanUp:
 
 ErrorTrap:
 
-    strErrmsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
+    strErrMsg = "Error " & CStr(Err.Number) & vbCrLf & vbCrLf & _
                 "DeleteSquadron() " & vbCrLf & vbCrLf & _
                 Err.Description
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
     Err.Clear
 
@@ -1003,10 +1003,10 @@ Public Function LookupBomberSquadron(ByVal LookupKeyField As Integer, ByVal Look
     ' If the squadron had been found, we would have previously exitted.
     ' Therefore, an error condition exists.
     
-    strErrmsg = "LookupBomberSquadron() " & vbCrLf & vbCrLf & _
+    strErrMsg = "LookupBomberSquadron() " & vbCrLf & vbCrLf & _
                 "Squadron " & LookupKeyField & " not found."
 
-    MsgBox strErrmsg, (vbCritical + vbOKOnly)
+    MsgBox strErrMsg, (vbCritical + vbOKOnly)
 
 End Function
 

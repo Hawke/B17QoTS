@@ -1,3 +1,4 @@
+Attribute VB_Name = "modBomberModel"
 '******************************************************************************
 ' modBomberModel.bas
 '
@@ -22,7 +23,6 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modBomberModel"
 Option Explicit
 
 Public prsBomberModel As New ADODB.Recordset
@@ -89,7 +89,7 @@ End Function
 '         true and BomberModel; if it is not found (which should never happen),
 '         return false and blank.
 '******************************************************************************
-Public Function LookupBomberModel(ByVal LookupKeyField As Integer, ByRef BomberModel As String) As Boolean
+Public Function LookupBomberModel(ByVal LookupKeyField As Integer, Optional ByRef BomberModel As String = vbNullString) As Boolean
     
     LookupBomberModel = False
     BomberModel = ""

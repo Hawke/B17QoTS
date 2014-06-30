@@ -1,3 +1,4 @@
+Attribute VB_Name = "modMission"
 '******************************************************************************
 ' modMission.bas
 '
@@ -22,10 +23,9 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modMission"
 Option Explicit
 
-Dim strErrmsg As String
+Dim strErrMsg As String
 
 '******************************************************************************
 ' InitializeMission
@@ -820,7 +820,7 @@ Public Sub InitializeRandomEvents()
     RandomEvent.AceForADay = False ' TODO: add effecting logic
     RandomEvent.AggressiveCover = False
     RandomEvent.BadLuftwaffeComm = False
-    RandomEvent.EngineFailure = False
+    RandomEvent.EngineFailure = 0
     RandomEvent.ExtremeCold = False
     RandomEvent.FormationCasualties = False
     RandomEvent.LooseFormation = False

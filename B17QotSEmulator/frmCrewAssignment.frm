@@ -661,9 +661,6 @@ Private Sub Form_Load()
 '       "varAirmanCurrentlyOnTab = " & varAirmanCurrentlyOnTab & vbCrLf & _
 '       "prsAirman![Name] = " & prsAirman![Name]
     
-    For Each cbo In cboCrewPosition
-        cbo.Tag = cbo.Index
-    Next
     
     With frmMainMenu
     
@@ -1159,24 +1156,10 @@ Private Function CommitAssignments() As Boolean
         intPositionsOnBomber = 0
         
         For intIndex = cboCrewPosition.LBound To cboCrewPosition.UBound
-
-            If intIndex = PORT_WAIST_GUNNER _
-            And (prsBomber![BomberModel] = B24_D _
-            Or prsBomber![BomberModel] = B24_E _
-            Or prsBomber![BomberModel] = B24_GHJ _
-            Or prsBomber![BomberModel] = B24_LM) Then
-            
-                ' The port waist gunner is supposed to be unmanned on B-24s.
-            
-            ElseIf cboCrewPosition(intIndex).Tag = UNMANNED_POSITION Then
-
+            If cboCrewPosition(intIndex).ListIndex < 0 And cboCrewPosition(intIndex).Tag > HIDDEN_POSITION Then
                 blnStandDown = True
                 intPositionsOnBomber = intPositionsOnBomber + 1
-                
-            ElseIf cboCrewPosition(intIndex).Tag <> HIDDEN_POSITION Then
-                intPositionsOnBomber = intPositionsOnBomber + 1
             End If
-
         Next intIndex
 
 'MsgBox "intPositionsOnBomber = " & intPositionsOnBomber
@@ -1345,20 +1328,9 @@ Private Function ValidData()
         ' Duplicate crew positions are illegal. Blank crew positions are
         ' permissible. Multiple blank crew positions should not give the
         ' duplicate error.
-        
-        If intIndex = PORT_WAIST_GUNNER _
-        And (prsBomber![BomberModel] = B24_D _
-        Or prsBomber![BomberModel] = B24_E _
-        Or prsBomber![BomberModel] = B24_GHJ _
-        Or prsBomber![BomberModel] = B24_LM) Then
-        
-            ' The port waist gunner is supposed to be unmanned on B-24s.
-        
-        ElseIf cboCrewPosition(intIndex).Tag = UNMANNED_POSITION Then
-
-            ' The position really is blank / unoccupied.
+        If cboCrewPosition(intIndex).ListIndex < 0 And cboCrewPosition(intIndex).Tag > HIDDEN_POSITION Then
+            'Position is not hidden, but no crew was selected.
             blnMissingCrew = True
-        
         End If
     
     Next intIndex
@@ -1391,7 +1363,9 @@ Private Sub PositionCrewCombos()
         hasPosition = False
         For j = LBound(CurrentBomberPositions) To UBound(CurrentBomberPositions)
             If CurrentBomberPositions(j) = i Then
+                'This bomber has a position for this combobox.
                 hasPosition = True
+                cboCrewPosition(i).Tag = CurrentBomberPositions(j)
                 lblCrewPosition(i).Caption = CurrentBomberPositionNames(j)
                 bomberPositions = bomberPositions + 1
             End If
@@ -1403,7 +1377,6 @@ Private Sub PositionCrewCombos()
             cboCrewPosition(i).Left = X
             cboCrewPosition(i).Top = Y
             Y = Y + 600
-            cboCrewPosition(i).Tag = UNMANNED_POSITION
         Else
             cboCrewPosition(i).Tag = HIDDEN_POSITION
         End If

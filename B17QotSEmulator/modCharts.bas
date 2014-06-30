@@ -9751,6 +9751,7 @@ End Function
 Private Function B7RandomEvents() As Integer
     Dim intRoll As Integer
     Dim intEngine As Integer
+    Dim intFeathering As Integer
     Dim intGun As Integer
     Dim strMessage As String
     Dim bRetryRoll As Boolean
@@ -9768,35 +9769,34 @@ Private Function B7RandomEvents() As Integer
             'Rules Page 9, section 18.0
             'Note a: If this random event is rolled again, the previously-failed engine may be able to restart.
             
-            intEngine = RandomDX(4)
-            
-            If Damage.EngineOut(intEngine) = False Then
-                Damage.EngineOut(intEngine) = True
+            If RandomEvent.EngineFailure = 0 Then
+                'No current random engine failure. Break a random engine.
+                RandomEvent.EngineFailure = RandomDX(4)
+                Damage.EngineOut(RandomEvent.EngineFailure) = True
                 UpdateMessage "Engine failure in # " & intEngine & "."
-                              
-                If Damage.FeatheringCtrl Then
-                    'see BL-2 result 10
+                
+                'Table BL-1 note c.
+                'Check if prop was feathered when it failed.
+                intFeathering = Random1D6
+                If intFeathering = 6 Then
                     UpdateMessage "  Prop not feathered."
                     Damage.EngineDrag(intEngine) = True
-                    Call DropOutOfFormation
+                    DropOutOfFormation
+                Else
+                    UpdateMessage "  Prop feathered."
                 End If
-            
-                RandomEvent.EngineFailure = True
             Else
-                ' Engine must have some oil to restart. If the engine is
-                ' dragging (blades flat to wind), it may be restarted. If
-                ' engine is not dragging (blades parallel to wind), feathering
-                ' control must be operational.
+                'An engine was previously failed.
+                'It is able to restart if it was not shutdown due to damage.
+                '(either engine hit or oil leak runout)
+                'FIXME: a battle-damaged engine should stay failed
+                If Damage.OilTankLeak(RandomEvent.EngineFailure) > NO_OIL Then
+                    Damage.EngineDrag(RandomEvent.EngineFailure) = False
+                    Damage.EngineOut(RandomEvent.EngineFailure) = False
+                End If
                 
-                'NOTE: the above seems wrong. Oil leak rules state: "shut off engine after x more
-                'zones", not necessarily that the engine has seized or suffered a catastrophic
-                'failure. Damage to the feathering control is only relevant when suffering a
-                'runaway engine. After all, it *miraculously* restarts.
-                
-                Damage.EngineDrag(intEngine) = False
-                Damage.EngineOut(intEngine) = False
-                UpdateMessage "#" & intEngine & " engine miraculously " & _
-                              "restarts."
+                RandomEvent.EngineFailure = 0
+                UpdateMessage "#" & RandomEvent.EngineFailure & " engine restarted."
             End If
         
         Case 3:

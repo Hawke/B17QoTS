@@ -265,9 +265,11 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000080FF&
             Height          =   255
             Left            =   120
             TabIndex        =   194
+            ToolTipText     =   "from ""The General"", vol. 26 no. 5"
             Top             =   4320
             Width           =   2655
          End
@@ -282,9 +284,11 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000080FF&
             Height          =   255
             Left            =   120
             TabIndex        =   174
+            ToolTipText     =   "from ""The General"", vol. 24 no. 6"
             Top             =   2520
             Width           =   2175
          End
@@ -300,9 +304,11 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000080FF&
             Height          =   255
             Left            =   120
             TabIndex        =   173
+            ToolTipText     =   "from ""The General"", vol. 24 no. 6"
             Top             =   2880
             Width           =   3135
          End
@@ -317,9 +323,11 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000080FF&
             Height          =   255
             Left            =   120
             TabIndex        =   171
+            ToolTipText     =   "from ""The General"", vol. 24 no. 6"
             Top             =   1800
             Width           =   3255
          End
@@ -334,9 +342,11 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000080FF&
             Height          =   255
             Left            =   120
             TabIndex        =   172
+            ToolTipText     =   "from ""The General"", vol. 24 no. 6"
             Top             =   2160
             Width           =   1695
          End
@@ -351,6 +361,7 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000000FF&
             Height          =   255
             Left            =   120
             TabIndex        =   176
@@ -368,6 +379,7 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000000FF&
             Height          =   255
             Left            =   120
             TabIndex        =   177
@@ -385,11 +397,12 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000080FF&
             Height          =   255
             Left            =   120
             TabIndex        =   167
+            ToolTipText     =   "from ""The General"", vol. 25 no. 5"
             Top             =   360
-            Value           =   1  'Checked
             Width           =   2415
          End
          Begin VB.CheckBox chkRandomEvents 
@@ -403,7 +416,7 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            ForeColor       =   &H000000FF&
+            ForeColor       =   &H0000C000&
             Height          =   255
             Left            =   120
             TabIndex        =   168
@@ -422,10 +435,12 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H0000C000&
             Height          =   255
             Left            =   120
             TabIndex        =   175
             Top             =   3240
+            Value           =   1  'Checked
             Width           =   2535
          End
          Begin VB.CheckBox chkTimePeriodSpecificFormations 
@@ -439,9 +454,11 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000080FF&
             Height          =   255
             Left            =   120
             TabIndex        =   170
+            ToolTipText     =   "from ""The General"", vol. 24 no. 6"
             Top             =   1440
             Width           =   3255
          End
@@ -456,9 +473,11 @@ Begin VB.Form frmMainMenu
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H000080FF&
             Height          =   255
             Left            =   120
             TabIndex        =   169
+            ToolTipText     =   "from The General, Vol 24. no. 6"
             Top             =   1080
             Width           =   2295
          End

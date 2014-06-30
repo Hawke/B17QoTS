@@ -1,3 +1,4 @@
+Attribute VB_Name = "modUserDefinedTypes"
 '******************************************************************************
 ' modUserDefinedTypes.bas
 '
@@ -22,7 +23,6 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modUserDefinedTypes"
 Option Explicit
 
 Public gblnCrewAssigned As Boolean
@@ -225,7 +225,7 @@ Public Wave As WaveInfoNew
 '        BomberInfoNew structure.
 '******************************************************************************
 Private Type RandomEventNew
-    EngineFailure As Boolean
+    EngineFailure As Integer
     FormationCasualties As Boolean
     LooseFormation As Boolean
     AggressiveCover As Boolean

@@ -11,7 +11,6 @@ Begin VB.Form frmSplash
    MinButton       =   0   'False
    ScaleHeight     =   5835
    ScaleWidth      =   6735
-   ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox picSplash 
       Appearance      =   0  'Flat

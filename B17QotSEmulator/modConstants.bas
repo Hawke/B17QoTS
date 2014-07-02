@@ -1,3 +1,4 @@
+Attribute VB_Name = "modConstants"
 '******************************************************************************
 ' modConstants.bas
 '
@@ -22,7 +23,6 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modConstants"
 Option Explicit
 
 Public pintDoo(1 To 2) As Integer
@@ -393,6 +393,7 @@ Public Const CRASH_LAND As String = "Crash"
 Public Const ATTEMPT_LANDING As String = "Land"
 Public Const ABORT_MISSION As String = "Abort Mission"
 Public Const DESCEND_ALTITUDE As String = "Descend"
+Public Const ASCEND_ALTITUDE As String = "Ascend"
 Public Const JETTISON_EXCESS As String = "Jettison Excess"
 Public Const FINISH_MISSION As String = "Finish Mission"
 Public Const EXIT_MISSION As String = "Exit Mission"

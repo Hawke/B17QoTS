@@ -1,3 +1,4 @@
+Attribute VB_Name = "modMisc"
 '******************************************************************************
 ' modMisc.bas
 '
@@ -22,7 +23,6 @@
 ' along with B17QotS. If not, see <http://www.gnu.org/licenses/>.
 '******************************************************************************
 
-Attribute VB_Name = "modMisc"
 Option Explicit
 
 Public Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
@@ -83,25 +83,11 @@ End Function
 '         is called. frmMission needs to be loaded for it to work.
 '*******************************************************************************
 Public Sub UpdateMessage(ByVal strNewText As String)
-'Static intLines As Integer
-'        UpdateMessage (Mission.Options.Delay / 1000) & " second delay"
-'        MsgBox (Mission.Options.Delay / 1000) & " second delay"
-'Sleep 250 ' Mission.Options.Delay
 
     With frmMission
-'        intLines = intLines + 1
-
-'        If intLines <= 17 Then
-'            .rtbMessages.Text = .rtbMessages.Text & strNewText & vbCrLf
-'        ElseIf intLines = 18 Then
-'            .rtbMessages.Text = .rtbMessages.Text & strNewText & vbCrLf
-'            Sleep (Mission.Options.Delay * 10)
-'        ElseIf intLines >= 19 Then
             .rtbMessages.SelStart = Len(.rtbMessages.Text)
             .rtbMessages.Text = .rtbMessages.Text & strNewText & vbCrLf
             Sleep Mission.Options.Delay
-'        End If
- 
         .Refresh
     
     End With

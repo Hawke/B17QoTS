@@ -99,6 +99,7 @@ Private Type AirmanInfoNew ' ne: CrewInfo
     Wounded As Boolean
     Frostbite As Boolean
     AssignedPosition As Integer ' The position the airman started the mission at
+    AceForADay As Boolean
 End Type
 
 '******************************************************************************
@@ -143,6 +144,7 @@ Private Type GunInfoNew
    Ammo As Integer  ' current ammo
    MaxAmmo As Integer ' maximum ammo
    Status As Integer
+   Frozen As Boolean 'Jammed due to cold; auto-repair when at 10K feet.
    MannedBy As Integer ' TODO: not necessary if gun is a property of position
    QualifiedGunner As Boolean 'Is airman qualified? If not, 6 to hit.
 End Type

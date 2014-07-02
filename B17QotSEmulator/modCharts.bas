@@ -117,11 +117,8 @@ End Function
 '         determines how many German fighters are chased away.
 '******************************************************************************
 Public Function G5FighterCover(intDate As Integer, blnExtendedCover As Boolean) As String
-    
     Dim intRoll As Integer
     
-    G5FighterCover = ""
-   
     intRoll = Random1D6()
 
     ' Fighter cover, regardless of range, improved as the war progressed.
@@ -406,13 +403,11 @@ End Sub
 '******************************************************************************
 Public Sub G9LandingOnLand()
     Dim intRoll As Integer
-'    Dim blnEnemyTerritory As Boolean
     Dim blnPayloadExploded As Boolean
     Dim intEnginesOut As Integer
     
     UpdateMessage "Landing on land:"
         
-'    blnEnemyTerritory = EnemyTerritory()
     
     If Mission.Zone(Bomber.CurrentZone).Terrain = ALPS_TER Then
         
@@ -720,6 +715,99 @@ Public Sub G9LandingOnLand()
     End If
 
 End Sub
+
+Public Function G9TakeOff() As Boolean
+    Dim blnPayloadExploded As Boolean
+    Dim intRoll As Integer
+    'From "B-24 variant" (The Boardgamer, volume 8 no. 4?)
+    If Bomber.BomberModel = B24_D _
+    Or Bomber.BomberModel = B24_E _
+    Or Bomber.BomberModel = B24_GHJ _
+    Or Bomber.BomberModel = B24_LM Then
+    
+        ' Basically, this is the G9LandingOnLand procedure, but only with
+        ' modifiers for weight, weather and pilot/copilot skill.
+    
+        intRoll = Random2D6()
+        
+        ' Adjust the roll for the extra weight carried by the B-24.
+        
+        intRoll = intRoll - 1
+        
+        'O-1 Weather Note a. Bad weather causes -2 on G9/G10
+        'O-1 Weather: Note b. Poor weather causes -1 on G9/G10
+        
+        
+        If Mission.Zone(BASE_ZONE).Weather = POOR_WEATHER Then
+            intRoll = intRoll - 1
+        ElseIf Mission.Zone(BASE_ZONE).Weather = BAD_WEATHER Then
+            intRoll = intRoll - 2
+        ElseIf Mission.Zone(BASE_ZONE).Weather = STORM_WEATHER Then
+            intRoll = intRoll - 3
+        End If
+            
+        ' Adjust for pilot and copilot experience.
+            
+        If Bomber.Airman(PILOT).Mission >= 11 _
+        And Bomber.Airman(COPILOT).Mission >= 11 Then
+            intRoll = intRoll + 1
+        End If
+        
+        If intRoll <= 1 Then
+            UpdateMessage "Bomber fails to clear end of runway."
+        End If
+        If intRoll <= 0 Then
+            If Bomber.BombsOnBoard _
+                Or Bomber.ExtraFuelInBombBay _
+                Or Bomber.ExtraAmmo > 0 _
+                Then
+                If Random1D6 = 6 Then
+                    blnPayloadExploded = True
+                End If
+            End If
+        End If
+        If blnPayloadExploded Then
+            Bomber.Status = CRASHED_STATUS
+            UpdateMessage "Explosion. Bomber destroyed, killing all crew."
+            Call CrewFinish(KIA_STATUS)
+            G9TakeOff = False
+        Else
+            Select Case intRoll
+                Case Is <= -3:
+                    Bomber.Status = CRASHED_STATUS
+                    UpdateMessage "Bomber wrecked."
+                    Call CrewFinish(KIA_STATUS)
+                
+                Case -2:
+                    Bomber.Status = CRASHED_STATUS
+                    UpdateMessage "Bomber wrecked."
+                    Call CrewFinish(BAD_CRASH_STATUS)
+                    
+                Case -1:
+                    Bomber.Status = CRASHED_STATUS
+                    UpdateMessage "Bomber wrecked."
+                    Call CrewFinish(CRASHED_STATUS)
+                    
+                Case 0:
+                    Bomber.Status = CRASHED_STATUS
+                    UpdateMessage "Bomber crashed; irrepairably damaged."
+                    
+                Case 1:
+                    Bomber.Status = DUTY_STATUS
+                    UpdateMessage "Bomber crashed; repairable by next mission."
+                    
+                Case Is >= 2:
+                    G9TakeOff = True
+            
+            End Select
+            
+        End If
+    
+    Else
+        ' B-17s and Lancasters always successfully takeoff.
+        G9TakeOff = True
+    End If
+End Function
 
 '******************************************************************************
 ' G10LandingInWater
@@ -1558,7 +1646,7 @@ End Function
 '
 ' RETURN: n/a
 '
-' NOTES:  Cycle through all positions. If the heater is broke assess if the
+' NOTES:  Cycle through all positions. If the heater is broken assess if the
 '         airman currently occupying the position sustains frostbite.
 '******************************************************************************
 Public Sub BL5Frostbite()
@@ -2008,7 +2096,7 @@ Public Function O1Weather() As Integer
         
     O1Weather = GOOD_WEATHER
     
-    If Mission.Options.AlternateWeather = False Then
+    If Not Mission.Options.AlternateWeather Then
         
         ' Use the traditional weather table.
         Select Case Random2D6()
@@ -8199,34 +8287,28 @@ Public Sub DropOutOfFormation()
 
 End Sub
 
-'******************************************************************************
-' LoseAltitude
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
-' RETURN: n/a
-'
 ' NOTES:  Bomber must drop out of formation before it can lose altitude. The
 '         DropToLowAltitude() asks if the user wants to descend to low altitude;
 '         this function actually does the descent.
-'******************************************************************************
 Public Sub LoseAltitude()
-
-' TODO: regain altitude ???
-    
-    If Bomber.Altitude = HIGH_ALTITUDE _
-    And (Bomber.InFormation = False _
-    Or Bomber.BomberModel = AVRO_LANCASTER) Then
-        
+    'We won't worry about the formation dropout, that's the job of DropOutOfFormation()
+    If Bomber.Altitude = HIGH_ALTITUDE Then
+        'don't want to report that we were descending when we were already low.
         Bomber.Altitude = LOW_ALTITUDE
-
+    
         UpdateMessage "Bomber descends to low altitude (" & _
                       LOW_ALTITUDE & " feet)."
-    
     End If
+End Sub
 
+Public Sub GainAltitude()
+    
+    If Bomber.Altitude = LOW_ALTITUDE Then
+        Bomber.Altitude = HIGH_ALTITUDE
+        UpdateMessage "Bomber climbs to high altitude (" & _
+              HIGH_ALTITUDE & " feet)."
+
+    End If
 End Sub
 
 '******************************************************************************
@@ -8292,7 +8374,7 @@ Public Function B1NumberOfGermanFighterWaves() As Integer
     
     ' Rule 18.0
     
-    If RandomEvent.LooseFormation = True Then
+    If RandomEvent.LooseFormation Then
         intRoll = intRoll + 1
     ElseIf RandomEvent.TightFormation = True Then
         intRoll = intRoll - 1
@@ -9750,358 +9832,354 @@ End Function
 '******************************************************************************
 Private Function B7RandomEvents() As Integer
     Dim intRoll As Integer
-    Dim intEngine As Integer
-    Dim intFeathering As Integer
     Dim intGun As Integer
     Dim strMessage As String
     Dim bRetryRoll As Boolean
+    Dim bNoEvent As Boolean
     
-    ' Rule 18.0: Note that we do not re-roll as called for by the rules (Note b)
-    
-    intRoll = Random2D6()
-    
-    frmMission.lblMiscWave.Caption = vbNullString
-
-    Select Case intRoll
-    
-        Case 2:
+    If Not Bomber.BomberModel = AVRO_LANCASTER Then
+        Do
+            bRetryRoll = False
+            '"The Battle of Berlin", Rule 7E: The Random Events table is never used
+            intRoll = Random2D6()
             
-            'Rules Page 9, section 18.0
-            'Note a: If this random event is rolled again, the previously-failed engine may be able to restart.
-            
-            If RandomEvent.EngineFailure = 0 Then
-                'No current random engine failure. Break a random engine.
-                RandomEvent.EngineFailure = RandomDX(4)
-                Damage.EngineOut(RandomEvent.EngineFailure) = True
-                UpdateMessage "Engine failure in # " & intEngine & "."
-                
-                'Table BL-1 note c.
-                'Check if prop was feathered when it failed.
-                intFeathering = Random1D6
-                If intFeathering = 6 Then
-                    UpdateMessage "  Prop not feathered."
-                    Damage.EngineDrag(intEngine) = True
-                    DropOutOfFormation
-                Else
-                    UpdateMessage "  Prop feathered."
-                End If
-            Else
-                'An engine was previously failed.
-                'It is able to restart if it was not shutdown due to damage.
-                '(either engine hit or oil leak runout)
-                'FIXME: a battle-damaged engine should stay failed
-                If Damage.OilTankLeak(RandomEvent.EngineFailure) > NO_OIL Then
-                    Damage.EngineDrag(RandomEvent.EngineFailure) = False
-                    Damage.EngineOut(RandomEvent.EngineFailure) = False
-                End If
-                
-                RandomEvent.EngineFailure = 0
-                UpdateMessage "#" & RandomEvent.EngineFailure & " engine restarted."
-            End If
+            frmMission.lblMiscWave.Caption = vbNullString
         
-        Case 3:
-        
-            ' Note h: This may only happen once per mission, as it makes no
-            ' sense to move from one end of the formation to the other.
+            Select Case intRoll
             
-            If Bomber.InFormation = True _
-            And Bomber.FormationPos = MIDDLE_PLANE _
-            And RandomEvent.FormationCasualties = False _
-            And Bomber.BomberModel <> AVRO_LANCASTER Then
-
-                ' Lancasters are part of a "stream", rather than a formation.
-    
-                strMessage = "Formation casualties. You are now the "
-            
-                If Random1D6() <= 3 Then
-                    strMessage = strMessage & "lead"
-                    Bomber.FormationPos = LEAD_PLANE
-                Else
-                    strMessage = strMessage & "tail"
-                    Bomber.FormationPos = TAIL_PLANE
-                End If
-            
-                strMessage = strMessage & " bomber."
-            
-                UpdateMessage strMessage
-            
-                RandomEvent.FormationCasualties = True
-            Else
-                frmMission.lblMiscWave.Caption = "No Attackers"
-                UpdateMessage "No attackers."
-            End If
-        
-        Case 4:
-        
-            ' Note i: A formation cannot be both loose and tight.
-        
-            If Bomber.InFormation = True _
-            And Bomber.FormationPos = MIDDLE_PLANE _
-            And RandomEvent.LooseFormation = False _
-            And RandomEvent.TightFormation = False _
-            And Bomber.BomberModel <> AVRO_LANCASTER Then
-
-                ' Lancasters are part of a "stream", rather than a formation.
-
-                RandomEvent.LooseFormation = True
-                
-                UpdateMessage "Loose formation."
-            
-            Else
-                frmMission.lblMiscWave.Caption = "No Attackers"
-                UpdateMessage "No attackers."
-            End If
-        
-        Case 5:
-
-            If Mission.Options.Unescorted = False _
-            And RandomEvent.AggressiveCover = False _
-            And Bomber.BomberModel <> AVRO_LANCASTER Then
-                RandomEvent.AggressiveCover = True
-                UpdateMessage "Aggressive fighter cover."
-            Else
-                frmMission.lblMiscWave.Caption = "No Attackers"
-                UpdateMessage "No attackers."
-            End If
-        
-        Case 6, 8: 'tight formation
-        
-            ' Note j: A formation cannot be both loose and tight.
-        
-            If Bomber.InFormation = True _
-            And Bomber.FormationPos = MIDDLE_PLANE _
-            And RandomEvent.LooseFormation = False _
-            And RandomEvent.TightFormation = False _
-            And Bomber.BomberModel <> AVRO_LANCASTER Then
-
-                ' Lancasters are part of a "stream", rather than a formation.
-
-                RandomEvent.TightFormation = True
-                
-                UpdateMessage "Tight formation."
-            
-            Else
-                frmMission.lblMiscWave.Caption = "No Attackers"
-                UpdateMessage "No attackers."
-            End If
-        
-        Case 7:
-            
-            ' Note c: This may happen multiple times. Rather than having the
-            ' user decide when to expend some luck, the luck will automatically
-            ' be expended when some horrible tragedy occurs, such as burst in
-            ' plane or the plane is shot down.
-            
-            Bomber.RabbitsFoot = Bomber.RabbitsFoot + 1
-            UpdateMessage "Your crew feels luckier ..."
-        
-        Case 9:
-            
-            ' Note d: This may happen multiple times.
-            
-            If RandomEvent.BadLuftwaffeComm = False Then
-                RandomEvent.BadLuftwaffeComm = True
-            Else
-                ' Luftwaffe restores communications.
-                RandomEvent.BadLuftwaffeComm = False
-            End If
-        
-            ' The player should not know the condition of enemy commo.
-            
-            frmMission.lblMiscWave.Caption = "No Attackers"
-            UpdateMessage "No attackers."
-            
-        Case 10:
-        
-            ' Note e: This may happen multiple times.
-            
-            If Bomber.Altitude = HIGH_ALTITUDE Then
-            
-                UpdateMessage "Extreme cold"
-            
-                For intGun = MID_UPPER_MG To TAIL_MG
+                Case 2:
+                    B702RandomEngineFailure
+                Case 3:
+                    'Formation casualties
+                    ' Note h: This may only happen once per mission, as it makes no
+                    ' sense to move from one end of the formation to the other.
                     
-                    If GunExists(intGun) = True Then
+                    If RandomEvent.FormationCasualties Or Not Bomber.InFormation Then
+                        'Rule 18.0, note b. If this random event is rolled again, ignore and re-roll.
+                        'Rule 18.0, note h. If you are out of formation, reroll also.
+                        bRetryRoll = True
+                    ElseIf Bomber.FormationPos = MIDDLE_PLANE Then
+                            strMessage = "Formation casualties. You are now the "
                         
-                        If Random1D6() = 6 Then
-                        
-                            Bomber.Gun(intGun).Status = MG_JAMMED
-                            UpdateMessage frmMission.lblGunName(intGun).Caption & " frozen solid."
-                        
-                        End If
-                    
-                    End If
-                
-                Next intGun
-            
-            Else
-                frmMission.lblMiscWave.Caption = "No Attackers"
-                UpdateMessage "No attackers."
-            End If
-        
-            RandomEvent.ExtremeCold = True
-        
-        Case 11: 'ace for a day
-        
-UpdateMessage "TODO: ace for a day."
-        
-        Case 12: 'mid-air accident
-    
-            ' Note g: This may happen multiple times.
-            
-            If Mission.Options.TimePeriodSpecificFormations = True _
-            And Mission.Date = AUG_1942 Then
-                ' "The General" (Volume 24, #6) variant.
-                frmMission.lblMiscWave.Caption = "No Attackers"
-                UpdateMessage "No attackers."
-                Exit Function
-            End If
-        
-            If Bomber.InFormation = True _
-            And RandomEvent.LooseFormation = False Then
-            
-                RandomEvent.MidAirAccident = True
-                
-                intRoll = Random2D6()
-                
-                If (Bomber.Position(PILOT).CurrentSerialNum = Bomber.Position(PILOT).AssignedSerialNum _
-                And Bomber.Airman(PILOT).Status <= LW2_STATUS) _
-                Or (Bomber.Position(PILOT).CurrentSerialNum = Bomber.Position(COPILOT).AssignedSerialNum _
-                And Bomber.Airman(COPILOT).Status <= LW2_STATUS) Then
-
-                    ' Crew Experience: "The General" (Volume 24, #6) variant.
-                    ' The airman occupying the pilot's seat is a pilot or copilot,
-                    ' who is not incapacitated.
-                    
-                    If Mission.Options.CrewExperience = True Then
-                        
-                        ' Crew experience variant from the "Theater Modifications"
-                        ' article in "The General" (Volume 24, #6).
-
-                        If Bomber.Airman(PILOT).Mission <= 5 _
-                        And Bomber.Airman(COPILOT).Mission <= 5 Then
-
-                            ' Inexperienced pilot and copilot more likely to
-                            ' have severe collision.
-                            intRoll = intRoll + 1
-                    
-                        ElseIf Bomber.Airman(PILOT).Mission >= 11 _
-                        Or Bomber.Airman(COPILOT).Mission >= 11 Then
-
-                            ' Experienced pilot or copilot less likely to have
-                            ' severe collision.
-                            intRoll = intRoll - 1
-                        
-                        End If
-                    
-                    End If
-                    
-                Else
-                    
-                    ' Non-pilot even more likely to have more severe collision.
-                    intRoll = intRoll + 2
-                
-                End If
-                    
-            
-                Select Case intRoll
-                    Case 2 To 8:
-                        
-                        UpdateMessage "Mid-air collision jars bomber."
-                        
-                        Damage.PeckhamPoints = Damage.PeckhamPoints + 25
-                            
-                    Case 9 To 10:
-                    
-                        UpdateMessage "Mid-air collision knocks bomber into shallow dive."
-                        
-                        Damage.PeckhamPoints = Damage.PeckhamPoints + 25
-                            
-                        Call DropOutOfFormation
-                    
-                    Case 11:
-                    
-                        If Bomber.RabbitsFoot >= 1 Then
-                            ' Expend luck to prevent loss of aircraft.
-                            UpdateMessage "Luckily avoided mid-air collision"
-                            Bomber.RabbitsFoot = Bomber.RabbitsFoot - 1
-                        Else
-                            
-                            UpdateMessage "Mid-air collision knocks bomber into steep dive."
-                            
-                            Damage.PeckhamPoints = Damage.PeckhamPoints + 50
-                            
-                            If Random1D6() = 6 Then
-                                
-                                UpdateMessage "Stress tears off port wing!"
-                                G7UncontrolledBailout (OverWater())
-                                B7RandomEvents = END_MISSION
-                                Exit Function
-                            
-                            ElseIf Random1D6() = 6 Then
-                                
-                                UpdateMessage "Stress tears off starboard wing!"
-                                G7UncontrolledBailout (OverWater())
-                                B7RandomEvents = END_MISSION
-                                Exit Function
-                            
+                            If Random1D6() <= 3 Then
+                                strMessage = strMessage & "lead"
+                                Bomber.FormationPos = LEAD_PLANE
                             Else
+                                strMessage = strMessage & "tail"
+                                Bomber.FormationPos = TAIL_PLANE
+                            End If
+                        
+                            strMessage = strMessage & " bomber."
+                        
+                            UpdateMessage strMessage
+                        
+                            RandomEvent.FormationCasualties = True
+                    Else
+                        'Rule 18.0, note h. If you are already the lead or tail plane, ignore and re-roll.
+                        bRetryRoll = True
+                    End If
+                
+                Case 4:
+                    'Loose formation.
+                    'NOTRAW: A formation cannot be both loose and tight.
+                    
+                    If RandomEvent.LooseFormation Then
+                        'Rule 18.0, note b. If this random event is rolled again, ignore and re-roll.
+                        bRetryRoll = True
+                    Else
+                        'Formation was either tight or normal.
+                        'Rule 18.0, note i. This event still has the same effect, even if out of formation.
+                        RandomEvent.TightFormation = False
+                        RandomEvent.LooseFormation = True
+                        UpdateMessage "Loose formation."
+                    End If
+                
+                Case 5:
+                    'Aggressive "Little Friends".
+                    If RandomEvent.AggressiveCover Then
+                        'Rule 18.0, note b. If this random event is rolled again, ignore and reroll.
+                        bRetryRoll = True
+                    ElseIf Mission.Options.Unescorted Then
+                        'If we're unescorted we can't have aggressive cover.
+                        'NOTRAW: in this case, reroll.
+                        bRetryRoll = True
+                    Else
+                        RandomEvent.AggressiveCover = True
+                        UpdateMessage "Aggressive fighter cover."
+                    End If
+                
+                Case 6, 8:
+                    ' Tight formation.
+                    ' NOTRAW: A formation cannot be both loose and tight.
+                
+                    If RandomEvent.TightFormation Then
+                        'Rule 18.0, note b. If this random event is rolled again, ignore and re-roll.
+                        bRetryRoll = True
+                    Else
+                        RandomEvent.LooseFormation = False
+                        RandomEvent.TightFormation = True
+                        UpdateMessage "Tight formation."
+                    End If
+                
+                Case 7:
+                    
+                    ' Note c: This may happen multiple times. Rather than having the
+                    ' user decide when to expend some luck, the luck will automatically
+                    ' be expended when some horrible tragedy occurs, such as burst in
+                    ' plane or the plane is shot down.
+                    'FIXME: offer the rabbit's foot on any negative die result.
+                    
+                    Bomber.RabbitsFoot = Bomber.RabbitsFoot + 1
+                    UpdateMessage "Your crew feels luckier ..."
+                
+                Case 9:
+                    
+                    ' Note d: This may happen multiple times.
+                    RandomEvent.BadLuftwaffeComm = Not RandomEvent.BadLuftwaffeComm
+                    
+                    'NOTE Should the user be notified of this? Maybe make it optional?
+                    If RandomEvent.BadLuftwaffeComm Then
+                        UpdateMessage "The Luftwaffe seem poorly co-ordinated"
+                    Else
+                        UpdateMessage "The Luftwaffe seem better co-ordinated"
+                    End If
+                    
+                Case 10:
+                
+                    If Not Bomber.Altitude = HIGH_ALTITUDE Then
+                        'Rule 18.0 note e. If you are out of formation at 10,000 feet, ignore this result and re-roll.
+                        
+                        bRetryRoll = True
+                    Else
+                    
+                        UpdateMessage "Extreme cold."
+                    
+                        For intGun = MID_UPPER_MG To TAIL_MG
                             
-                                If Bomber.BombsOnBoard = True _
-                                Or Bomber.ExtraAmmo >= 1 _
-                                Or Bomber.ExtraFuelInBombBay = True Then
+                            If GunExists(intGun) Then
                                 
-                                    UpdateMessage "Payload rips through bomb bay doors."
-                                    
-                                    Bomber.BombsOnBoard = False
-                                    Bomber.ExtraAmmo = 0
-                                    Bomber.ExtraFuelInBombBay = False
-                                    
-                                    Damage.BombBayDoors = True
-                                    Damage.BombRelease = True
-                                    Damage.PeckhamPoints = Damage.PeckhamPoints + 35
+                                If Random1D6() = 6 Then
+                                    Bomber.Gun(intGun).Status = MG_JAMMED
+                                    Bomber.Gun(intGun).Frozen = True
+                                    UpdateMessage frmMission.lblGunName(intGun).Caption & " jammed due to cold."
+                                    'FIXME: Needs to be auto-repaired at 10K feet.
                                 
                                 End If
-                                
+                            
                             End If
                         
-                            Call DropOutOfFormation
-        
-                            If AlpsDirection() = ALPS_BELOW Then
-                                G7UncontrolledBailout (False)
-                                B7RandomEvents = END_MISSION
-                                Exit Function
-                            Else
-                                Call LoseAltitude
-                            End If
-                        
-                        End If
-
-                    Case 12:
-                        
-                        If Bomber.RabbitsFoot >= 1 Then
-                            ' Expend luck to prevent loss of aircraft.
-                            UpdateMessage "Luckily avoided mid-air collision"
-                            Bomber.RabbitsFoot = Bomber.RabbitsFoot - 1
-                        Else
-                                
-                            UpdateMessage "Mid-air collision!"
-                            G7UncontrolledBailout (OverWater())
-                            B7RandomEvents = END_MISSION
-                            Exit Function
-                    
-                        End If
+                        Next intGun
+                    End If
                 
-                End Select
-            
-            Else
-                frmMission.lblMiscWave.Caption = "No Attackers"
-                UpdateMessage "No attackers."
-            End If
-
-    End Select
+                    RandomEvent.ExtremeCold = True
+                
+                Case 11: 'ace for a day
+                    Dim AcePosition As Integer
+                    UpdateMessage "TODO: ace for a day."
+                    
+                    Select Case Random1D6
+                        Case 1 To 2:
+                            AcePosition = ENGINEER
+                        Case 3 To 4:
+                            AcePosition = BALL_GUNNER
+                        Case 5 To 6:
+                            AcePosition = TAIL_GUNNER
+                    End Select
+                    Bomber.Airman(AcePosition).AceForADay = True
+                    UpdateMessage Bomber.Airman(AcePosition).Name & " is having a great day!"
+                
+                Case 12: 'mid-air accident
+                    B712MidAirAccident
+                    
+            End Select
+        Loop Until bRetryRoll = False
+        If bNoEvent Then
+            frmMission.lblMiscWave.Caption = "No Attackers"
+            UpdateMessage "No attackers."
+        End If
+    End If
     
 End Function
+
+
+Public Sub B702RandomEngineFailure()
+                    
+    'Rules Page 9, section 18.0
+    'Note a: If this random event is rolled again, the previously-failed engine may be able to restart.
+    Dim intEngine As Integer
+    Dim intFeathering As Integer
+    
+    If RandomEvent.EngineFailure = 0 Then
+        'Engine failure.
+        'No current random engine failure. Break a random engine.
+        RandomEvent.EngineFailure = RandomDX(4)
+        Damage.EngineOut(RandomEvent.EngineFailure) = True
+        UpdateMessage "Engine failure in # " & intEngine & "."
+        
+        'Table BL-1 note c.
+        'Check if prop was feathered when it failed.
+        intFeathering = Random1D6
+        If intFeathering = 6 Then
+            UpdateMessage "  Prop not feathered."
+            Damage.EngineDrag(intEngine) = True
+            DropOutOfFormation
+        Else
+            UpdateMessage "  Prop feathered."
+        End If
+    Else
+        'An engine was previously failed.
+        'NOTRAW It is able to restart if it was not shutdown due to damage.
+        '(either engine hit or oil leak runout)
+        'FIXME: a battle-damaged engine should stay failed
+        If Damage.OilTankLeak(RandomEvent.EngineFailure) > NO_OIL Then
+            Damage.EngineDrag(RandomEvent.EngineFailure) = False
+            Damage.EngineOut(RandomEvent.EngineFailure) = False
+        End If
+        
+        RandomEvent.EngineFailure = 0
+        UpdateMessage "#" & RandomEvent.EngineFailure & " engine restarted."
+    End If
+End Sub
+
+Private Sub B712MidAirAccident()
+    'NOTE: this previously indicated that "Theater Modifications: More Expansions
+    'for B-17" said that mid-air collision were impossible in August 1942.
+    'I cannot find this in that variant. It does say "While risk of collision was
+    'low [prior to September 1942], but it doesn't suggest any rules change to
+    'account for that.
+    Dim intRoll As Integer
+    
+    If Not Bomber.InFormation Then
+        'Rule 18.0 note g. If you are out of formation, treat this result as #2 (engine failure) instead.
+        B702RandomEngineFailure
+    Else
+    
+        RandomEvent.MidAirAccident = True
+        
+        intRoll = Random2D6()
+        
+        If (Bomber.Position(PILOT).CurrentSerialNum = Bomber.Position(PILOT).AssignedSerialNum _
+        And Bomber.Airman(PILOT).Status <= LW2_STATUS) _
+        Or (Bomber.Position(PILOT).CurrentSerialNum = Bomber.Position(COPILOT).AssignedSerialNum _
+        And Bomber.Airman(COPILOT).Status <= LW2_STATUS) Then
+
+            ' Crew Experience: "The General" (Volume 24, #6) variant.
+            ' The airman occupying the pilot's seat is a pilot or copilot,
+            ' who is not incapacitated.
+            
+            If Mission.Options.CrewExperience Then
+                
+                ' Crew experience variant from the "Theater Modifications"
+                ' article in "The General" (Volume 24, #6).
+
+                If Bomber.Airman(PILOT).Mission <= 5 _
+                And Bomber.Airman(COPILOT).Mission <= 5 Then
+
+                    ' Novice pilot is more likely to have severe accident.
+                    intRoll = intRoll + 1
+            
+                ElseIf Bomber.Airman(PILOT).Mission >= 11 _
+                Or Bomber.Airman(COPILOT).Mission >= 11 Then
+
+                    ' Veteran pilot is less likely to have severe accident.
+                    intRoll = intRoll - 1
+                
+                End If
+            
+            End If
+            
+        Else
+            'NOTRAW: Non-pilot even more likely to have more severe collision.
+            intRoll = intRoll + 2
+        
+        End If
+
+        Select Case intRoll
+            Case 2 To 8:
+                
+                UpdateMessage "Close call, but no effect."
+                
+                'Damage.PeckhamPoints = Damage.PeckhamPoints + 25
+                    
+            Case 9 To 10:
+            
+                UpdateMessage "Avoided mid-air collision with a shallow dive."
+                
+                'Damage.PeckhamPoints = Damage.PeckhamPoints + 25
+                    
+                Call DropOutOfFormation
+                'FIXME: we should be able to return to formation in next zone
+            
+            Case 11:
+            
+                If Bomber.RabbitsFoot >= 1 Then
+                    ' Expend luck to prevent loss of aircraft.
+                    UpdateMessage "Luckily avoided mid-air collision"
+                    Bomber.RabbitsFoot = Bomber.RabbitsFoot - 1
+                Else
+                    
+                    UpdateMessage "Avoided mid-air collision with a steep dive."
+                    
+                    ' Damage.PeckhamPoints = Damage.PeckhamPoints + 50
+                    
+                    If Random1D6() = 6 Then
+                        
+                        UpdateMessage "Stress tears off port wing!"
+                        G7UncontrolledBailout (OverWater())
+                    
+                    ElseIf Random1D6() = 6 Then
+                        
+                        UpdateMessage "Stress tears off starboard wing!"
+                        G7UncontrolledBailout (OverWater())
+                    Else
+                        If Bomber.BombsOnBoard = True _
+                        Or Bomber.ExtraAmmo >= 1 _
+                        Or Bomber.ExtraFuelInBombBay = True Then
+                        
+                            UpdateMessage "Payload rips through bomb bay doors."
+                            
+                            Bomber.BombsOnBoard = False
+                            Bomber.ExtraAmmo = 0
+                            Bomber.ExtraFuelInBombBay = False
+                            
+                            Damage.BombBayDoors = True
+                            Damage.BombRelease = True
+                            Damage.PeckhamPoints = Damage.PeckhamPoints + 35
+                        
+                        End If
+                        
+                    End If
+                
+                    Call DropOutOfFormation
+
+                    If AlpsDirection() = ALPS_BELOW Then
+                        G7UncontrolledBailout (False)
+                        Exit Sub
+                    Else
+                        Call LoseAltitude
+                    End If
+                
+                End If
+
+            Case 12:
+                
+                If Bomber.RabbitsFoot >= 1 Then
+                    ' Expend luck to prevent loss of aircraft.
+                    UpdateMessage "Luckily avoided mid-air collision"
+                    Bomber.RabbitsFoot = Bomber.RabbitsFoot - 1
+                Else
+                        
+                    UpdateMessage "Mid-air collision!"
+                    G7UncontrolledBailout (OverWater())
+                    Exit Sub
+            
+                End If
+        
+        End Select
+    
+    End If
+
+End Sub
 
 '******************************************************************************
 ' M1DefensiveFire
@@ -10119,16 +10197,10 @@ Public Function M1DefensiveFire(ByVal intBomberModel As Integer, ByVal intGun As
     Dim rsGunnery As New ADODB.Recordset
     Dim intToHit As Integer
     Dim strErrMsg As String
-'    Dim intAirman As Integer
     
     M1DefensiveFire = 0
     intToHit = 0
     
-'    If intAirman = UNMANNED_MG _
-'    Or intAirman = HIDDEN_MG Then
-'        Exit Function
-'    End If
-        
     pobjCmnd.CommandText = " SELECT * FROM Gunnery" & _
                            " WHERE BomberModel = " & intBomberModel & _
                            " AND GunPos = " & intGun & _
@@ -10325,6 +10397,7 @@ Public Function M3GermanOffensiveFire(ByVal intPosition As Integer, ByVal intFig
     
 End Function
 
+
 '******************************************************************************
 ' M4FighterCoverDefense
 '
@@ -10484,3 +10557,16 @@ Private Function M6FighterPilotStatus() As Integer
 
 End Function
 
+Private Function BadRoll() As Boolean
+    'Return value: whether or not the bad result should be re-rolled
+    BadRoll = False
+    Dim response As VbMsgBoxResult
+    If Bomber.RabbitsFoot > 0 Then
+        response = MsgBox("Would you like to use a rabbit's foot?", vbYesNo, "Uh-oh")
+        If response = vbYes Then
+            UpdateMessage "...but you luckily avoid it"
+            Bomber.RabbitsFoot = Bomber.RabbitsFoot - 1
+            BadRoll = True
+        End If
+    End If
+End Function

@@ -300,11 +300,8 @@ End Function
 ' NOTES:  n/a
 '******************************************************************************
 Public Function LookupBomber(ByVal LookupKeyField As Integer, ByVal LookupType As Integer, Optional ByRef BomberName As String = vbNullString) As Boolean
-    
     Dim intIndex As Integer
 
-    LookupBomber = False
-    BomberName = ""
     intIndex = 1
 
     If LookupKeyField = 0 Then

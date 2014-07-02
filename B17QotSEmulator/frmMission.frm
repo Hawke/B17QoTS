@@ -1894,6 +1894,7 @@ Begin VB.Form frmMission
       _ExtentX        =   8916
       _ExtentY        =   6588
       _Version        =   393217
+      Enabled         =   -1  'True
       ScrollBars      =   3
       TextRTF         =   $"frmMission.frx":0000
    End
@@ -1949,6 +1950,7 @@ Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 Private gintRemovalsRemaining As Integer
 Private gintCurrGun As Integer
 Private gintCurrTarget As Integer
+Private boolFrostBiteGraceExpired As Boolean
 
 ' Dynamically created run-time controls. In order for the controls to respond
 ' to events, they must be globally declared using the WithEvents key word.
@@ -2067,7 +2069,7 @@ Private Sub cmdTakeOff_Click()
 
     cmdInterrupt.Visible = True
 
-    Me.Controls.Remove ("cmdTakeOff")
+    Me.Controls.Remove cmdTakeOff
             
     ' Launch the mission engine.
             
@@ -2866,8 +2868,6 @@ Private Sub UnjamGuns()
 
         If Bomber.Gun(intGun).Status = MG_JAMMED _
         And GunOccupied(intGun) = True Then
-'        And Bomber.Gun(intGun).MannedBy <> HIDDEN_MG _
-'        And Bomber.Gun(intGun).MannedBy <> UNMANNED_MG Then
         
             intIndex = GetAirmanIndexBySerialNumber(Bomber.Gun(intGun).MannedBy)
             
@@ -3116,70 +3116,67 @@ Private Function FlyMission()
     
     blnContinueMission = True
 
-    If TakeOff() = False Then
-        Exit Function
-    End If
+    If TakeOff() Then
     
     ' Endless loop that exits only when the bomber returns to base or is shot
     ' down.
     
-    Do
-       
-        If EnterZone() = END_MISSION Then
-            Exit Function
-        End If
-        
-        Call RefreshMissionForm
-
-        If Bomber.CurrentZone = BASE_ZONE Then
-            If BailOverBase() = False Then
-                Call G9LandingOnLand
-            End If
-            Exit Function
-        End If
-
-        If Bomber.Altitude = LOW_ALTITUDE _
-        And EnemyTerritory() = True Then
-            ' Bomber takes light flak when as it flies over a zone at low
-            ' altitude. (If the bomber spendS two turns in the zone, it checks
-            ' twice.) Separate from flak surrounding the target, this represents
-            ' ad hoc local resistance.
-            
-            If FlakCombat(LIGHT_FLAK, False) = END_MISSION Then
+        Do
+            If EnterZone() = END_MISSION Then
                 Exit Function
             End If
             
             Call RefreshMissionForm
-        End If
-
-        If NormalZoneCombat() = END_MISSION Then
-            Exit Function
-        End If
-        
-        Call AbortMission
-        
-        If Bomber.CurrentZone = Mission.TargetZone _
-        And Bomber.Direction = OUTBOUND Then
-        
-            UpdateMessage vbCrLf & "Target Zone"
     
-            If Mission.Zone(Bomber.CurrentZone).Weather = STORM_WEATHER Then
-                ' If there is a storm in the target zone, there is no flak and
-                ' the bomber may not bomb the target. The bomber must abort or
-                ' attack an alternate target.
-                UpdateMessage "Target obscured by stormy weather"
-' TODO: alternate target
-                Call JettisonPayload(True, False)
-            ElseIf TargetZoneCombat() = END_MISSION Then
+            If Bomber.CurrentZone = BASE_ZONE Then
+                If BailOverBase() = False Then
+                    Call G9LandingOnLand
+                End If
                 Exit Function
             End If
+    
+            If Bomber.Altitude = LOW_ALTITUDE _
+            And EnemyTerritory() = True Then
+                ' Bomber takes light flak when as it flies over a zone at low
+                ' altitude. (If the bomber spendS two turns in the zone, it checks
+                ' twice.) Separate from flak surrounding the target, this represents
+                ' ad hoc local resistance.
+                
+                If FlakCombat(LIGHT_FLAK, False) = END_MISSION Then
+                    Exit Function
+                End If
+                
+                Call RefreshMissionForm
+            End If
+    
+            If NormalZoneCombat() = END_MISSION Then
+                Exit Function
+            End If
+            
+            Call AbortMission
+            
+            If Bomber.CurrentZone = Mission.TargetZone _
+            And Bomber.Direction = OUTBOUND Then
+            
+                UpdateMessage vbCrLf & "Target Zone"
         
-            Call RefreshMissionForm
-        
-        End If
-        
-    Loop While blnContinueMission
-
+                If Mission.Zone(Bomber.CurrentZone).Weather = STORM_WEATHER Then
+                    ' If there is a storm in the target zone, there is no flak and
+                    ' the bomber may not bomb the target. The bomber must abort or
+                    ' attack an alternate target.
+                    UpdateMessage "Target obscured by stormy weather"
+    ' TODO: alternate target
+                    Call JettisonPayload(True, False)
+                ElseIf TargetZoneCombat() = END_MISSION Then
+                    Exit Function
+                End If
+            
+                Call RefreshMissionForm
+            
+            End If
+            
+        Loop While blnContinueMission
+    End If
 End Function
 
 '******************************************************************************
@@ -3396,18 +3393,10 @@ Private Function BailOverBase() As Integer
     
 End Function
 
-'******************************************************************************
-' EnterZone
-'
-' INPUT:  n/a
-'
-' OUTPUT: n/a
-'
 ' RETURN: End of mission, or default value.
 '
 ' NOTES:  Controls the number of turns a bomber spends in a zone and the change
 '         of direction after the target is bombed.
-'******************************************************************************
 Private Function EnterZone() As Integer
     Dim intEng As Integer
     Dim intEnginesOut As Integer
@@ -3417,7 +3406,7 @@ Private Function EnterZone() As Integer
     
     For intEng = 1 To 4
         
-        If Damage.EngineOut(intEng) = True Then
+        If Damage.EngineOut(intEng) Then
             intEnginesOut = intEnginesOut + 1
         End If
             
@@ -3448,7 +3437,7 @@ Private Function EnterZone() As Integer
     
     End If
         
-    If blnSpendAnotherTurnInZone = True Then
+    If blnSpendAnotherTurnInZone Then
 '    If Bomber.InFormation = False _
 '    And Bomber.TurnsInZone = 1 _
 '    And Bomber.CurrentZone <> Mission.TargetZone Then
@@ -3587,12 +3576,31 @@ Private Function EnterZone() As Integer
         End If
     
     End If
-Dim a
-a = 1
-
-'    UpdateMessage "Terrain: " & Mission.Zone(Bomber.CurrentZone).Terrain
-'    UpdateMessage "Weather: " & WeatherText(Mission.Zone(Bomber.CurrentZone).Weather)
-
+    If Bomber.TurnsInZone = 1 Then
+        'It's our first turn in a new zone...
+        If Bomber.Altitude = HIGH_ALTITUDE Then
+            '...we're at high altitude...
+            If HeaterOut Then
+                '...and at least one crewman's heater is out.
+                UpdateMessage "Frostbite warning: Heaters out at high altitude."
+                If Not boolFrostBiteGraceExpired Then
+                    'Rule 11.0: When heat is out, the B-17 may travel one more zone at the current
+                    'altitude and in formation. Thereafter the B-17 must either descend to low altitude
+                    'or stay at high altitude and roll for frostbite once per zone.
+                    boolFrostBiteGraceExpired = True
+                    UpdateMessage "Bomber must descend in the next zone, or risk frostbite injury to crew."
+                Else
+                    'We have exhausted our frostbite grace period.
+                    UpdateMessage "Bomber must descend immediately, or risk frostbite injury to crew."
+                    DropToLowAltitude 'Offer to drop to low altitude
+                    If Bomber.Altitude = HIGH_ALTITUDE Then
+                        'user refused to descend.
+                        BL5Frostbite
+                    End If
+                End If
+            End If
+        End If
+    End If
 End Function
 
 '******************************************************************************
@@ -4120,142 +4128,119 @@ Private Function ExitPrevZone() As Integer
     
     Next intEng
     
-    If Bomber.Altitude = HIGH_ALTITUDE Then
+    'high altitude + O2 out = force low
+    'high altitude + heat out = offer low
+    'low altitude + heat out + alps = offer high
+    'low altitude + alps = bail out.
     
-        If Damage.OxygenSystem = True Then
-            blnOxygenOut = True
-        Else
-        
-            ' Cycle through the existing positions on the bomber.
-            For intPos = PILOT To AMMO_STOCKER
-                
-                If PosOccupied(intPos) = True Then
-                    
-                    ' Airman currently in position
-                    intIndex = GetAirmanIndexBySerialNumber(Bomber.Position(intPos).CurrentSerialNum)
-                    
-                    If Bomber.Airman(intIndex).Status <= SW_STATUS Then
-                        
-                        If Damage.Oxygen(intPos) >= 2 Then
-                            
-                            ' If the airman is alive, he must have air.
-                    
-                            blnOxygenOut = True
-                            Exit For
-                    
-                        ElseIf Bomber.Airman(intIndex).Frostbite = False _
-                        And Damage.Heater(intPos) = True Then
-                            
-                            ' If the airman is alive, he should have heat.
-                    
-                            blnHeaterOut = True
-                            Exit For
-                        
-                        End If
-                    
-                    End If
-                    
-                End If
-            
-            Next intPos
-        
+    If OxygenOut Then
+        ' We have to be at low altitude, regardless of where we are or anything else.
+        DropOutOfFormation
+        LoseAltitude
+    Else
+        'Oxygen is available, so we can ascend if necessary.
+        If intAlpsDirection = ALPS_BELOW _
+            Or intAlpsDirection = ALPS_NEXT_ZONE Then
+            'Notify the user so they are aware of the danger of being at low altitude.
+            UpdateMessage "Approaching the Alps."
         End If
-
-        If blnOxygenOut = True Then
-'            ' Oxygen is out at a manned position(s): The bomber must descend.
-'
-'            Call DropOutOfFormation
-'
-            If intAlpsDirection = ALPS_BELOW Then
-
-                ' Bomber must maintain high altitude over the Alps. Since
-                ' it cannot, the crew must bailout.
-                UpdateMessage "Bomber cannot maintain altitude in Alps."
-                G6ControlledBailout (False)
-                ExitPrevZone = END_MISSION
-                Exit Function
-
-'            ElseIf intAlpsDirection = ALPS_NEXT_ZONE Then
-'
-'                UpdateMessage "Bomber cannot maintain altitude in Alps."
-'                Call BailOrCrash
-'                ExitPrevZone = END_MISSION
-'                Exit Function
-'
-            Else
-                
-                Call DropOutOfFormation
-                Call LoseAltitude
-                Call RefreshMissionForm
-            
-            End If
-        
-        ElseIf blnHeaterOut = True Then
-        
-'            If intAlpsDirection = ALPS_BELOW _
-'            Or intAlpsDirection = ALPS_NEXT_ZONE Then
-            If intAlpsDirection = ALPS_NEXT_ZONE Then
-            
-                UpdateMessage "Bomber must maintain altitude entering Alps."
-            
-            ElseIf intAlpsDirection = ALPS_BELOW Then
-            
-                UpdateMessage "Bomber must maintain altitude over Alps."
-            
-            Else
-            
-                Call DropToLowAltitude
-                Call RefreshMissionForm
-            
-            End If
-        
+        If HeaterOut Then
+            'Warn user that the heaters are out, so climbing is dangerous.
+            UpdateMessage "Heaters are out. Frostbite is possible at high altitude."
         End If
-        
-    ElseIf Bomber.Altitude = LOW_ALTITUDE Then
+        If Bomber.Altitude = LOW_ALTITUDE Then
+            'Only offer to climb if we are at low altitude.
+            'FIXME: This is only possible if we have enough (3 or 4)engines available
+            ClimbToHighAltitude
+        End If
+    End If
+    RefreshMissionForm
     
-'        If intAlpsDirection = ALPS_AHEAD _
-'        And Bomber.Direction = OUTBOUND Then
-'            UpdateMessage "Bomber can't gain altitude to cross Alps."
-'            Call BomberAbort
-'            Exit Function
-'        ElseIf intAlpsDirection = ALPS_NEXT_ZONE _
-'        And Bomber.Direction = RETURN_TRIP Then
-        If intAlpsDirection = ALPS_NEXT_ZONE _
+    If Bomber.Altitude = LOW_ALTITUDE _
+        And intAlpsDirection = ALPS_NEXT_ZONE _
         And Bomber.Direction = RETURN_TRIP Then
+        
+        'we're still at low altitude for whatever reason, and we can't cross the alps on the return trip.
             UpdateMessage "Bomber can't gain altitude to re-cross Alps."
             Call BailOrCrash
             ExitPrevZone = END_MISSION
-            Exit Function
-        End If
-        
-    End If
-
-    If Bomber.FuelPoints = 0 Then
+            
+    ElseIf Bomber.FuelPoints = 0 Then
         
         UpdateMessage "Fuel tanks empty."
         Call BailOrCrash
         ExitPrevZone = END_MISSION
-        Exit Function
     
     ElseIf Bomber.CurrentZone = Damage.LastZone Then
         
         UpdateMessage "Bomber can't maintain lift."
         Call BailOrCrash
         ExitPrevZone = END_MISSION
-        Exit Function
     
     ElseIf Bomber.FuelPoints = 1 _
     And intAlpsDirection = ALPS_NEXT_ZONE _
     And Bomber.Direction = RETURN_TRIP Then
+        'NOTRAW: No mention of special fuel requirements for the alps in "The General" vol 23 no. 1
     
         UpdateMessage "Bomber doesn't have enough fuel to re-cross Alps."
         Call BailOrCrash
         ExitPrevZone = END_MISSION
-        Exit Function
-    
+        
     End If
-    
 End Function
+
+Private Function OxygenOut() As Boolean
+    'see if vital oxygen systems are out.
+    Dim intIndex As Integer
+    Dim intPos As Integer
+    
+    If Damage.OxygenSystem Then
+        'The plane-wide O2 system is out.
+        OxygenOut = True
+    Else
+        For intPos = PILOT To AMMO_STOCKER
+            'Check all (occupied) positions for oxygen outage
+            If PosOccupied(intPos) Then
+                ' Airman currently in position
+                intIndex = GetAirmanIndexBySerialNumber(Bomber.Position(intPos).CurrentSerialNum)
+                
+                If Bomber.Airman(intIndex).Status <= SW_STATUS Then
+                    ' This oxygen system is vital, since the occupyingcrewman is alive.
+                    If Damage.Oxygen(intPos) >= 2 Then
+
+                        OxygenOut = True
+                        Exit For
+                    End If
+                End If
+            End If
+        Next
+    End If
+End Function
+
+Private Function HeaterOut() As Boolean
+    'See if vital heater systems are out.
+    Dim intIndex As Integer
+    Dim intPos As Integer
+
+    For intPos = PILOT To AMMO_STOCKER
+        'Check heater on all occupied positions.
+        If PosOccupied(intPos) Then
+            ' Airman currently in position
+            intIndex = GetAirmanIndexBySerialNumber(Bomber.Position(intPos).CurrentSerialNum)
+            
+            If Bomber.Airman(intIndex).Status <= SW_STATUS _
+                And Not Bomber.Airman(intIndex).Frostbite _
+                And Damage.Heater(intPos) Then
+                    'The crewman is alive, not already-frostbitten, and his heater is out.
+                    
+                    HeaterOut = True
+                    Exit For
+            
+            End If
+        End If
+    Next
+End Function
+
 
 Private Sub Form_Unload(Cancel As Integer)
     frmMainMenu.Show
@@ -4439,22 +4424,24 @@ Public Sub DropToLowAltitude()
 
     ' User clicked the next action button.
     
-    If optOneTemp.Value = True Then
-        blnDescend = True
-    Else ' optTwoTemp was clicked
-        blnDescend = False
-    End If
+    blnDescend = optOneTemp.Value = True
     
     Call RemoveTempOptions
 
-    If blnDescend = True Then
-        Call DropOutOfFormation
-        Call LoseAltitude
-        Exit Sub
+    If blnDescend Then
+        DropOutOfFormation
+        LoseAltitude
     End If
 
-    Call BL5Frostbite
+End Sub
 
+Public Sub ClimbToHighAltitude()
+    DisplayTempOptions ASCEND_ALTITUDE, "Yes", "No"
+    Interrupt cmdInterrupt, ASCEND_ALTITUDE
+    If optOneTemp.Value Then
+        Call GainAltitude
+    End If
+    RemoveTempOptions
 End Sub
 
 '******************************************************************************
@@ -4558,36 +4545,14 @@ Private Sub AbortMission()
         
         End If
         
-        If Damage.OxygenSystem = True Then
-            blnOxygenOut = True
-        Else
+        blnOxygenOut = OxygenOut
+        If blnOxygenOut Then
+            UpdateMessage "Oxygen shortage: Bomber may abort."
+        End If
         
-            ' Cycle through the existing positions on the bomber.
-            For intPos = PILOT To AMMO_STOCKER
-                
-                If PosOccupied(intPos) = True Then
-                    
-                    ' Airman currently in position
-                    intIndex = GetAirmanIndexBySerialNumber(Bomber.Position(intPos).CurrentSerialNum)
-                    
-                    If Bomber.Airman(intIndex).Status <= SW_STATUS Then
-                        
-                        ' If the airman is alive, he must have air and should have heat.
-                    
-                        If Damage.Oxygen(intPos) >= 2 Then
-                            blnOxygenOut = True
-                            Exit For
-                        ElseIf Damage.Heater(intPos) = True Then
-                            blnHeaterOut = True
-                            Exit For
-                        End If
-                    
-                    End If
-                    
-                End If
-            
-            Next intPos
-        
+        blnHeaterOut = HeaterOut
+        If blnHeaterOut Then
+            UpdateMessage "Heater out: bomber may abort."
         End If
         
         ' Alps check block
@@ -4774,129 +4739,16 @@ End Sub
 '         success due to their tendency to have a hard time getting airborne.
 '******************************************************************************
 Private Function TakeOff() As Boolean
-    Dim intRoll As Integer
-    Dim blnPayloadExploded As Boolean
     
-    TakeOff = False
     
-    ' All bombers other than the B-24 are assume to safely takeoff. The B-24,
+    UpdateMessage "Taking off..."
+    ' All bombers other than the B-24 are assumed to safely takeoff. The B-24,
     ' due to overloading, may crash on takeoff, so it must be checked.
-    
-    UpdateMessage Bomber.Name & " takes off."
-    
-    If Bomber.BomberModel = B24_D _
-    Or Bomber.BomberModel = B24_E _
-    Or Bomber.BomberModel = B24_GHJ _
-    Or Bomber.BomberModel = B24_LM Then
-    
-        ' Basically, this is the G9LandingOnLand procedure, but only with
-        ' modifiers for weight, weather and pilot/copilot skill.
-    
-        intRoll = Random2D6()
-        
-        ' Adjust the roll for the extra weight carried by the B-24.
-        
-        intRoll = intRoll - 1
-        
-        ' O-1 Weather: Note a and Note b, plus "The General" (Volume 24, #6)
-        ' variant.
-        
-        If Mission.Zone(BASE_ZONE).Weather = POOR_WEATHER Then
-            intRoll = intRoll - 1
-        ElseIf Mission.Zone(BASE_ZONE).Weather = BAD_WEATHER Then
-            intRoll = intRoll - 2
-        ElseIf Mission.Zone(BASE_ZONE).Weather = STORM_WEATHER Then
-            intRoll = intRoll - 3
-        End If
-            
-        ' Adjust for pilot and copilot experience.
-            
-        If Bomber.Airman(PILOT).Mission >= 11 _
-        And Bomber.Airman(COPILOT).Mission >= 11 Then
-            intRoll = intRoll + 1
-        End If
-        
-        If intRoll <= 1 Then
-            UpdateMessage Bomber.Name & " fails to clear end of runway."
-        End If
-
-        If intRoll <= 0 _
-        And Random1D6() = 6 Then
-            
-            If Bomber.BombsOnBoard = True Then
-                ' Note e.
-                UpdateMessage "Bombs still aboard!"
-                blnPayloadExploded = True
-            ElseIf Bomber.ExtraFuelInBombBay = True Then
-                blnPayloadExploded = True
-            ElseIf Bomber.ExtraAmmo > 0 Then
-                UpdateMessage "Extra ammo still aboard!"
-                blnPayloadExploded = True
-            End If
-                
-        End If
-            
-        If blnPayloadExploded = True Then
-            
-            Bomber.Status = CRASHED_STATUS
-            UpdateMessage "Explosion. Bomber destroyed."
-            Call CrewFinish(KIA_STATUS)
-            TakeOff = False
-            Exit Function
-        
-        Else
-
-            Select Case intRoll
-                    
-                Case Is <= -3:
-                        
-                    Bomber.Status = CRASHED_STATUS
-                    UpdateMessage "Bomber wrecked."
-                    Call CrewFinish(KIA_STATUS)
-                
-                Case -2:
-                        
-                    Bomber.Status = CRASHED_STATUS
-                    UpdateMessage "Bomber wrecked."
-                    Call CrewFinish(BAD_CRASH_STATUS)
-                    
-                Case -1:
-                        
-                    Bomber.Status = CRASHED_STATUS
-                    UpdateMessage "Bomber wrecked."
-                    Call CrewFinish(CRASHED_STATUS)
-                    
-                Case 0:
-                        
-                    Bomber.Status = CRASHED_STATUS
-                    UpdateMessage "Bomber crashed; irrepairably damaged."
-                    
-                Case 1:
-                        
-                    Bomber.Status = DUTY_STATUS
-                    UpdateMessage "Bomber crashed; repairable by next mission."
-                    
-                Case Is >= 2:
-                        
-                    ' B-24 successfully takes off.
-                    TakeOff = True
-                    
-            End Select
-            
-        End If
-    
-    Else
-        
-        ' B-17s and Lancasters always successfully takeoff.
+    If G9TakeOff Then
         TakeOff = True
-    
-    End If
-    
-    If TakeOff = True Then
     
         Bomber.Altitude = HIGH_ALTITUDE
         
-        ' B-24s that successfully took off, plus all other bomber models.
         
         If Bomber.BomberModel = AVRO_LANCASTER Then
             UpdateMessage Bomber.Name & " joins the bomber stream heading for Europe."
@@ -4909,7 +4761,6 @@ Private Function TakeOff() As Boolean
         End If
     
     End If
-    
 End Function
 
 '******************************************************************************
